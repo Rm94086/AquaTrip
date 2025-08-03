@@ -7,5 +7,19 @@
   },
   "author": "",
   "license": "ISC",
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rm94086/AquaTrip.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Rm94086/AquaTrip/issues"
+  },
+  "homepage": "https://github.com/Rm94086/AquaTrip#readme",
+  "description": "",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "express-validator": "^7.2.1"
+  }
 }
