@@ -5,4 +5,8 @@ router.get('/', function(req,res ){
     res.render('pages/index');
 });
 
+router.get('/ilhagalapagos', function(req,res ){
+    res.render('pages/ilhagalapagos');
+});
+
 module.exports = router;
