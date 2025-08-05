@@ -6,7 +6,7 @@ router.get('/', function(req,res ){
 });
 
 router.get('/ilhagalapagos', function(req,res ){
-    res.render('pages/ilhagalapagos');
+    res.render('pages/Ilhagalapagos');
 });
 
 module.exports = router;
