@@ -1,23 +1,25 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+  <link rel="stylesheet" href="css/home.css">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaTrip</title>
-    <link rel="stylesheet" href="css/home.css">
 </head>
 <body>
- 
-   
     <header>
+       
+        <nav>  
+        <a href=/index.ejs>
+        <img href="/index.ejs" class="logo" src="img/AquaTrip.png"></a>
         
+        </nav>
         <form class="search-box" action="/Ilhagalapagos" method="get">
         <input type="search" name="q" placeholder="Digite sua busca..." required>
         <button type="submit">Buscar</button>
         </form>
         <nav>
             <ul>
-                <li><a href="app.js">Login</a></li>
+                <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
             </ul>
         </nav>
     </header>
@@ -29,7 +31,7 @@
  
   <section class="icones-expedicao">
     <section class="icone">
-      <img src="img/scuba.png" alt="Expedição">
+      <a href="expedicao.ejs"><img src="img/scuba.png" alt="Expedição"></a>
       <p>Expedição</p>
     </section>
     <section class="icone">
@@ -42,13 +44,12 @@
     </section>
   </section>
 </section>
+ <section class="pesquisa">
  
- 
+
         </section>
         <section class="card-principal">
-        <figure>
             <img src="img/barco.jpg">
-        </figure>
         <section class="divider"></section>
         <article>
             <h2>Tenha novas experiências<br>e conecte-se com os mares.</h2>
@@ -58,39 +59,35 @@
         <section class="cards">
             <section class="card">
                
-                <img src="img/ilhas-galapagos.jpg">
-                <a><h3 class="caixa"><a class="nome" href="/ilhagalapagos">Ilhas Galápagos</a></h3>
-                 <p>A partir de R$238 p/ pessoa.</p>
+                <a href="/ilhagalapagos">
+                    <img src="img/ilhas-galapagos.jpg" alt="Ilhas Galápagos">
+                </a>
+                <a><h3 class="caixa"><a class="nome" href="/ilhagalapagos"></a></h3>
+                <p>Ilha Galápagos <br> 
+                    a partir de R$259 p/ pessoa.
+                </p>
                
             </section>
             <section class="card">
                 <img src="img/açores.jpg">
-                   <h3>Ilhas Açores</h3>
-                <p>A partir de R$259 p/ pessoa.</p>
+                <p> Ilhas Açores <br>
+                    a partir de R$248 p/ pessoa.
+                </p>
             </section>
 
             <section class="card">
             <img src="img/monterey.JPG">
-            <h3>Monterey Bay Aquarium</h3>
-            <p>A partir de R$223 p/ pessoa.</p>
+            <p>Monterey Bay Aquarium <br>
+                a partir de R$223 p/ pessoa.
+            </p>
             </section>
 
             <section class="card">
             <img src="img/cenote.jpg">
-             <h3>Cenotes e Lagoas</h3>
-             <p>A partir de R$28-224 p/ pessoa.</p>
+             <p>Cenotes e Lagoas <br>
+                a partir de R$28-224 p/ pessoa.
+            </p>
             </section>
-
-            <section class="card">
-                <img src="img/emerald cove.png">
-                <h3>Emerald Cove</h3>
-                <p>A partir de R$621 p/ pessoa.</p>
-            </section>
-
-            <section class="card">
-                <img src="img/cozumel.jpg">
-                <h3>Cozumel</h3>
-                <p>A partir de R$335 p/ pessoa.</p>
             </section>
         </section>
 
@@ -99,51 +96,31 @@
         <section class="cards">
             <section class="card">
                 <img src="img/aquariosp.webp">
-                <h3>Aquário de São Paulo</h3>
-                <p>A partir de R$120 p/ pessoa.</p>
+                <p>Aquário de São Paulo <br>
+                a partir de R$120 p/ pessoa.
+                </p>
             </section>
 
             <section class="card">
             <img src="img/Paraty.jpg">
-            <h3>Paraty (RJ) – passeio de snorkel</h3>
-            <p>A partir de R$200 e R$300 p/ pessoa.</p>
+            <p>Paraty (RJ) – passeio de snorkel <br>
+            a partir de R$200 a R$300 p/ pessoa.
+            </p>
             </section>
 
              <section class="card">
             
              <img src="img/Aquario Santos.jpg" >
-             <h3>Aquário Municipal de Santos</h3>
-             <p>A partir de R$10 p/ pessoa.</p>
+             <p>Aquário Municipal de Santos <br>
+            a partir de R$10 p/ pessoa.
+            </p>
             </section>
 
             <section class="card">
             <img src="img/Bonito MS.webp">
-            <h3>Bonito (MS) – flutuação no Rio Sucuri</h3>
-            <p>A partir de R$269 p/ pessoa.</p>
-            </section>
-
-            <section class="card">
-            <img src="img/ilha arvoredo.jpg">
-            <h3>Ilha do Arvoredo (SC)</h3>
-            <p>A partir de R$285 p/ pessoa.</p>
-            </section>
-        </section>
-
-        <h1>Sua próxima aventura te espera</h1><br>
-        <section class="cards2">
-            <section class="card2">
-            <img src="img/keywest.jpg">
-            <h3>Key West</h3>
-            </section>
-
-            <section class="card2">
-            <img src="img/farjado.webp">
-            <h3>Farjado</h3>
-            </section>
-
-            <section class="card2">
-            <img src="img/ibiza.jpg">
-            <h3>Ibiza</h3>
+            <p>Bonito (MS) – flutuação no Rio Sucuri <br>
+            a partir de R$269 p/ pessoa.
+            </p>
             </section>
         </section>
     </main>

@@ -1,71 +1,164 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <link rel="stylesheet" href="css/Ilha_Galápagos.css">
 <head>
-
+ 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilhas Galápagos </title>
-    
+    <title>Ilhas Galápagos</title>
+   
 </head>
-<body> 
+<body>
     <header>
-        <nav>   
-          <ul> 
-         <li> <a href="/index">    </a></li>
-          </ul>
+       
+        <nav>  
+        <a href=/index.ejs>
+        <img href="/index.ejs" class="logo" src="img/AquaTrip.png"></a>
+        
         </nav>
-        <form class="search-box" action="/index" method="get">
+        <form class="search-box" action="/index.ejs" method="get">
         <input type="search" name="q" placeholder="Digite sua busca..." required>
         <button type="submit">Buscar</button>
         </form>
         <nav>
             <ul>
-                <li><a href="app.js">Login</a></li>
+                <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
             </ul>
         </nav>
     </header>
+ 
     <main>
     <h1>Ilhas Galápagos - Aventuras Oceânicas</h1>
-    <h2>4.0 <a class="Avaliação">★ ★ ★ ★</a></h2>
+    <h2>5.0 <a class="Avaliação">★ ★ ★ ★ ★</a></h2>
     <section class="carrossel">
     <article class="slide active">
-      <img src="img/galapagos1.webp"  alt="Imagem1" class="img1">
-    </article> 
+      <img src="img/galapagos1.webp"  alt="Imagem1">
+    </article>
     <article class="slide">
-      <img src="img/galapagos2.jpg" alt="Imagem2" class="img2">
-    </article> 
+      <img src="img/galapagos2.jpg" alt="Imagem2">
+    </article>
     <article class="slide">
-      <img src="img/galapago3.jpg" alt="Imagem3" class="img3">
+      <img src="img/galapagos3.jpg" alt="Imagem3">
     </article>
   </section>
+  <script src="js/script.js"></script>
+  <h2>Informações:</h2>
+   <p class="texto">
+    As ilhas Galápagos são um arquipélago vulcânico do Oceano Pacífico. Elas são consideradas 
+    um dos destinos mais procurados do mundo para observação de vida selvagem. Essa 
+    província do Equador está localizada a aproximadamente 1.000 km da costa do país. Suas 
+     terras isoladas abrigam várias espécies de plantas e animais,
+      muitas não encontradas em  outros lugares. Charles Darwin
+     visitou as ilhas em 1835. A observação das espécies  de
+     Galápagos inspirou sua teoria da evolução.
+    </p>
  
-  <script src="script.js"></script>
-  <h2>Informações:</h2> 
-  <p>As ilhas Galápagos são um arquipélago vulcânico do Oceano Pacífico.<br>  
-     Elas são consideradas um dos destinos mais procurados do mundo <br>
-     para observação de vida selvagem. Essa província do Equador está <br>
-     localizada a aproximadamente 1.000 km da costa do país. Suas <br> 
-     terras isoladas abrigam várias espécies de plantas e animais, <br>
-      muitas não encontradas em outros lugares. Charles Darwin <br> 
-     visitou as ilhas em 1835. A observação das espécies de <br>
-     Galápagos inspirou sua teoria da evolução.   </p>
-  <section class="cards">
  
-     <section class="card">
-                <h3>A partir de R$259 p/ pessoa.</h3>
-                <form><br>
-        <label for="data">Selecione uma Data:</label>
-        <input type="date" id="data" name="data">
-    </form>
-    <section class="hero"><br>
-    <p><button type="submit">Reserve Agora</button></p> 
+<section class="cards">
+    <article class="card-reserva">
+       
+        <header class="card-header">
+    <span class="preco-wrapper">
+        <span class="preco-label">A partir de</span>
+        <span class="preco-valor">R$ 259</span>
+    </span>
+    <span class="preco-obs">por adulto</span>
+</header>
+ 
+        <section class="card-body">
+            <h3 class="secao-titulo">Selecione data e viajantes</h3>
+           
+            <section class="seletores">
+   
+    <fieldset class="seletor-data-funcional">
+        <label for="data-reserva">Data</label>
+        <input type="date" id="data-reserva" name="data-reserva">
+    </fieldset>
+</section>
+ 
+            <section class="info-extra">
+                <i class="icone-cancelamento"></i>
+                <p><strong>Política de cancelamento</strong>  
+ 
+                Cancele até 24 horas antes para obter o reembolso integral.</p>
+            </section>
+        </section>
+ 
+        <footer class="card-footer">
+            <section class="resumo-pedido">
+                <h4>Pacote Ilhas Galápagos</h4>
+                <p>2 adultos x R$ 259</p>
+                <p class="total">Total R$ 518</p>
+                <span class="info-impostos">(o preço inclui impostos e taxas de reserva)</span>
+            </section>
+           
+            <button class="botao-reservar">Reservar agora</button>
+        </footer>
+
+    </article>
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+<section class="avaliacoes-container">
+   
+    <h2>Avaliações</h2>
+ 
+    <section class="resumo-avaliacoes">
+       
+        <article class="avaliacao-geral">
+            <strong>5,0</strong>
+            <span class="estrelas">★★★★★</span>
+        </article>
+       
+        <section class="lista-barras">
+            <article class="linha-avaliacao">
+                <span class="label">Excelente</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 80%;"></span>
+                </span>
+                <span class="contagem">1.894</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Muito bom</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 60%;"></span>
+                </span>
+                <span class="contagem">1.020</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Razoável</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 25%;"></span>
+                </span>
+                <span class="contagem">846</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Ruim</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 15%;"></span>
+                </span>
+                <span class="contagem">302</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Péssimo</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 5%;"></span>
+                </span>
+                <span class="contagem">37</span>
+            </article>
+        </section>
+ 
     </section>
-  </section>
-    </section>
+ 
+</section>
+ 
     </main>
     <footer>
         <p>&copy; 2025 - Todos os direitos reservados.</p>
     </footer>
 </body>
-    
+   

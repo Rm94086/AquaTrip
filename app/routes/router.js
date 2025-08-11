@@ -9,4 +9,12 @@ router.get('/ilhagalapagos', function(req,res ){
     res.render('pages/Ilhagalapagos');
 });
 
+router.get('/login', function(req,res ){
+    res.render('pages/login');
+});
+
+router.get('/index.ejs', function(req,res ){
+    res.render('pages/index.ejs');
+});
+
 module.exports = router;
