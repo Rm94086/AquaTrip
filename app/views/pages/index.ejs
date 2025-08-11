@@ -11,9 +11,7 @@
    
     <header>
         
-        <form class="search-box" action="/Ilhagalapagos" method="get">
-        <input type="search" name="q" placeholder="Digite sua busca..." required>
-        <button type="submit">Buscar</button>
+        <img src="img/AquaTrip.png">
         </form>
         <nav>
             <ul>
@@ -29,7 +27,7 @@
  
   <section class="icones-expedicao">
     <section class="icone">
-      <img src="img/scuba.png" alt="Expedição">
+      <a href="expedicao.ejs"><img src="img/scuba.png" alt="Expedição"></a>
       <p>Expedição</p>
     </section>
     <section class="icone">
@@ -42,13 +40,14 @@
     </section>
   </section>
 </section>
- 
- 
+ <section class="pesquisa">
+ <form class="search-box" action="/Ilhagalapagos" method="get">
+        <input type="search" name="q" placeholder="Digite sua busca..." required>
+        <button type="submit">Buscar</button></section>
+
         </section>
         <section class="card-principal">
-        <figure>
             <img src="img/barco.jpg">
-        </figure>
         <section class="divider"></section>
         <article>
             <h2>Tenha novas experiências<br>e conecte-se com os mares.</h2>
@@ -58,7 +57,9 @@
         <section class="cards">
             <section class="card">
                
-                <img src="img/ilhas-galapagos.jpg">
+                <a href="/ilhagalapagos">
+                    <img src="img/ilhas-galapagos.jpg" alt="Ilhas Galápagos">
+                </a>
                 <a><h3 class="caixa"><a class="nome" href="/ilhagalapagos">Ilhas Galápagos</a></h3>
                  <p>A partir de R$238 p/ pessoa.</p>
                
@@ -132,19 +133,20 @@
         <h1>Sua próxima aventura te espera</h1><br>
         <section class="cards2">
             <section class="card2">
-            <img src="img/keywest.jpg">
-            <h3>Key West</h3>
+                    <img src="img/keywest.jpg">
+            
+                <h1>Key West</h1>
+            
             </section>
-
+          
             <section class="card2">
             <img src="img/farjado.webp">
-            <h3>Farjado</h3>
-            </section>
-
+            <h1>Farjado</h1>
+           </section>
+       
             <section class="card2">
             <img src="img/ibiza.jpg">
-            <h3>Ibiza</h3>
-            </section>
+            <h1>Ibiza</h3></section>
         </section>
     </main>
  
