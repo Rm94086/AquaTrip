@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
   <link rel="stylesheet" href="css/Ilha_Galápagos.css">
 <head>
  
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ilhas Galápagos </title>
+    <title>Ilhas Galápagos</title>
    
 </head>
 <body>
     <header>
+       
         <nav>  
-          <ul>
-         <li> <a href="/index"></a></li>
-          </ul>
+        <a href=/index.ejs>
+        <img href="/index.ejs" class="logo" src="img/AquaTrip.png"></a>
+        
         </nav>
-        <form class="search-box" action="/index" method="get">
+        <form class="search-box" action="/index.ejs" method="get">
         <input type="search" name="q" placeholder="Digite sua busca..." required>
         <button type="submit">Buscar</button>
         </form>
         <nav>
             <ul>
-                <li><a href="login.ejs">Login</a></li>
+                <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
             </ul>
         </nav>
     </header>
@@ -30,17 +31,17 @@
     <h1>Ilhas Galápagos - Aventuras Oceânicas</h1>
     <h2>5.0 <a class="Avaliação">★ ★ ★ ★ ★</a></h2>
     <section class="carrossel">
-    <article class="slide-active">
-      <img src="img/galapagos1.webp"  alt="Imagem1" class="img1">
+    <article class="slide active">
+      <img src="img/galapagos1.webp"  alt="Imagem1">
     </article>
     <article class="slide">
-      <img src="img/galapagos2.jpg" alt="Imagem2" class="img2">
+      <img src="img/galapagos2.jpg" alt="Imagem2">
     </article>
     <article class="slide">
-      <img src="img/galapagos3.jpg" alt="Imagem3" class="img3">
+      <img src="img/galapagos3.jpg" alt="Imagem3">
     </article>
   </section>
-  <script src="script.js"></script>
+  <script src="js/script.js"></script>
   <h2>Informações:</h2>
    <p class="texto">
     As ilhas Galápagos são um arquipélago vulcânico do Oceano Pacífico. Elas são consideradas 
@@ -93,7 +94,7 @@
            
             <button class="botao-reservar">Reservar agora</button>
         </footer>
- 
+
     </article>
 </section>
  

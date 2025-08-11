@@ -1,48 +1,51 @@
 body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            color: #333;
-            background-color: #EEEEEE;
-        }
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #EEEEEE;
+}
  
-        header {
-            background-color: #192E86;
-            padding: 10px 60px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid #ddd;
-            margin: 0px;
-        }
-        
-        header img {
-            width: 190px;
-            height: 70px;
-
-        }
-
-        header h1 {
-            font-size: 24px;
-            color: #fff;
-        }
+header {
+    background-color: #192E86;
+    padding: 10px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+}
  
-        nav ul {
-            list-style: none;
-            gap: 20px;
-            margin: 0;
-            padding: 0;
-        }
+header h1 {
+    font-size: 24px;
+    color: #fff;
+}
  
-        nav li {
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+ 
+nav li {
             display: flex;
             justify-content: right; /* Centers horizontally */
             align-items: right;    /* Centers vertically */
         }
+
 nav a { 
     text-decoration: none;
     color: #ffffff;
     font-weight: bold; 
 }
+.logo {
+    width: 225px;
+}
+ 
+main {
+    padding: 40px 60px;
+}
+
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -72,7 +75,16 @@ nav a {
         }
  
          
- 
+      .logintexto {
+    background: #007bff;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+
+      }
 
 
 
@@ -130,27 +142,6 @@ nav a {
     font-weight: bold;
 }
 
-.card2 img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    border-radius: 8px;
-    aspect-ratio: 120/100;
-         } 
-         
-  
-        .cards2 {
-    display: grid;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-    padding: 40px 60px;
-    max-width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-}
- 
 
  .card2:hover {
     transform:scale(1.05);
@@ -197,44 +188,39 @@ nav a {
         }
     
         
-        .search-box {
-            font-family: Arial, sans-serif;
-            display: grid;
-            justify-content: center;
-            align-items: center;
-            background-color: #f4f4f4;
-            display: flex;
-            align-items: center;
-            background: #fff;
-            border-radius: 25px;
-            padding: 8px 15px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            margin-right: 710px;
-            outline: 2px solid #007bff;
-        }
-
-        .search-box input {
-            border: none;
-            outline: none;
-            flex: 1;
-            padding: 8px;
-            font-size: 16px;
-        }
+    .search-box {
+    font-family: Arial, sans-serif;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 25px;
+    padding: 8px 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    margin-right: 200px;
+}
  
-        .search-box button {
-            background: #007bff;
-            border: none;
-            color: #fff;
-            padding: 8px 15px;
-            border-radius: 20px;
-            cursor: pointer;
-            transition: 0.3s;
-        }
+.search-box input {
+    border: none;
+    outline: none;
+    flex: 1;
+    padding: 8px;
+    font-size: 16px;
+}
  
-        .search-box button:hover {
-            background: #0056b3;
-        }
+.search-box button {
+    background: #007bff;
+    border: none;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+ 
+.search-box button:hover {
+    background: #0056b3;
+}
         figure {
             margin: 0;
             flex: 1;
@@ -263,7 +249,7 @@ nav a {
         }
         .card-principal {
             margin: 100px;
-            margin-left: 250px;
+            margin-left: 300px;
             background-color: #0047ab; /* Azul do fundo */
             color: #fff;
             display: flex;
@@ -271,7 +257,7 @@ nav a {
             justify-content: space-between;
             padding: 20px;
             border-radius: 12px;
-            width: 90%;
+            width: 80%;
             max-width: 1200px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             

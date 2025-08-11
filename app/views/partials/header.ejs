@@ -1,18 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Meu Site</title>
-    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-<header>
-    <h1>Logo</h1>
-    <nav>
-        <ul>
-            <li><a href="/">Início</a></li>
-            <li><a href="/login">Login</a></li>
-        </ul>
-    </nav>
-</header>
+    <header>
+       
+        <nav>  
+        <a href=/index.ejs>
+        <img href="/index.ejs" class="logo" src="img/AquaTrip.png"></a>
+        </nav>
+        <form class="search-box" action="/index" method="get">
+        <input type="search" name="q" placeholder="Digite sua busca..." required>
+        <button type="submit">Buscar</button>
+        </form>
+    </header>
