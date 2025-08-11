@@ -34,7 +34,9 @@ body {
         }
  
         nav li {
-            display: inline;
+            display: flex;
+            justify-content: right; /* Centers horizontally */
+            align-items: right;    /* Centers vertically */
         }
 nav a { 
     text-decoration: none;
@@ -193,6 +195,8 @@ nav a {
         main{
             padding: 50px;
         }
+    
+        
         .search-box {
             font-family: Arial, sans-serif;
             display: grid;
@@ -206,8 +210,7 @@ nav a {
             padding: 8px 15px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             width: 300px;
-            position: center;
-            margin-left: 750px;
+            margin-right: 710px;
             outline: 2px solid #007bff;
         }
 
@@ -316,3 +319,70 @@ nav a {
     font-size: 25px;
     transition: 0.5s;
 }
+
+/* Responsividade para telas até 1024px */
+
+
+
+
+@media (max-width: 1024px) {
+    header {
+        padding: 10px 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    header img {
+        width: 150px;
+        height: auto;
+    }
+
+    header h1 {
+        font-size: 20px;
+        flex-basis: 100%;
+        text-align: center;
+    }
+
+    nav ul {
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    nav li {
+        display: inline-block;
+        margin: 0 10px;
+    }
+
+    main {
+        padding: 30px 20px;
+    }
+
+    .search-box {
+        margin-left: auto;
+        margin-right: auto;
+        width: 90%;
+        max-width: 400px;
+    }
+
+    .card-principal {
+        margin: 40px 20px;
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+    }
+
+    .card-principal img {
+        max-width: 100%;
+        height: auto;
+        width: auto;
+        max-height: 480px; /* mantém o limite de altura que você tem */
+        display: block;
+        margin: 0 auto;
+        position: relative;
+    }
+    
+}
+
+/* Responsividade para telas até 768*
