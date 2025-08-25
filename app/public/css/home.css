@@ -46,6 +46,7 @@ main {
     padding: 40px 60px;
 }
 
+
         .hero {
             text-align: center;
             padding: 60px 20px;
@@ -197,7 +198,7 @@ main {
     padding: 8px 15px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     width: 300px;
-    margin-right: 200px;
+    margin-right: 200px; /* garante o mesmo alinhamento da segunda página */
 }
  
 .search-box input {
@@ -371,4 +372,8 @@ main {
     
 }
 
-/* Responsividade para telas até 768*
+/* Responsividade para telas até 768*/
+
+.aquario {
+    text-decoration: none;
+}
