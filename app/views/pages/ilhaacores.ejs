@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <link rel="stylesheet" href="css/ilhaacores.css">
+<head>
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ilha açores</title>
+</head>
+<body>
+    <header>
+       
+        <nav>  
+        <a href=/index.ejs>
+        <img class="logo" src="img/AquaTrip.png"></a>
+        
+        </nav>
+        <form class="search-box" action="/index.ejs" method="get">
+        <input type="search" name="q" placeholder="Digite sua busca..." required>
+        <button type="submit">Buscar</button>
+        </form>
+        <nav>
+            <ul>
+                <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
+            </ul>
+        </nav>
+    </header>
+ 
+    <main>
+    <h1>Ilha Açores - Aventuras Oceânicas</h1>
+    <h2>4.0 <a class="Avaliação">★ ★ ★ ★</a></h2>
+    <section class="carrossel">
+    <article class="slide active">
+      <img src="img/sereiasp.jpg"  alt="Imagem1">
+    </article>
+    <article class="slide">
+      <img src="img/aquariosp2.jpg" alt="Imagem2">
+    </article>
+    <article class="slide">
+      <img src="img/aquariosp3.jpg" alt="Imagem3">
+    </article>
+  </section>
+  <script src="js/script.js"></script>
+  <h2>Informações:</h2>
+   <p class="texto">
+    Aquário de São Paulo é um oceanário localizado no distrito do Ipiranga, zona <br>
+    sudeste da cidade de São Paulo, 
+    Brasil. Foi inaugurado no dia 6 de <br>
+    julho de 2006, como o primeiro Aquário Temático da América Latina.
+    </p>
+ 
+ 
+<section class="cards">
+    <article class="card-reserva">
+       
+        <header class="card-header">
+    <span class="preco-wrapper">
+        <span class="preco-label">A partir de</span>
+        <span class="preco-valor">R$ 248</span>
+    </span>
+    <span class="preco-obs">por adulto</span>
+</header>
+ 
+        <section class="card-body">
+            <h3 class="secao-titulo">Selecione data e viajantes</h3>
+           
+            <section class="seletores">
+   
+    <fieldset class="seletor-data-funcional">
+        <label for="data-reserva">Data</label>
+        <input type="date" id="data-reserva" name="data-reserva">
+    </fieldset>
+</section>
+ 
+            <section class="info-extra">
+                <i class="icone-cancelamento"></i>
+                <p><strong>Política de cancelamento</strong>  
+ 
+                Cancele até 24 horas antes para obter o reembolso integral.</p>
+            </section>
+        </section>
+ 
+        <footer class="card-footer">
+            <section class="resumo-pedido">
+                <h4>Pacote Ilha Açores</h4>
+                <p>2 adultos x R$ 248</p>
+                <p class="total">Total R$ 496</p>
+                <span class="info-impostos">(o preço inclui impostos e taxas de reserva)</span>
+            </section>
+           
+            <a href="pagamento"><button class="botao-reservar">Reservar agora</button></a>
+        </footer>
+
+    </article>
+</section>
+ 
+ 
+ 
+ 
+ 
+ 
+<section class="avaliacoes-container">
+   
+    <h2>Avaliações</h2>
+ 
+    <section class="resumo-avaliacoes">
+       
+        <article class="avaliacao-geral">
+            <strong>4,0</strong>
+            <span class="estrelas">★★★★</span>
+        </article>
+       
+        <section class="lista-barras">
+            <article class="linha-avaliacao">
+                <span class="label">Excelente</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 80%;"></span>
+                </span>
+                <span class="contagem">1.894</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Muito bom</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 60%;"></span>
+                </span>
+                <span class="contagem">1.020</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Razoável</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 25%;"></span>
+                </span>
+                <span class="contagem">846</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Ruim</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 15%;"></span>
+                </span>
+                <span class="contagem">302</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Péssimo</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 5%;"></span>
+                </span>
+                <span class="contagem">37</span>
+            </article>
+        </section>
+ 
+    </section>
+ 
+</section>
+ 
+    </main>
+    <footer>
+        <p>&copy; 2025 - Todos os direitos reservados.</p>
+    </footer>
+</body>
+   
