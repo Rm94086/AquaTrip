@@ -4,274 +4,206 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aquatrip - Preservando a Vida Marinha</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/homedoispontozero.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
-<!-- Header -->
-<header id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white z-50 transition duration-300">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <h1 class="text-2xl font-bold">Aquatrip</h1>
+<body>
+  <!-- Header -->
+  <header id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white z-50 transition duration-300">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold">Aquatrip</h1>
 
-    <!-- Menu Desktop -->
-    <nav class="hidden md:flex space-x-6 font-semibold">
-      <a href="#inicio" class="hover:text-green-400">Início</a>
-      <a href="#sobre" class="hover:text-green-400">Sobre</a>
-      <a href="#ods14" class="hover:text-green-400">ODS 14</a>
-      <a href="#descubra" class="hover:text-green-400">Descubra</a>
-      <a href="#parcerias" class="hover:text-green-400">Parcerias</a>
-      <a href="#voluntariado" class="hover:text-green-400">Voluntariado</a>
-      <a href="#contato" class="hover:text-green-400">Contato</a>
-    </nav>
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <li><a href="#perfil" class="hover:text-green-400">Perfil</a></li>
+        <li><a href="#viagens" class="hover:text-green-400">Viagens já feitas</a></li>
+        <li><a href="#ingressos" class="hover:text-green-400">Ingressos digitais</a></li>
+        <li><a href="#negocios" class="hover:text-green-400">Faça negócio conosco</a></li>
+      </ul>
 
-    <!-- Botão CTA Desktop -->
-    <a href="#voluntariado" class="hidden md:inline-block bg-green-500 hover:bg-green-600 px-4 py-2 rounded-lg shadow">
-      Participe
-    </a>
+      <ul>
+                <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
+      </ul>
 
-    <!-- Menu Mobile -->
-    <button id="menuBtn" class="md:hidden">
-      <i data-lucide="menu"></i>
-    </button>
-  </div>
-
-  <!-- Mobile Sidebar -->
-  <div id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
-    <div class="flex justify-between items-center px-6 py-4 border-b border-blue-700">
-      <h2 class="text-xl font-bold">Menu</h2>
-      <button id="closeMenu">
-        <i data-lucide="x"></i>
+      <!-- Menu Mobile -->
+      <button id="menuBtn" class="md:hidden">
+        <i data-lucide="menu"></i>
       </button>
-    </div>
-    <nav class="flex flex-col p-6 space-y-4 font-semibold">
-      <a href="#inicio" class="hover:text-green-400">Início</a>
-      <a href="#sobre" class="hover:text-green-400">Sobre</a>
-      <a href="#ods14" class="hover:text-green-400">ODS 14</a>
-      <a href="#descubra" class="hover:text-green-400">Descubra</a>
-      <a href="#parcerias" class="hover:text-green-400">Parcerias</a>
-      <a href="#voluntariado" class="hover:text-green-400">Voluntariado</a>
-      <a href="#contato" class="hover:text-green-400">Contato</a>
     </nav>
-  </div>
-</header>
 
-<script>
-  lucide.createIcons();
+    <!-- Mobile Sidebar -->
+    <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
+      <header class="flex justify-between items-center px-6 py-4 border-b border-blue-700">
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button id="closeMenu">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <nav class="flex flex-col p-6 space-y-4 font-semibold">
+        <a href="/perfil" class="hover:text-green-400">Perfil</a>
+        <a href="#viagens" class="hover:text-green-400">Viagens já feitas</a>
+        <a href="#ingressos" class="hover:text-green-400">Ingressos digitais</a>
+        <a href="#negocios" class="hover:text-green-400">Faça negócio conosco</a>
+      </nav>
+    </aside>
+  </header>
 
-  const menuBtn = document.getElementById("menuBtn");
-  const closeMenu = document.getElementById("closeMenu");
-  const mobileMenu = document.getElementById("mobileMenu");
-  const navbar = document.getElementById("navbar");
+  <script>
+    lucide.createIcons();
 
-  menuBtn.addEventListener("click", () => {
-    mobileMenu.classList.remove("translate-x-full");
-  });
+    const menuBtn = document.getElementById("menuBtn");
+    const closeMenu = document.getElementById("closeMenu");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const navbar = document.getElementById("navbar");
 
-  closeMenu.addEventListener("click", () => {
-    mobileMenu.classList.add("translate-x-full");
-  });
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.remove("translate-x-full");
+    });
 
-  // Mudar cor do header ao rolar
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      navbar.classList.add("bg-blue-900", "shadow-lg");
-    } else {
-      navbar.classList.remove("bg-blue-900", "shadow-lg");
-    }
-  });
-</script>
+    closeMenu.addEventListener("click", () => {
+      mobileMenu.classList.add("translate-x-full");
+    });
 
+    // Mudar cor do header ao rolar
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add("bg-blue-900", "shadow-lg");
+      } else {
+        navbar.classList.remove("bg-blue-900", "shadow-lg");
+      }
+    });
+  </script>
+  <main>
 
-<body class="bg-blue-50 text-gray-800">
   <!-- Hero -->
-  <section class="bg-blue-900 text-white py-20">
-    <div class="container mx-auto text-center px-6">
-      <h1 class="text-4xl md:text-6xl font-bold mb-4">Aquatrip 🌊</h1>
-      <p class="text-lg md:text-2xl mb-8">Explorando e preservando os oceanos através de expedições e aquários sustentáveis.</p>
-      <a href="#sobre" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold transition">Saiba Mais</a>
-    </div>
+  <section class="hero-section">
+    <img src="img/fotolandingpage.jpeg" alt="Imagem da vida marinha">
+   
+  </section>
+
+  <!-- Descubra (movido para antes de Sobre) -->
+  <section id="descubra" class="section-blue section-padding">
+    <article class="container">
+      <h2 class="section-title">Descubra</h2>
+      <nav class="discover-links">
+        <a href="/aquarios" class="discover-card">
+          <i data-lucide="fish" class="discover-icon"></i>
+          <span class="discover-label">Aquários</span>
+        </a>
+        <a href="/expedicoes" class="discover-card">
+          <i data-lucide="sailboat" class="discover-icon"></i>
+          <span class="discover-label">Expedições</span>
+        </a>
+      </nav>
+    </article>
   </section>
 
   <!-- Sobre -->
-  <section id="sobre" class="py-16 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-8">Sobre nós:</h2>
-    <p class="text-center max-w-3xl mx-auto text-lg">O Aquatrip conecta pessoas apaixonadas pelo mar com experiências únicas em expedições e visitas a aquários. Nossa missão é promover turismo responsável e apoiar iniciativas que preservam a vida marinha, alinhadas com a <strong>ODS 14</strong>.</p>
+  <section id="sobre" class="section-padding">
+    <article class="container">
+      <h2 class="section-title">Sobre nós:</h2>
+      <p class="section-text centered">O Aquatrip conecta pessoas apaixonadas pelo mar com experiências únicas em expedições e visitas a aquários. Nossa missão é promover turismo responsável e apoiar iniciativas que preservam a vida marinha.</p>
+    </article>
   </section>
 
   <!-- ODS 14 -->
-  <section class="bg-white py-16">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">ODS 14 - Vida na Água</h2>
-      <div class="grid md:grid-cols-3 gap-8 text-center">
-        <div class="p-6 bg-blue-100 rounded-2xl shadow">
-          <i data-lucide="fish" class="w-12 h-12 mx-auto text-blue-600"></i>
-          <h3 class="font-semibold text-xl mt-4">Proteção da Vida Marinha</h3>
+  <section id="ods14" class="section-white section-padding">
+    <article class="container">
+      <h2 class="section-title">ODS 14 - Vida na Água</h2>
+      <section class="grid-3-cols">
+        <article class="card blue-card">
+          <i data-lucide="fish" class="card-icon blue-icon"></i>
+          <h3 class="card-title">Proteção da Vida Marinha</h3>
           <p>Incentivamos práticas de turismo que respeitam e preservam os ecossistemas marinhos.</p>
-        </div>
-        <div class="p-6 bg-blue-100 rounded-2xl shadow">
-          <i data-lucide="anchor" class="w-12 h-12 mx-auto text-blue-600"></i>
-          <h3 class="font-semibold text-xl mt-4">Expedições Sustentáveis</h3>
+        </article>
+        <article class="card blue-card">
+          <i data-lucide="anchor" class="card-icon blue-icon"></i>
+          <h3 class="card-title">Expedições Sustentáveis</h3>
           <p>Nossas expedições são guiadas por princípios de sustentabilidade e respeito ao mar.</p>
-        </div>
-        <div class="p-6 bg-blue-100 rounded-2xl shadow">
-          <i data-lucide="globe" class="w-12 h-12 mx-auto text-blue-600"></i>
-          <h3 class="font-semibold text-xl mt-4">Consciência Global</h3>
+        </article>
+        <article class="card blue-card">
+          <i data-lucide="globe" class="card-icon blue-icon"></i>
+          <h3 class="card-title">Consciência Global</h3>
           <p>Trabalhamos em rede com parceiros globais comprometidos com a conservação dos oceanos.</p>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </article>
   </section>
 
-  <!-- Seção de Links para Aquários e Expedições -->
-  <section class="py-16 bg-blue-50">
-    <div class="container mx-auto px-6">
-      <h2 class="text-3xl font-bold text-center mb-12">Descubra</h2>
-      <div class="flex flex-col md:flex-row justify-center items-center gap-12">
-        <a href="/aquarios.html" class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-          <i data-lucide="fish" class="w-16 h-16 text-blue-700"></i>
-          <span class="mt-4 font-semibold text-xl">Aquários</span>
-        </a>
-        <a href="/expedicoes.html" class="flex flex-col items-center p-6 bg-white rounded-2xl shadow hover:shadow-lg transition">
-          <i data-lucide="sailboat" class="w-16 h-16 text-blue-700"></i>
-          <span class="mt-4 font-semibold text-xl">Expedições</span>
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Parcerias -->
-  <section class="py-16 container mx-auto px-6">
-    <h2 class="text-3xl font-bold text-center mb-12">Nossas Parcerias Sustentáveis</h2>
-    <div class="grid md:grid-cols-3 gap-8 text-center">
-      <div class="p-6 bg-green-100 rounded-2xl shadow">
-        <i data-lucide="leaf" class="w-12 h-12 mx-auto text-green-600"></i>
-        <h3 class="font-semibold text-xl mt-4">ONGs Ambientais</h3>
-        <p>Conectados com organizações que lideram projetos de preservação marinha.</p>
-      </div>
-      <div class="p-6 bg-green-100 rounded-2xl shadow">
-        <i data-lucide="users" class="w-12 h-12 mx-auto text-green-600"></i>
-        <h3 class="font-semibold text-xl mt-4">Comunidades Locais</h3>
-        <p>Engajamos moradores e comunidades costeiras em nossas iniciativas.</p>
-      </div>
-      <div class="p-6 bg-green-100 rounded-2xl shadow">
-        <i data-lucide="sprout" class="w-12 h-12 mx-auto text-green-600"></i>
-        <h3 class="font-semibold text-xl mt-4">Pesquisa & Educação</h3>
-        <p>Apoiamos a ciência e promovemos a educação ambiental para todos.</p>
-      </div>
-    </div>
+  <!-- Parcerias (removido "Comunidades Locais" e centralizado os 2 cards restantes) -->
+  <section id="parcerias" class="section-padding">
+    <article class="container">
+      <h2 class="section-title">Nossas Parcerias Sustentáveis</h2>
+      <section class="grid-2-cols-centered">
+        <article class="card green-card">
+          <i data-lucide="leaf" class="card-icon green-icon"></i>
+          <h3 class="card-title">ONGs Ambientais</h3>
+          <p>Conectados com organizações que lideram projetos de preservação marinha.</p>
+        </article>
+        <article class="card green-card">
+          <i data-lucide="sprout" class="card-icon green-icon"></i>
+          <h3 class="card-title">Pesquisa & Educação</h3>
+          <p>Apoiamos a ciência e promovemos a educação ambiental para todos.</p>
+        </article>
+      </section>
+    </article>
   </section>
 
   <!-- Selos Sustentáveis -->
-  <section class="py-12 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-2xl font-bold mb-8">Nossos Selos Sustentáveis</h2>
-      <div class="flex justify-center gap-8 flex-wrap">
-        <div class="flex flex-col items-center">
-          <div class="w-20 h-20 rounded-full border-4 border-green-500 flex items-center justify-center">
-            <i data-lucide="badge-check" class="w-10 h-10 text-green-600"></i>
-          </div>
-          <span class="mt-2 font-semibold">ODS 14</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="w-20 h-20 rounded-full border-4 border-blue-500 flex items-center justify-center">
-            <i data-lucide="recycle" class="w-10 h-10 text-blue-600"></i>
-          </div>
-          <span class="mt-2 font-semibold">Eco Friendly</span>
-        </div>
-        <div class="flex flex-col items-center">
-          <div class="w-20 h-20 rounded-full border-4 border-teal-500 flex items-center justify-center">
-            <i data-lucide="shield-check" class="w-10 h-10 text-teal-600"></i>
-          </div>
-          <span class="mt-2 font-semibold">Parceiro Verde</span>
-        </div>
-      </div>
-    </div>
+  <section class="section-white section-padding-small">
+    <article class="container">
+      <h2 class="section-title-small">Nossos Selos Sustentáveis</h2>
+      <section class="seals-container">
+        <article class="seal">
+          <figure class="seal-icon green-seal">
+            <i data-lucide="badge-check" class="seal-icon-inner"></i>
+          </figure>
+          <span class="seal-label">ODS 14</span>
+        </article>
+        <article class="seal">
+          <figure class="seal-icon blue-seal">
+            <i data-lucide="recycle" class="seal-icon-inner"></i>
+          </figure>
+          <span class="seal-label">Eco Friendly</span>
+        </article>
+        <article class="seal">
+          <figure class="seal-icon teal-seal">
+            <i data-lucide="shield-check" class="seal-icon-inner"></i>
+          </figure>
+          <span class="seal-label">Parceiro Verde</span>
+        </article>
+      </section>
+    </article>
   </section>
 
   <!-- Educação Ambiental -->
-  <section class="py-16 bg-blue-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Educação Ambiental</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white rounded-2xl shadow">
-          <i data-lucide="cup-soda" class="w-12 h-12 mx-auto text-blue-600"></i>
-          <h3 class="mt-4 font-semibold">Reduza Plásticos</h3>
+  <section class="section-blue section-padding">
+    <article class="container">
+      <h2 class="section-title">Educação Ambiental</h2>
+      <section class="grid-3-cols">
+        <article class="card white-card">
+          <i data-lucide="cup-soda" class="card-icon blue-icon"></i>
+          <h3 class="card-title">Reduza Plásticos</h3>
           <p>Evite descartáveis e ajude a diminuir a poluição dos mares.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow">
-          <i data-lucide="school" class="w-12 h-12 mx-auto text-blue-600"></i>
-          <h3 class="mt-4 font-semibold">Educação Sustentável</h3>
+        </article>
+        <article class="card white-card">
+          <i data-lucide="school" class="card-icon blue-icon"></i>
+          <h3 class="card-title">Educação Sustentável</h3>
           <p>Promova a conscientização e compartilhe boas práticas ambientais.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow">
-          <i data-lucide="footprints" class="w-12 h-12 mx-auto text-blue-600"></i>
-          <h3 class="mt-4 font-semibold">Turismo Consciente</h3>
+        </article>
+        <article class="card white-card">
+          <i data-lucide="footprints" class="card-icon blue-icon"></i>
+          <h3 class="card-title">Turismo Consciente</h3>
           <p>Visite aquários e participe de expedições que respeitam a vida marinha.</p>
-        </div>
-      </div>
-    </div>
+        </article>
+      </section>
+    </article>
   </section>
-
-  <!-- Linha do Tempo -->
-  <section class="py-16 bg-white">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Nossa Jornada até 2030</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-blue-100 rounded-2xl shadow">
-          <h3 class="text-xl font-semibold">2025</h3>
-          <p>Expansão da rede de aquários e expedições sustentáveis.</p>
-        </div>
-        <div class="p-6 bg-blue-100 rounded-2xl shadow">
-          <h3 class="text-xl font-semibold">2027</h3>
-          <p>Projetos de monitoramento e combate à poluição marinha.</p>
-        </div>
-        <div class="p-6 bg-blue-100 rounded-2xl shadow">
-          <h3 class="text-xl font-semibold">2030</h3>
-          <p>Alcançar metas da ONU para proteção da vida marinha.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Voluntariado -->
-  <section class="py-16 bg-blue-50">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Seja um Voluntário</h2>
-      <p class="mb-8 text-lg">Participe de expedições de limpeza de praias e projetos de conservação.</p>
-      <a href="#form" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold transition">Quero Ser Voluntário</a>
-    </div>
-  </section>
-
-  <!-- Impacto -->
-  <section class="bg-blue-100 py-16">
-    <div class="container mx-auto px-6 text-center">
-      <h2 class="text-3xl font-bold mb-12">Nosso Impacto</h2>
-      <div class="grid md:grid-cols-3 gap-8">
-        <div class="p-6 bg-white rounded-2xl shadow">
-          <h3 class="text-4xl font-bold text-blue-600">+500</h3>
-          <p class="mt-2">Expedições realizadas com responsabilidade ambiental.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow">
-          <h3 class="text-4xl font-bold text-blue-600">+30</h3>
-          <p class="mt-2">Aquários parceiros promovendo educação e preservação.</p>
-        </div>
-        <div class="p-6 bg-white rounded-2xl shadow">
-          <h3 class="text-4xl font-bold text-blue-600">+1000</h3>
-          <p class="mt-2">Pessoas impactadas por nossas ações sustentáveis.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <section class="py-16 text-center">
-    <h2 class="text-3xl font-bold mb-6">Participe da Nossa Missão</h2>
-    <p class="mb-8 text-lg">Junte-se ao Aquatrip e ajude a proteger os oceanos para as futuras gerações.</p>
-    <a href="#" class="bg-green-500 hover:bg-green-600 text-white py-3 px-6 rounded-lg font-semibold transition">Quero Participar</a>
-  </section>
-
-  <!-- Footer -->
-  <footer class="bg-blue-900 text-white py-8 text-center">
-    <p>&copy; 2025 Aquatrip - Todos os direitos reservados</p>
+  </main>
+  <footer class="footer">
+    <article class="container">
+      <p>&copy; 2025 Aquatrip - Todos os direitos reservados</p>
+    </article>
   </footer>
 
   <script>
