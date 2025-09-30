@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aqua Trip - Avaliação</title>
+  <link rel="stylesheet" href="css/avaliacao.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <!-- Header -->
+  <header id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white z-50 transition duration-300">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+      <h1 class="text-2xl font-bold">Aquatrip</h1>
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <li><a href="#perfil" class="hover:text-green-400">Perfil</a></li>
+        <li><a href="/avaliacao" class="hover:text-green-400">Viagens já feitas</a></li>
+        <li><a href="#ingressos" class="hover:text-green-400">Ingressos digitais</a></li>
+        <li><a href="#negocios" class="hover:text-green-400">Faça negócio conosco</a></li>
+      </ul>
+
+      <ul>
+                <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
+      </ul>
+
+      <!-- Menu Mobile -->
+      <button id="menuBtn" class="md:hidden">
+        <i data-lucide="menu"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
+      <header class="flex justify-between items-center px-6 py-4 border-b border-blue-700">
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button id="closeMenu">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <nav class="flex flex-col p-6 space-y-4 font-semibold">
+        <a href="/perfil" class="hover:text-green-400">Perfil</a>
+        <a href="#viagens" class="hover:text-green-400">Viagens já feitas</a>
+        <a href="#ingressos" class="hover:text-green-400">Ingressos digitais</a>
+        <a href="#negocios" class="hover:text-green-400">Faça negócio conosco</a>
+      </nav>
+    </aside>
+  </header>
+
+  <!-- Conteúdo principal -->
+  <main class="container">
+    <p class="question">Como você avalia sua experiência?</p>
+    <div class="stars">
+      ★ ★ ★ ★ ★
+    </div>
+
+    <p class="question">Quando ocorreu sua experiência?</p>
+    <button class="date-btn">Dezembro 2025</button>
+
+    <label class="label">De um título a sua avaliação</label>
+    <input type="text" placeholder="Escreva aqui..." class="input">
+
+    <label class="label">Escreva sua avaliação</label>
+    <textarea placeholder="Escreva aqui..." class="textarea"></textarea>
+
+    <label class="label">Publique fotos <span class="optional">(opcional)</span></label>
+    <div class="upload-box">
+      ⬆ <br> Clique para adicionar uma imagem
+    </div>
+
+    <button class="publish-btn">Publicar</button>
+  </main>
+
+  <!-- Rodapé -->
+  <footer>
+    <p>&copy; 2025 - Todos os direitos reservados.</p>
+</footer>
+</body>
+</html>

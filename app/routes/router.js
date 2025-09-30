@@ -45,4 +45,8 @@ router.get('/perfil', function (req, res) {
   res.render('pages/perfil');
 });
 
+router.get('/avaliacao', function (req, res) {
+  res.render('pages/avaliacao');
+});
+
 module.exports = router;
