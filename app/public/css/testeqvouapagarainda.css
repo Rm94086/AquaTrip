@@ -1,0 +1,30 @@
+a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: tomato; /*mudar a cor caso fique esrtanho*/
+}
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top:50px;
+    left:50px;
+    z-index:1;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: block;
+    width:40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor:pointer;
+    opacity: 0;
+    z-index: 2;
+}

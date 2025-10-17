@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+  color: #111;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+a {
+    text-decoration: none;
+    color: #232323;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: black; /*mudar a cor caso fique esrtanho*/
+}
+
+#menuToggle {
+    display: block;
+    position: relative;
+    top:2px;
+    left:5px;
+    z-index:1;
+    user-select: none;
+}
+
+#menuToggle input {
+    display: block;
+    width:40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    left: -5px;
+    cursor:pointer;
+    opacity: 0;
+    z-index: 2;
+}
+
+/* ----- Barrinhas do hambúrguer ----- */
+#menuToggle span {
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background: #cdcdcd;
+  border-radius: 3px;
+  z-index: 1;
+  transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+/* ----- Animação ao clicar ----- */
+#menuToggle input:checked ~ span {
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: #232323;
+}
+
+#menuToggle input:checked ~ span:nth-last-child(3) {
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+#menuToggle input:checked ~ span:nth-last-child(2) {
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/* ----- Menu lateral ----- */
+#menu {
+  position: absolute;
+  width: 300px;
+  margin: -100px 0 0 -50px;
+  padding: 50px;
+  padding-top: 125px;
+  background: #ededed;
+  list-style-type: none;
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menuToggle input:checked ~ ul {
+   transform: none;
+}
+
+.logo {
+  font-size: 1.2rem;
+}
+
+/* Conteúdo principal */
+main {
+  padding: 1rem;
+}
+
+.voltar {
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+}
+
+h2 {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+/* Botões de seção */
+.botao-topo,
+.botao-bottom {
+  width: 100%;
+  text-align: left;
+  background-color: #003c91;
+  color: white;
+  border: none;
+  padding: 0.6rem;
+  border-radius: 0.4rem;
+  font-size: 0.9rem;
+}
+
+/* Cartão do ingresso */
+.cartao {
+  background-color: #e7eaf3;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  margin: 0.7rem 0;
+  position: relative;
+}
+
+.cartao-logo {
+  font-size: 1.2rem;
+  color: #999;
+  margin-bottom: 0.5rem;
+}
+
+.cartao p {
+  font-size: 0.85rem;
+  margin: 0.2rem 0;
+}
+
+.qr {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  width: 60px;
+  height: 60px;
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+/* Responsivo */
+@media (min-width: 600px) {
+  main {
+    max-width: 400px;
+    margin: auto;
+  }
+}

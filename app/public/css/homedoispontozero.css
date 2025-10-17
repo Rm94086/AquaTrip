@@ -1,4 +1,16 @@
 /* Reset e estilos base */
+img {
+  max-width: 1920px;
+  max-height: 1080px;
+}
+
+.expedicoes {
+  width: 60px;
+  height: 60px;
+}
+
+
+
 * {
   box-sizing: border-box;
 }
@@ -10,10 +22,6 @@ body {
   line-height: 1.5;
 }
 
-img {
-  max-width: 1920px;
-  max-height: 1080px;
-}
 
 /* Cores de fundo */
 .bg-blue-50 {
@@ -527,7 +535,12 @@ img {
   
   #mobileMenu {
     display: none;
-  }
+}
+  #hero-section img {
+      left: 400px;
+      margin-left: 400px;
+    }
+  
 }
 
 /* Hover effects */
@@ -565,6 +578,11 @@ a {
     max-width: 768px;
   }
 
+
+    #hero-section img {
+      left: 400px;
+      margin-left: 400px;
+    }
   .md\:inline-block {
     display: inline-block;
   }
@@ -586,6 +604,7 @@ a {
     font-size: 1.5rem;
     line-height: 2rem;
   }
+  
 }
 
 
@@ -602,6 +621,11 @@ a {
     min-width: 768px;
     max-width: 1024px;
   }
+
+    #hero-section img {
+      left: 400px;
+      margin-left: 400px;
+    }
 
   .md\:inline-block {
     display: inline-block;
@@ -640,6 +664,11 @@ a {
     max-width: 480px;
   }
 
+  #hero-section img {
+      left: 400px;
+      margin-left: 400px;
+    }
+
   .md\:inline-block {
     display: inline-block;
   }
@@ -677,6 +706,11 @@ a {
     max-width: 1200px;
   }
 
+  #hero-section img {
+      left: 400px;
+      margin-left: 400px;
+    }
+
   .md\:inline-block {
     display: inline-block;
   }
@@ -697,6 +731,18 @@ a {
   .md\:text-2xl {
     font-size: 1.5rem;
     line-height: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section img {
+    object-position: 15% center; /* Garante que a imagem continue bem enquadrada */
+}
+}
+
+@media (max-width: 480px) {
+  .hero-section img {
+    object-position: 15% center;
   }
 }
 

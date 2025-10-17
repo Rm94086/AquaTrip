@@ -409,13 +409,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #555;
 }
  
+.container2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    clear: both;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
 }
  
 .texto {

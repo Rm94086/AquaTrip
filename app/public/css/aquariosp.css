@@ -13,6 +13,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    height: 80px;
 }
  
 header h1 {
@@ -41,6 +42,8 @@ nav a {
 }
 
 .logo {
+    position: relative;
+    bottom: 23px;
     width: 225px;
 }
  
@@ -55,7 +58,7 @@ main {
     max-width: 1000px;
     overflow: hidden;
     margin: 0 auto 60px auto;
-    background: #ffffff;
+    background: #EEEEEE;
     border-radius: 25px;
 }
 
@@ -409,13 +412,19 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     color: #555;
 }
  
+.container2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 footer {
-    text-align: center;
-    padding: 20px;
-    background-color: #fff;
-    border-top: 1px solid #ddd;
-    font-size: 14px;
-    clear: both;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
 }
  
 .texto {
@@ -437,3 +446,142 @@ footer {
     transition: 0.3s;
 
       }
+
+.avaliacao {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #EEEEEE;
+  padding: 16px;
+  border-radius: 10px;
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+}
+
+/* imagem do perfil */
+.perfil img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* cabeçalho do nome e data */
+.avaliacao h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin: 8px 0 2px;
+  color: #000;
+}
+
+.avaliacao .data {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #222;
+  margin-bottom: 10px;
+}
+
+/* texto do comentário */
+.comentario p {
+  font-family: Arial, sans-serif;
+  font-size: 1rem;
+  color: #222;
+  line-height: 1.6;
+  text-align: justify;
+}
+
+/* responsividade */
+@media (min-width: 700px) {
+  .avaliacao {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .perfil img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .foto {
+    margin-top: 5px;
+  }
+
+  .comentario {
+    flex: 1;
+  }
+
+}
+
+.contribua {
+  text-align: center;
+  background-color: #EEEEEE; /* cor de fundo clara */
+  padding: 20px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  position: absolute;
+}
+
+.contribua h2 {
+  color: #0b1a47; /* azul escuro do texto "Contribua" */
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.botao-avaliacao {
+  display: inline-block;
+  padding: 10px 30px;
+  font-weight: bold;
+  color: #000;
+  border: 3px solid #000;
+  border-radius: 40px;
+  background-color: transparent;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.botao-avaliacao:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+
+
+@media (max-width: 480px) {
+ .card-reserva {
+    position: relative;
+    top: 210px;
+ }
+ 
+ .avaliacoes-container {
+    position: relative;
+    top: 180px;
+ }
+
+ .logo {
+    position: relative;
+    right: 70px;
+ }
+
+ .contribua {
+    position: relative;
+    top: 200px;
+ }
+
+ .footer {
+    position:relative; 
+    top: 200px;
+ }
+
+ .search-box {
+    position: relative;
+    right: 200px;
+    width: 100px;
+ }
+
+ .search-box input {
+    position: relative;
+    width: 100px;
+ }
+}

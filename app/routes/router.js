@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 router.get('/', function(req,res ){
-    res.render('pages/index');
+    res.render('pages/homedoispontozero');
 });
 
 router.get('/login', function(req,res ){
@@ -11,7 +11,7 @@ router.get('/login', function(req,res ){
 
 router.get('/aquarios', function(req,res ){
     res.render('pages/aquarios');
-}); 
+});
 
 router.get('/index.ejs', function(req,res ){
     res.render('pages/index.ejs');
@@ -49,4 +49,36 @@ router.get('/avaliacao', function (req, res) {
   res.render('pages/avaliacao');
 });
 
+router.get('/index-adm', function (req, res) {
+  res.render('pages/index-adm');
+  });
+
+  router.get('/contato', function (req, res) {
+  res.render('pages/contato');
+  });
+
+  router.get('/adm-cliente', function (req, res) {
+  res.render('pages/adm-cliente');
+  });
+
+  router.get('/adm-cliente-novo', function (req, res) {
+  res.render('pages/adm-cliente-novo');
+  });
+
+  router.get('/adm-cliente-list', function (req, res) {
+  res.render('pages/adm-cliente-list');
+  });
+
+  router.get('/adm-cliente-edit', function (req, res) {
+  res.render('pages/adm-cliente-edit');
+  });
+
+    router.get('/adm-cliente-del', function (req, res) {
+  res.render('pages/adm-cliente-del');
+  });
+
+  router.get('/ingressos', function (req, res) {
+  res.render('pages/ingressos');
+  });
+ 
 module.exports = router;

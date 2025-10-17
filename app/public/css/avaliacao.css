@@ -42,7 +42,7 @@ body {
 }
 
 #navbar nav ul {
-  display: none;
+  display: none; /* Escondido por padrão para mobile, Tailwind md:flex irá sobrescrever */
   gap: 1.5rem;
   font-weight: 600;
   list-style: none;
@@ -58,22 +58,44 @@ body {
   color: #4ade80;
 }
 
-#navbar .bg-green-500 {
-  display: none;
-  background-color: #22c55e;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
-  text-decoration: none;
-  color: white;
-}
-
-#navbar .bg-green-500:hover {
-  background-color: #16a34a;
+.logintexto {
+  /* Adicione aqui os estilos para o texto de login, se houver algum específico */
+  /* Por exemplo: */
+  /* font-weight: bold; */
 }
 
 #navbar button {
-  display: block;
+  display: block; /* Para o botão do menu mobile */
+}
+
+/* Estilos para o menu mobile (aside) */
+#mobileMenu {
+  /* Tailwind classes handle most of this, but here for clarity if needed */
+}
+
+#mobileMenu header {
+  /* Tailwind classes handle most of this, but here for clarity if needed */
+}
+
+#mobileMenu nav {
+  /* Tailwind classes handle most of this, but here for clarity if needed */
+}
+
+/* Estilos para os ícones do Lucide */
+.lucide {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mídia queries para desktop (Tailwind md:flex já lida com isso, mas para consistência) */
+@media (min-width: 768px) {
+  #navbar nav ul {
+    display: flex; /* Exibe o menu desktop */
+  }
+
+  #navbar button {
+    display: none; /* Esconde o botão do menu mobile */
+  }
 }
 
 /* Hover effects */
@@ -181,11 +203,17 @@ body {
   cursor: pointer;
 }
 
-/* Rodapé */
+.container2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 footer {
-text-align: center;
-padding: 20px;
-background-color: #fff;
-border-top: 1px solid #ddd;
-font-size: 14px;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
 }

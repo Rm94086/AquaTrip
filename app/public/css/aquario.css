@@ -20,6 +20,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    height: 80px;
 }
  
 header h1 {
@@ -52,7 +53,9 @@ nav a {
 }
 
 .logo {
+    position: relative;
     width: 225px;
+    bottom: 23px;
 }
 
 .search-box {
@@ -296,6 +299,21 @@ nav a {
 
 .featured-card:hover img {
     transform: scale(1.05);
+}
+
+.container2 {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+footer {
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
 }
 
 /* Responsividade */

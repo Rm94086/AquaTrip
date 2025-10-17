@@ -12,6 +12,7 @@ header {
     justify-content: space-between;
     align-items: center;
     border-bottom: 1px solid #ddd;
+    height: 80px;
 }
  
 header h1 {
@@ -40,45 +41,13 @@ nav a {
 }
 
 .logo {
+    position: relative;
     width: 225px;
+    bottom: 23px;
 }
  
 main {
     padding: 40px 60px;
-}
-
-    .search-box {
-    font-family: Arial, sans-serif;
-    display: flex;
-    align-items: center;
-    background: #fff;
-    border-radius: 25px;
-    padding: 8px 15px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    width: 300px;
-    margin-right: 200px;
-}
- 
-.search-box input {
-    border: none;
-    outline: none;
-    flex: 1;
-    padding: 8px;
-    font-size: 16px;
-}
- 
-.search-box button {
-    background: #007bff;
-    border: none;
-    color: #fff;
-    padding: 8px 15px;
-    border-radius: 20px;
-    cursor: pointer;
-    transition: 0.3s;
-}
- 
-.search-box button:hover {
-    background: #0056b3;
 }
 
 :root {
@@ -163,9 +132,19 @@ main {
 }
 
 footer {
-            text-align: center;
-            padding: 20px;
-            background-color: #EEEEEE;
-            border-top: 1px solid #ddd;
-            font-size: 14px;
-        }
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  bottom: 0px;
+  position: absolute;
+  width: 100%;
+}
+
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
