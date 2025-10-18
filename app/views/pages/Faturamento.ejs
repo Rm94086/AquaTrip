@@ -1,135 +1,123 @@
-<!doctype html>
-<html lang="pt-BR">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Aquatrip - Painel de Faturamento</title>
-  <link rel="stylesheet" href="css/faturamento.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTrip ADM</title>
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/faturamento.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+
 </head>
 <body>
-  <section class="container">
-    <header>
-      <section>
-        <h1>Faturamento — Aquatrip</h1>
-        <p>Resumo de vendas, taxas e receitas — período: <strong id="periodLabel">últimos 30 dias</strong></p>
-      </section>
-      <section style="display:flex; gap:8px;">
-        <button class="btn" onclick="exportCSV()">Exportar CSV</button>
-        <button class="btn secondary" onclick="window.print()">Imprimir</button>
-      </section>
-    </header>
+    <!-- <div class="navbar navbar-inverse navbar-fixed-top"> -->
+    <section class="navbar navbar-inverse ">
+        <section class="container">
+            <section class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/homedoispontozero" class = "navbar-brand"><span class="material-symbols-outlined">
+                    home
+                    </span></a>
 
-    <main class="left-column">
-      <section class="cards">
-        <section class="card">
-          <h3>Vendas (bruto)</h3>
-          <section class="value" id="grossSales">R$ 0,00</section>
-          <section class="kpi-note">Quantidade de ingressos: <strong id="ticketsCount">0</strong></section>
-        </section>
-        <section class="card">
-          <h3>Taxas & comissões</h3>
-          <section class="value" id="fees">R$ 0,00</section>
-          <section class="kpi-note">Ex.: gateway e taxa da plataforma</section>
-        </section>
-        <section class="card">
-          <h3>Receita líquida</h3>
-          <section class="value" id="netRevenue">R$ 0,00</section>
-          <section class="kpi-note">Valor após taxas</section>
-        </section>
-      </section>
-
-      <section class="transactions">
-        <section class="toolbar">
-          <section class="search">
-            <input id="q" placeholder="Buscar por nome, ticket, ID..." oninput="renderTable()" />
-            <select id="filterStatus" onchange="renderTable()">
-              <option value="">Todos os status</option>
-              <option value="paid">Pago</option>
-              <option value="refunded">Reembolsado</option>
-              <option value="pending">Pendente</option>
-            </select>
-          </section>
-          <section style="display:flex; gap:8px;">
-            <input type="date" id="from" onchange="applyDates()" />
-            <input type="date" id="to" onchange="applyDates()" />
-          </section>
-        </section>
-
-        <table aria-label="Transações">
-          <thead>
-            <tr>
-              <th>Data</th>
-              <th>Comprador / Ingresso</th>
-              <th>Tipo</th>
-              <th>Valor</th>
-              <th>Taxa</th>
-              <th>Recebido</th>
-              <th>Status</th>
-            </tr>
-          </thead>
-          <tbody id="tbody"></tbody>
-        </table>
-      </section>
-    </main>
-
-    <aside class="right-column">
-      <section class="tile">
-        <section style="display:flex; justify-content:space-between; align-items:center">
-          <strong>Resumo detalhado</strong>
-          <span class="small">Atualizado agora</span>
-        </section>
-
-        <section style="margin-top:10px; display:flex; gap:10px; align-items:center">
-          <section class="receipt-preview">
-            <img id="receiptImg" src="placeholder-receipt.png" alt="Recibo" />
-            <section>
-              <section style="font-weight:700">Recibo #<span id="sampleReceiptId">123456</span></section>
-              <section class="small">Método: Cartão de Crédito</section>
-              <section class="small">Data: <span id="sampleDate">-</span></section>
             </section>
-          </section>
+            <section class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="/adm-cliente">Pacotes</a></li>
+                    <li><a>Faturamento</a></li>
+                </ul>
+            </section>
         </section>
+    </section>
+     <header>
+    <h1>Faturamento</h1>
+    <p>Resumo de vendas, taxas e receitas — período: últimos 30 dias</p>
+  </header>
 
-        <svg class="chart" viewBox="0 0 200 140" preserveAspectRatio="none" id="miniChart"></svg>
+  <main>
+    <section class="resumo">
+      <article>
+        <h2>Receita bruta</h2>
+        <p class="valor">R$ 240,00</p>
+      </article>
+      <article>
+        <h2>Taxas e comissões</h2>
+        <p class="valor">R$ 18,00</p>
+      </article>
+      <article>
+        <h2>Receita líquida</h2>
+        <p class="valor">R$ 222,00</p>
+      </article>
+    </section>
 
-        <section style="margin-top:10px; display:flex; gap:8px; justify-content:space-between; align-items:center">
-          <section class="small">Total por tipo</section>
-          <section style="font-weight:700" id="topType">—</section>
-        </section>
-      </section>
+    <section class="ingressos">
+      <h3>Quantidade de ingressos: 3</h3>
 
-      <section class="tile">
-        <strong>Ganhos rápidos</strong>
-        <section style="margin-top:12px; display:flex; gap:8px; align-items:center">
-          <section style="flex:1">
-            <section class="small">Entradas</section>
-            <section style="font-weight:700" id="quickSales">R$ 0,00</section>
-          </section>
-          <section style="flex:1">
-            <section class="small">Fees</section>
-            <section style="font-weight:700" id="quickFees">R$ 0,00</section>
-          </section>
-          <section style="flex:1">
-            <section class="small">Liquid.</section>
-            <section style="font-weight:700" id="quickNet">R$ 0,00</section>
-          </section>
-        </section>
+      <form class="filtros">
+        <label>
+          <input type="text" placeholder="Buscar nome, ingresso...">
+        </label>
+        <label>
+          <select>
+            <option>Status</option>
+            <option>Pago</option>
+            <option>Reembolsado</option>
+          </select>
+        </label>
+        <label>
+          <input type="date">
+        </label>
+      </form>
 
-        <footer class="actions">
-          <small class="small">Período: <span id="periodShort">30d</span></small>
-          <section style="display:flex; gap:8px">
-            <button class="btn secondary" onclick="downloadReceiptSample()">Baixar recibo</button>
-            <button class="btn" onclick="openPayouts()">Ver pagamentos</button>
-          </section>
-        </footer>
-      </section>
-    </aside>
-  </section>
-  <script src="faturamento.js"></script>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Comprador/ingresso</th>
+            <th>Valor</th>
+            <th>Taxa</th>
+            <th>Recebido</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>11/10/2025</td>
+            <td>Mariana Silva<br><small>Aquário de São Paulo</small></td>
+            <td>R$ 120,00</td>
+            <td>R$ 6,00</td>
+            <td>R$ 114,00</td>
+            <td class="pago">Pago</td>
+          </tr>
+          <tr>
+            <td>24/10/2025</td>
+            <td>Felipe Fernando<br><small>Aquário de São Paulo</small></td>
+            <td>R$ 120,00</td>
+            <td>R$ 6,00</td>
+            <td>R$ 114,00</td>
+            <td class="pago">Pago</td>
+          </tr>
+          <tr>
+            <td>20/10/2025</td>
+            <td>Arthur Souza<br><small>Aquário de São Paulo</small></td>
+            <td>R$ 120,00</td>
+            <td>R$ 6,00</td>
+            <td>R$ 114,00</td>
+            <td class="reembolso">Reembolsado</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+    
+  <footer class="footer">
+    <article class="container2">
+      <p>&copy; 2025 Aquatrip - Todos os direitos reservados</p>
+    </article>
+  </footer>
+    </div>
 </body>
 </html>
-
-
-
-
-
