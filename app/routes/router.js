@@ -80,5 +80,8 @@ router.get('/index-adm', function (req, res) {
   router.get('/ingressos', function (req, res) {
   res.render('pages/ingressos');
   });
+      router.get('/faturamento', function (req, res) {
+  res.render('pages/faturamento');
+  });
  
 module.exports = router;

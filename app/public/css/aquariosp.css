@@ -252,7 +252,6 @@ input[type="date"]::-webkit-calendar-picker-indicator {
 }
  
  
- 
 .info-extra {
     display: flex;
     align-items: flex-start;
@@ -519,7 +518,8 @@ footer {
   padding: 20px;
   border-radius: 8px;
   font-family: Arial, sans-serif;
-  position: absolute;
+  position: relative;
+
 }
 
 .contribua h2 {
@@ -547,8 +547,13 @@ footer {
 }
 
 
-
 @media (max-width: 480px) {
+
+    .cards {
+        width: 95%;
+        padding: 10px;
+    }
+
  .card-reserva {
     position: relative;
     top: 210px;

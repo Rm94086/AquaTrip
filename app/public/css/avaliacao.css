@@ -14,120 +14,12 @@ body {
   min-height: 100vh;
 }
 
-/* Cabeçalho */
-/* Navbar específico */
-#navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: transparent;
-  color: white;
-  z-index: 50;
-  transition: all 0.3s ease;
-}
-
-#navbar .max-w-7xl {
-  max-width: 80rem;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1rem 1.5rem;
-}
-
-#navbar h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-}
-
-#navbar nav ul {
-  display: none; /* Escondido por padrão para mobile, Tailwind md:flex irá sobrescrever */
-  gap: 1.5rem;
-  font-weight: 600;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-#navbar nav ul li {
-  margin: 0;
-}
-
-#navbar nav a:hover {
-  color: #4ade80;
-}
-
-.logintexto {
-  /* Adicione aqui os estilos para o texto de login, se houver algum específico */
-  /* Por exemplo: */
-  /* font-weight: bold; */
-}
-
-#navbar button {
-  display: block; /* Para o botão do menu mobile */
-}
-
-/* Estilos para o menu mobile (aside) */
-#mobileMenu {
-  /* Tailwind classes handle most of this, but here for clarity if needed */
-}
-
-#mobileMenu header {
-  /* Tailwind classes handle most of this, but here for clarity if needed */
-}
-
-#mobileMenu nav {
-  /* Tailwind classes handle most of this, but here for clarity if needed */
-}
-
-/* Estilos para os ícones do Lucide */
-.lucide {
-  width: 24px;
-  height: 24px;
-}
-
-/* Mídia queries para desktop (Tailwind md:flex já lida com isso, mas para consistência) */
-@media (min-width: 768px) {
-  #navbar nav ul {
-    display: flex; /* Exibe o menu desktop */
-  }
-
-  #navbar button {
-    display: none; /* Esconde o botão do menu mobile */
-  }
-}
-
-/* Hover effects */
-.hover\:text-green-400:hover {
-  color: #4ade80;
-}
-
-.hover\:bg-green-600:hover {
-  background-color: #16a34a;
-}
-
-.hover\:shadow-lg:hover {
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-}
-
-.back-btn,
-.menu-btn {
-  background: none;
-  border: none;
-  font-size: 20px;
-  color: white;
-  cursor: pointer;
-}
-
-.logo {
-  font-weight: bold;
-}
-
 /* Container principal */
 .container {
   flex: 1;
   padding: 16px;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 .question {
@@ -154,7 +46,7 @@ body {
 .label {
   display: block;
   font-size: 14px;
-  margin-bottom: 4px;
+  margin: 0 auto;
 }
 
 .optional {
@@ -165,6 +57,7 @@ body {
 .input,
 .textarea {
   width: 100%;
+  max-width: 1000px;
   border: 2px solid #000;
   padding: 8px;
   margin-bottom: 16px;
@@ -178,12 +71,11 @@ body {
 
 .upload-box {
   width: 100%;
+  margin: 0 auto;
   height: 120px;
   border: 2px solid #000;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
   color: gray;
   font-size: 14px;
   margin-bottom: 20px;
@@ -193,12 +85,14 @@ body {
 
 /* Botão principal */
 .publish-btn {
-  width: 100%;
+  display: block;
+  margin: 0 auto;
+  width: 400px;
   padding: 12px;
   background: #1e5ab6;
   color: white;
   font-size: 16px;
-  border: none;
+  border: none; 
   border-radius: 6px;
   cursor: pointer;
 }
@@ -216,4 +110,433 @@ footer {
   color: white;
   padding: 2rem 0;
   text-align: center;
+}
+
+/* Navbar específico */
+#navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #1e3a8a;
+  color: white;
+  z-index: 50;
+  transition: all 0.3s ease;
+}
+
+#navbar .max-w-7xl {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+}
+
+#navbar h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+#navbar nav ul {
+  display: none;
+  gap: 1.5rem;
+  font-weight: 600;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#navbar nav ul li {
+  margin: 0;
+}
+
+#navbar nav a:hover {
+  color: #4ade80;
+}
+
+#navbar .bg-green-500 {
+  display: none;
+  background-color: #22c55e;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1);
+  text-decoration: none;
+  color: white;
+}
+
+#navbar .bg-green-500:hover {
+  background-color: #16a34a;
+}
+
+#navbar button {
+  display: block;
+}
+
+/* Mobile menu */
+#mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 16rem;
+  background-color: #1e3a8a;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 50;
+}
+
+#mobileMenu header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid #1d4ed8;
+}
+
+#mobileMenu nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+#mobileMenu nav a:hover {
+  color: #4ade80;
+}
+
+/* Navbar scrolled state */
+#navbar.bg-blue-900 {
+  background-color: #1e3a8a;
+}
+
+#navbar.shadow-lg {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+}
+
+/* Responsividade para navbar */
+@media (min-width: 768px) {
+  #navbar nav ul {
+    display: flex;
+  }
+  
+  #navbar .bg-green-500 {
+    display: inline-block;
+  }
+  
+  #navbar button {
+    display: none;
+  }
+  
+  #mobileMenu {
+    display: none;
+  }
+}
+
+/* Hover effects */
+.hover\:text-green-400:hover {
+  color: #4ade80;
+}
+
+.hover\:bg-green-600:hover {
+  background-color: #16a34a;
+}
+
+.hover\:shadow-lg:hover {
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Responsividade - Media Queries */
+
+@media (min-width: 481px) {
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+  
+  .img {
+    min-width: 481px;
+    max-width: 768px;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+  
+}
+
+
+@media (min-width: 768px) {
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+  
+  .img {
+    min-width: 768px;
+    max-width: 1024px;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+  
+  .img {
+    min-width: 1px;
+    max-width: 480px;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1025px) {
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+  
+  .img {
+    min-width: 1025px;
+    max-width: 1200px;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+@media (min-width: 1201px) {
+  .md\:hidden {
+    display: none;
+  }
+  
+  .md\:flex {
+    display: flex;
+  }
+  
+  .img {
+    min-width: 1201px;
+  }
+
+  .md\:inline-block {
+    display: inline-block;
+  }
+  
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .md\:flex-row {
+    flex-direction: row;
+  }
+  
+  .md\:text-6xl {
+    font-size: 3.75rem;
+    line-height: 1;
+  }
+  
+  .md\:text-2xl {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+
+/* Estilos específicos para ícones */
+i[data-lucide] {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+}
+
+/* Botões */
+button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Seções específicas */
+section {
+  position: relative;
+}
+
+/* Footer */
+footer {
+  background-color: #1e3a8a !important;
+  color: white;
+  padding: 1.5rem 0;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+/* Estilos específicos para as novas classes */
+
+/* Navbar */
+.navbar-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+}
+
+.desktop-nav {
+  display: none;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #4ade80;
+}
+
+.desktop-only {
+  display: none;
+}
+
+.mobile-menu-btn {
+  display: block;
+}
+
+.mobile-sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: 16rem;
+  background-color: #1e3a8a;
+  color: white;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease-in-out;
+  z-index: 50;
+}
+
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 1.5rem;
+  border-bottom: 1px solid #1d4ed8;
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  gap: 1rem;
+  font-weight: 600;
+}
+
+/* Navbar scrolled state */
+#navbar.scrolled {
+  background-color: #1e3a8a;
+  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
 }

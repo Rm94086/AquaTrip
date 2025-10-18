@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Aquatrip - Painel de Faturamento</title>
+  <link rel="stylesheet" href="css/faturamento.css" />
+</head>
+<body>
+  <section class="container">
+    <header>
+      <section>
+        <h1>Faturamento — Aquatrip</h1>
+        <p>Resumo de vendas, taxas e receitas — período: <strong id="periodLabel">últimos 30 dias</strong></p>
+      </section>
+      <section style="display:flex; gap:8px;">
+        <button class="btn" onclick="exportCSV()">Exportar CSV</button>
+        <button class="btn secondary" onclick="window.print()">Imprimir</button>
+      </section>
+    </header>
+
+    <main class="left-column">
+      <section class="cards">
+        <section class="card">
+          <h3>Vendas (bruto)</h3>
+          <section class="value" id="grossSales">R$ 0,00</section>
+          <section class="kpi-note">Quantidade de ingressos: <strong id="ticketsCount">0</strong></section>
+        </section>
+        <section class="card">
+          <h3>Taxas & comissões</h3>
+          <section class="value" id="fees">R$ 0,00</section>
+          <section class="kpi-note">Ex.: gateway e taxa da plataforma</section>
+        </section>
+        <section class="card">
+          <h3>Receita líquida</h3>
+          <section class="value" id="netRevenue">R$ 0,00</section>
+          <section class="kpi-note">Valor após taxas</section>
+        </section>
+      </section>
+
+      <section class="transactions">
+        <section class="toolbar">
+          <section class="search">
+            <input id="q" placeholder="Buscar por nome, ticket, ID..." oninput="renderTable()" />
+            <select id="filterStatus" onchange="renderTable()">
+              <option value="">Todos os status</option>
+              <option value="paid">Pago</option>
+              <option value="refunded">Reembolsado</option>
+              <option value="pending">Pendente</option>
+            </select>
+          </section>
+          <section style="display:flex; gap:8px;">
+            <input type="date" id="from" onchange="applyDates()" />
+            <input type="date" id="to" onchange="applyDates()" />
+          </section>
+        </section>
+
+        <table aria-label="Transações">
+          <thead>
+            <tr>
+              <th>Data</th>
+              <th>Comprador / Ingresso</th>
+              <th>Tipo</th>
+              <th>Valor</th>
+              <th>Taxa</th>
+              <th>Recebido</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </section>
+    </main>
+
+    <aside class="right-column">
+      <section class="tile">
+        <section style="display:flex; justify-content:space-between; align-items:center">
+          <strong>Resumo detalhado</strong>
+          <span class="small">Atualizado agora</span>
+        </section>
+
+        <section style="margin-top:10px; display:flex; gap:10px; align-items:center">
+          <section class="receipt-preview">
+            <img id="receiptImg" src="placeholder-receipt.png" alt="Recibo" />
+            <section>
+              <section style="font-weight:700">Recibo #<span id="sampleReceiptId">123456</span></section>
+              <section class="small">Método: Cartão de Crédito</section>
+              <section class="small">Data: <span id="sampleDate">-</span></section>
+            </section>
+          </section>
+        </section>
+
+        <svg class="chart" viewBox="0 0 200 140" preserveAspectRatio="none" id="miniChart"></svg>
+
+        <section style="margin-top:10px; display:flex; gap:8px; justify-content:space-between; align-items:center">
+          <section class="small">Total por tipo</section>
+          <section style="font-weight:700" id="topType">—</section>
+        </section>
+      </section>
+
+      <section class="tile">
+        <strong>Ganhos rápidos</strong>
+        <section style="margin-top:12px; display:flex; gap:8px; align-items:center">
+          <section style="flex:1">
+            <section class="small">Entradas</section>
+            <section style="font-weight:700" id="quickSales">R$ 0,00</section>
+          </section>
+          <section style="flex:1">
+            <section class="small">Fees</section>
+            <section style="font-weight:700" id="quickFees">R$ 0,00</section>
+          </section>
+          <section style="flex:1">
+            <section class="small">Liquid.</section>
+            <section style="font-weight:700" id="quickNet">R$ 0,00</section>
+          </section>
+        </section>
+
+        <footer class="actions">
+          <small class="small">Período: <span id="periodShort">30d</span></small>
+          <section style="display:flex; gap:8px">
+            <button class="btn secondary" onclick="downloadReceiptSample()">Baixar recibo</button>
+            <button class="btn" onclick="openPayouts()">Ver pagamentos</button>
+          </section>
+        </footer>
+      </section>
+    </aside>
+  </section>
+  <script src="faturamento.js"></script>
+</body>
+</html>
+
+
+
+
+

@@ -742,7 +742,7 @@ a {
 
 @media (max-width: 480px) {
   .hero-section img {
-    object-position: 15% center;
+    object-position: 20% center;
   }
 }
 
@@ -889,6 +889,7 @@ footer {
   justify-content: center;
   color: white;
   text-align: center;
+  border-radius: 5px;
 }
 
 .hero-section img {
@@ -1184,6 +1185,14 @@ footer {
 
 /* Responsividade - Media Queries */
 @media (min-width: 768px) {
+ .hero-section img {
+    object-position: 15% center; /* Garante que a imagem continue bem enquadrada */
+}
+
+.logintexto {
+display: inline-block
+}
+
   .desktop-nav {
     display: flex;
   }
