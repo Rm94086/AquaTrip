@@ -57,31 +57,92 @@ router.get('/index-adm', function (req, res) {
   res.render('pages/contato');
   });
 
-  router.get('/adm-cliente', function (req, res) {
-  res.render('pages/adm-cliente');
+  router.get('/adm-produto', function (req, res) {
+  res.render('pages/adm-produto');
   });
 
-  router.get('/adm-cliente-novo', function (req, res) {
-  res.render('pages/adm-cliente-novo');
+  router.get('/adm-produto-novo', function (req, res) {
+  res.render('pages/adm-produto-novo');
   });
 
-  router.get('/adm-cliente-list', function (req, res) {
-  res.render('pages/adm-cliente-list');
+  router.get('/adm-produto-list', function (req, res) {
+  res.render('pages/adm-produto-list');
   });
 
-  router.get('/adm-cliente-edit', function (req, res) {
-  res.render('pages/adm-cliente-edit');
+  router.get('/adm-produto-edit', function (req, res) {
+  res.render('pages/adm-produto-edit');
   });
 
-    router.get('/adm-cliente-del', function (req, res) {
-  res.render('pages/adm-cliente-del');
+    router.get('/adm-produto-del', function (req, res) {
+  res.render('pages/adm-produto-del');
+  });
+
+  
+  router.get('/adm-gestor', function (req, res) {
+  res.render('pages/adm-gestor');
+  });
+
+  router.get('/adm-gestor-novo', function (req, res) {
+  res.render('pages/adm-gestor-novo');
+  });
+
+  router.get('/adm-gestor-list', function (req, res) {
+  res.render('pages/adm-gestor-list');
+  });
+
+  router.get('/adm-gestor-edit', function (req, res) {
+  res.render('pages/adm-gestor-edit');
+  });
+
+    router.get('/adm-gestor-del', function (req, res) {
+  res.render('pages/adm-gestor-del');
+  });
+
+  router.get('/adm-user', function (req, res) {
+  res.render('pages/adm-user');
+  });
+
+  router.get('/adm-user-list', function (req, res) {
+  res.render('pages/adm-user-list');
+  });
+
+    router.get('/adm-user-del', function (req, res) {
+  res.render('pages/adm-user-del');
   });
 
   router.get('/ingressos', function (req, res) {
   res.render('pages/ingressos');
   });
-      router.get('/faturamento', function (req, res) {
+    router.get('/faturamento', function (req, res) {
   res.render('pages/faturamento');
   });
  
+  router.get('/AquaRio', function (req, res) {
+  res.render('pages/AquaRio');
+  });
+
+  router.get('/aquarioCanada', function (req, res) {
+  res.render('pages/aquarioCanada');
+  });
+
+  router.get('/aquarioSydney', function (req, res) {
+  res.render('pages/aquarioSydney');
+  });
+  
+router.get('/expedicoes', function (req, res) {
+  res.render('pages/expedicoes');
+  });
+
+ router.get('/aquarioSydney', function (req, res) {
+  res.render('pages/aquarioSydney');
+  });
+
+ router.get('/lisboa', function (req, res) {
+  res.render('pages/lisboa');
+  });
+
+   router.get('/bangkok', function (req, res) {
+  res.render('pages/bangkok');
+  });
+
 module.exports = router;

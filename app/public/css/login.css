@@ -148,3 +148,25 @@ footer {
   padding-left: 1rem;
   padding-right: 1rem;
 }
+
+.label-select {
+  font-weight: bold;
+  margin-right: 10px;
+  font-size: 16px;
+}
+
+.select-tipo {
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  background-color: white;
+  color: #333;
+  cursor: pointer;
+}
+
+.select-tipo:focus {
+  outline: none;
+  border-color: #192E86; /* azul do seu layout */
+  box-shadow: 0 0 4px #192E86;
+}

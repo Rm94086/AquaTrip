@@ -4,12 +4,19 @@ img {
   max-height: 1080px;
 }
 
+.logo {
+   position: relative;
+    width: 175px;
+    bottom: 45px;
+    margin-bottom: -60px;
+    left: -35px;
+    cursor: pointer;
+}
+
 .expedicoes {
   width: 60px;
   height: 60px;
 }
-
-
 
 * {
   box-sizing: border-box;
@@ -472,7 +479,19 @@ body {
 }
 
 #navbar button {
-  display: block;
+  display: none; /* Esconde o botão por padrão */
+}
+
+@media (max-width: 767px) {
+  #navbar button {
+    display: block; /* Mostra o botão em telas pequenas */
+  }
+}
+
+@media (min-width: 768px) {
+  #mobileMenu {
+    display: none !important; /* Garante que o menu mobile esteja oculto em desktop */
+  }
 }
 
 /* Mobile menu */
@@ -486,8 +505,16 @@ body {
   color: white;
   box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1);
   transform: translateX(100%);
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, visibility 0.3s ease-in-out, opacity 0.3s ease-in-out;
   z-index: 50;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#mobileMenu.open {
+  transform: translateX(0%);
+  visibility: visible;
+  opacity: 1;
 }
 
 #mobileMenu header {
@@ -691,8 +718,7 @@ a {
     line-height: 2rem;
   }
 }
-
-@media (min-width: 1025px) {
+(max-width:1300px){
   .md\:hidden {
     display: none;
   }
@@ -736,7 +762,7 @@ a {
 
 @media (max-width: 768px) {
   .hero-section img {
-    object-position: 15% center; /* Garante que a imagem continue bem enquadrada */
+    object-position: 15% center; 
 }
 }
 
@@ -746,7 +772,7 @@ a {
   }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1201px) 
   .md\:hidden {
     display: none;
   }
@@ -882,7 +908,7 @@ footer {
 .hero-section {
   position: relative;
   width: 100%;
-  height: 650px; /* Altura fixa para a seção hero */
+  height: 650px; 
   overflow: hidden;
   display: flex;
   align-items: center;
@@ -898,13 +924,14 @@ footer {
   left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover; /* Garante que a imagem cubra toda a área sem distorcer */
-  z-index: 1;
+  object-fit: cover;    
+  z-index: 1; 
 }
+
 
 .hero-container {
   position: relative;
-  z-index: 2; /* Garante que o conteúdo (botão) fique acima da imagem */
+  z-index: 2;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
@@ -915,7 +942,7 @@ footer {
   height: 100%;
 }
 
-/* Removido hero-title e hero-subtitle pois o texto está na imagem */
+
 
 /* Sections */
 .section-padding {
@@ -924,7 +951,7 @@ footer {
 
 .section-padding-small {
   padding: 3rem 0;
-  margin-top: 2rem; /* Adiciona uma margem superior para aumentar o espaçamento */
+  margin-top: 2rem;
 }
 
 .section-white {
@@ -1024,6 +1051,18 @@ footer {
   gap: 3rem;
 }
 
+@media (max-width: 767px) {
+  .discover-links {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .discover-card {
+    width: 45%;
+    max-width: none;
+  }
+}
+
 .discover-card {
   display: flex;
   flex-direction: column;
@@ -1035,6 +1074,8 @@ footer {
   transition: box-shadow 0.15s ease;
   text-decoration: none;
   color: inherit;
+  width: 100%; 
+  max-width: 200px; 
 }
 
 .discover-card:hover {
@@ -1239,3 +1280,34 @@ display: inline-block
     cursor: pointer;
     transition: 0.3s;
       }
+
+
+
+
+
+
+
+/* Garante que o botão do menu hamburguer seja visível em telas pequenas */
+
+/* Garante que o menu mobile esteja oculto por padrão em telas pequenas */
+
+/* Garante que o menu mobile esteja oculto em telas maiores */
+
+
+
+#mobileMenu.open {
+  transform: translateX(0%);
+}
+
+
+
+/* Garante que o menu mobile esteja acima de outros elementos quando aberto */
+#mobileMenu.open {
+  z-index: 9999;
+}
+
+/* Garante que o botão do menu hamburguer tenha um z-index alto o suficiente */
+#menuBtn {
+  z-index: 1000;
+}
+

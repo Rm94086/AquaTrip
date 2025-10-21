@@ -30,7 +30,6 @@
         <i data-lucide="menu"></i>
       </button>
     </nav>
-
     <!-- Mobile Sidebar -->
     <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
       <header class="flex justify-between items-center px-6 py-4 border-b border-blue-700">
@@ -40,14 +39,27 @@
         </button>
       </header>
       <nav class="flex flex-col p-6 space-y-4 font-semibold">
-        <a href="/perfil" class="hover:text-green-400">Perfil</a>
-        <a href="#viagens" class="hover:text-green-400">Viagens já feitas</a>
-        <a href="#ingressos" class="hover:text-green-400">Ingressos digitais</a>
-        <a href="#negocios" class="hover:text-green-400">Faça negócio conosco</a>
+                         <a href="homedoispontozero"><li>Home</li></a>
+                         <a href="/perfil"><li>Perfil</li></a>
+                         <a href="/avaliacao"><li>Avaliação</li></a>
+                         <a href="/ingressos"><li>Ingressos Digitais</li></a>
+                         <a href="/contato"><li>Contato</li></a>
       </nav>
     </aside>
   </header>
-
+<br>
+<br>
+<br>
+<br>
+<br>
+<nav class="nav-back"><a href="homedoispontozero">
+        <button class="back-btn" aria-label="Voltar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+            </svg>
+        </button></a>
+    </nav>
   <!-- Conteúdo principal -->
   <main class="container">
 
@@ -62,13 +74,13 @@
     <!-- Formulário -->
     <form class="form">
       <label for="username">Nome de usuário</label>
-      <input type="text" id="username" placeholder="Escreva aqui..">
+      <input type="text" id="username" placeholder="Escreva aqui.." required>
 
       <label for="name">Nome</label>
-      <input type="text" id="name" placeholder="Escreva aqui..">
+      <input type="text" id="name" placeholder="Escreva aqui.." required>
 
       <label for="bio">Bio</label>
-      <textarea id="bio" rows="3" placeholder="Escreva aqui.."></textarea>
+      <textarea id="bio" rows="3" placeholder="Escreva aqui.." required></textarea>
 
       <button type="submit" class="btn-salvar">Salvar</button>
     </form>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <link rel="stylesheet" href="css/aquaRiojaneiro.css">
+ 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaTrip - Aquário de Sydney</title>
+   
+</head>
+<body>
+  <header id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white z-50 transition duration-300">
+    <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+
+      <!-- Menu Desktop -->
+      <ul class="hidden md:flex space-x-6 font-semibold">
+        <img href="/homedoispontozero.ejs" class="logo" src="img/AquaTrip.png"></a>
+        <li><a href="/perfil" class="hover:text-green-400">Perfil</a></li>
+        <li><a href="/avaliacao" class="hover:text-green-400">Viagens já feitas</a></li>
+        <li><a href="/ingressos" class="hover:text-green-400">Ingressos digitais</a></li>
+        <li><a href="/contato" class="hover:text-green-400">Faça Contato Conosco</a></li>
+      </ul>
+
+      <ul>
+          <li><a href="/login"><span class="logintexto">Fazer Login</span></a></li>
+      </ul>
+
+      <!-- Menu Mobile -->
+      <button id="menuBtn">
+        <i data-lucide="menu"></i>
+      </button>
+    </nav>
+
+    <!-- Mobile Sidebar -->
+    <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
+      <header class="flex justify-between items-center px-6 py-4 border-b border-blue-700">
+        <h2 class="text-xl font-bold">Menu</h2>
+        <button id="closeMenu">
+          <i data-lucide="x"></i>
+        </button>
+      </header>
+      <nav class="flex flex-col p-6 space-y-4 font-semibold">
+        <a href="/perfil" class="hover:text-green-400">Perfil</a>
+        <a href="/avaliacao" class="hover:text-green-400">Viagens já feitas</a>
+        <a href="/ingressos" class="hover:text-green-400">Ingressos digitais</a>
+        <a href="/contato" class="hover:text-green-400">Faça Contato Conosco</a>
+      </nav>
+    </aside>
+  </header>
+
+    <nav class="nav-back"><a href="aquarios">
+        <button class="back-btn" aria-label="Voltar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+            </svg>
+        </button></a>
+    </nav>
+ 
+    <main>
+    <h1>AquaRio</h1>
+    <h2>5.0 <a class="Avaliação">★ ★ ★ ★ ★</a></h2>
+    <section class="fundo">
+    <section class="carrossel">
+    <article class="slide active">
+      <img src="img/sydney1.jpg"  alt="Imagem1">
+    </article>
+    <article class="slide">
+      <img src="img/sydney2.webp" alt="Imagem2">
+    </article>
+    <article class="slide">
+      <img src="img/sydney3.jpg" alt="Imagem3">
+    </article>
+  </section>
+ </section>
+    <script>
+      lucide.createIcons();
+
+      const menuBtn = document.getElementById("menuBtn");
+      const closeMenu = document.getElementById("closeMenu");
+      const mobileMenu = document.getElementById("mobileMenu");
+      const navbar = document.getElementById("navbar");
+
+      menuBtn.addEventListener("click", (event) => {
+        event.stopPropagation();
+        mobileMenu.classList.add("open");
+      });
+
+      closeMenu.addEventListener("click", () => {
+        mobileMenu.classList.remove("open");
+      });
+
+      document.addEventListener("click", (event) => {
+        if (!mobileMenu.contains(event.target) && !menuBtn.contains(event.target)) {
+          mobileMenu.classList.remove("open");
+        }
+      });
+
+      window.addEventListener("scroll", () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add("bg-blue-900", "shadow-lg");
+        } else {
+          navbar.classList.remove("bg-blue-900", "shadow-lg");
+        }
+      });
+    </script>
+    <script src="js/script.js"></script>
+
+  <p class="texto">
+    O Sydney Sea Life Aquarium, localizado na cidade de Sydney, 
+    Austrália, é um dos maiores aquários do país e uma atração 
+    turística importante. Ele está situado no Darling Harbour, 
+    um complexo de entretenimento e lazer, e foi inaugurado em 
+    1988.
+  </p>
+ 
+<section class="cards">
+    <article class="card-reserva">
+       
+        <header class="card-header">
+    <span class="preco-wrapper">
+        <span class="preco-label">A partir de</span>
+        <span class="preco-valor">R$ 259</span>
+    </span>
+    <span class="preco-obs">por adulto</span>
+</header>
+ 
+        <section class="card-body">
+            <h3 class="secao-titulo">Selecione data e viajantes</h3>
+           
+            <section class="seletores">
+   
+    <fieldset class="seletor-data-funcional">
+        <label for="data-reserva">Data</label>
+        <input type="date" id="data-reserva" name="data-reserva">
+    </fieldset>
+</section>
+ 
+            <section class="info-extra">
+                <i class="icone-cancelamento"></i>
+                <p><strong>Política de cancelamento</strong>  
+ 
+                Cancele até 24 horas antes para obter o reembolso integral.</p>
+            </section>
+        </section>
+ 
+        <footer class="card-footer">
+            <section class="resumo-pedido">
+                <h4>Pacote Aquário de São Paulo</h4>
+                <p>2 adultos x R$ 259</p>
+                <p class="total">Total R$ 518</p>
+                <span class="info-impostos">(o preço inclui impostos e taxas de reserva)</span>
+            </section>
+           
+            <a href="/pagamento"><button class="botao-reservar">Reservar agora</button></a>
+        </footer>
+
+    </article>
+</section>
+<section class="avaliacoes-container">
+
+    <h2>Avaliações</h2>
+ 
+    <section class="resumo-avaliacoes">
+       
+        <article class="avaliacao-geral">
+            <strong>4,7</strong>
+            <span class="estrelas">★★★★★</span>
+        </article>
+       
+        <section class="lista-barras">
+            <article class="linha-avaliacao">
+                <span class="label">Excelente</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 80%;"></span>
+                </span>
+                <span class="contagem">1.894</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Muito bom</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 60%;"></span>
+                </span>
+                <span class="contagem">1.020</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Razoável</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 25%;"></span>
+                </span>
+                <span class="contagem">846</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Ruim</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 15%;"></span>
+                </span>
+                <span class="contagem">302</span>
+            </article>
+            <article class="linha-avaliacao">
+                <span class="label">Péssimo</span>
+                <span class="barra-container">
+                    <span class="barra" style="width: 5%;"></span>
+                </span>
+                <span class="contagem">37</span>
+            </article>
+        </section>
+    </section>
+
+    <section class="avaliacao">
+  <figure class="perfil">
+    <img src="img/cachoeira.jpeg" alt="Foto de Arthur M">
+  </figure>
+
+  <section class="foto">
+    <h3>Arthur M</h3>
+    <p class="data">dez. de 2025</p>
+  </section>
+
+  <article class="comentario">
+    <p>
+      Excelente. O valor é um pouco alto. Mas a experiência incrível. Corredores amplos.
+      Boa circulação, explicações, visualização fácil dos animais até p crianças pequenas.
+      Tem assistentes a cada etapa, banheiro bom, acessível e limpo. Lanchonetes.
+      Eles têm atividades inclusivas para autistas e gratuidade para PCDs.
+      Não perde em nada p outros aquários que já conheci em outros países.
+    </p>
+  </article>
+</section>
+
+ 
+</section>
+<section class="contribua">
+  <h2>Contribua</h2>
+  <a href="/avaliacao" class="botao-avaliacao">Faça uma avaliação</a>
+</section>
+    </main>
+  <footer class="footer">
+    <article class="container2">
+      <p>&copy; 2025 Aquatrip - Todos os direitos reservados</p>
+    </article>
+  </footer>
+</body>

@@ -114,20 +114,23 @@ small {
 }
 
 .containerfooter {
-  position: relative;
+  display: flex;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 1rem;
   padding-right: 1rem;
+  flex-grow: 1;
+  bottom: 0;
 }
 
 footer {
+  display: flex;
+  position: fixed;
   background-color: #1e3a8a;
   color: white;
   padding: 2rem 0;
   text-align: center;
-  position: absolute;
   bottom: 0;
   width: 100%;
 }
@@ -155,4 +158,25 @@ footer {
   .resumo article {
     width: 30%;
   }
+
+  .containerfooter {
+  display: flex;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  flex-grow: 1;
+  bottom: 0;
+}
+
+footer {
+  display: flex;
+  position: fixed;
+  background-color: #1e3a8a;
+  color: white;
+  padding: 2rem 0;
+  text-align: center;
+  width: 100%;
+}
 }

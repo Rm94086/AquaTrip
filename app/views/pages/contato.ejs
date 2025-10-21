@@ -10,10 +10,10 @@
 <body>
   <header id="navbar" class="fixed top-0 left-0 w-full bg-transparent text-white z-50 transition duration-300">
     <nav class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-      <h1 class="text-2xl font-bold">Aquatrip</h1>
 
       <!-- Menu Desktop -->
       <ul class="hidden md:flex space-x-6 font-semibold">
+        <img href="/homedoispontozero.ejs" class="logo" src="img/AquaTrip.png"></a>
         <li><a href="/perfil" class="hover:text-green-400">Perfil</a></li>
         <li><a href="/avaliacao" class="hover:text-green-400">Viagens já feitas</a></li>
         <li><a href="/ingressos" class="hover:text-green-400">Ingressos digitais</a></li>
@@ -29,7 +29,19 @@
         <i data-lucide="menu"></i>
       </button>
     </nav>
-
+     <section id="menuToggle">
+                  <input type="checkbox">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                          <ul id="menu">
+                         <a href="homedoispontozero"><li>Home</li></a>
+                         <a href="/perfil"><li>Perfil</li></a>
+                         <a href="/avaliacao"><li>Avaliação</li></a>
+                         <a href="/ingressos"><li>Ingressos Digitais</li></a>
+                         <a href="/contato"><li>Contato</li></a>
+                  </ul>
+           </section>
     <!-- Mobile Sidebar -->
     <aside id="mobileMenu" class="fixed top-0 right-0 h-full w-64 bg-blue-900 text-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out md:hidden z-50">
       <header class="flex justify-between items-center px-6 py-4 border-b border-blue-700">
@@ -40,13 +52,20 @@
       </header>
       <nav class="flex flex-col p-6 space-y-4 font-semibold">
         <a href="/perfil" class="hover:text-green-400">Perfil</a>
-        <a href="#viagens" class="hover:text-green-400">Viagens já feitas</a>
-        <a href="#ingressos" class="hover:text-green-400">Ingressos digitais</a>
-        <a href="#negocios" class="hover:text-green-400">Faça negócio conosco</a>
+        <a href="avaliacao.ejs" class="hover:text-green-400">Viagens já feitas</a>
+        <a href="ingressos.ejs" class="hover:text-green-400">Ingressos digitais</a>
+        <a href="contato.ejs" class="hover:text-green-400">Faça negócio conosco</a>
       </nav>
     </aside>
   </header>
-
+<nav class="nav-back"><a href="homedoispontozero">
+        <button class="back-btn" aria-label="Voltar">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5"></path>
+                <path d="M12 19l-7-7 7-7"></path>
+            </svg>
+        </button></a>
+    </nav>
         <main class="main-content">
             <div class="contact-form-container">
                 <div class="form-header">
