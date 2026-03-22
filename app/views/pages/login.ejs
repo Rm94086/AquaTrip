@@ -1,62 +1,39 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>AquaTrip — Login</title>
+   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:
+    ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"> 
+    <script src="js/script.js"></script>
     <link rel="stylesheet" href="css/login.css">
-    <script src="js/scriptlogin.js"></script>
-    <title></title>
 </head>
+
 <body>
-    <header>
-        <nav>  
-        <a href=/homedoispontozero>
-        <img href="/homedoispontozero" class="logo" src="img/AquaTrip.png"></a>
-        </nav>
-    </header>
 
-     <main class="form-container">
-    
-    <form class="formulario" id="login-form">
-      <label for="login-email">Email</label>
-      <input type="email" id="login-email" placeholder="Digite seu email" required />
-
-      <label for="login-senha">Senha</label>
-      <input type="password" id="login-senha" placeholder="Digite sua senha" required />
-
+<form id="loginForm" method="dialog" onsubmit="return false">
+    <fieldset>
+      <label for="login-email">E-mail</label>
+      <input id="login-email" type="email" placeholder="seu@email.com" autocomplete="email">
+      <label for="login-pass">Senha</label>
+      <input id="login-pass" type="password" placeholder="••••••••" autocomplete="current-password">
       <button type="submit">Entrar</button>
+      <p class="form-foot">Não tem conta? <a href="#" onclick="switchTab('signup')">Cadastre-se</a> &nbsp;·&nbsp; <a href="#">Esqueci a senha</a></p>
+    </fieldset>
+</form>
 
-      <a href="#" class="trocar" onclick="mostrarCadastro()">Crie sua conta</a>
-    </form>
-
-    <form class="formulario hidden" id="cadastro-form">
-      <label for="cadastro-email">Email</label>
-      <input type="email" id="cadastro-email" placeholder="Digite seu email" required />
-
-      <label for="cadastro-senha">Senha</label>
-      <input type="password" id="cadastro-senha" placeholder="Crie uma senha" required />
-
-      <label for="cadastro-confirmar">Confirme a senha</label>
-      <input type="password" id="cadastro-confirmar" placeholder="Repita a senha" required />
-      <label for="tipo" class="label-select">Tipo</label>
-
-    <select id="tipo" name="tipo" class="select-tipo">
-      <option value="usuario">Usuário</option>
-      <option value="adm">ADM</option>
-      <option value="gestor">Gestor</option>
-    </select>
-
-      <button type="submit">Entrar</button>
-
-      <a href="#" class="trocar" onclick="mostrarLogin()">Já tenho uma conta</a>
-    </form>
-  </main>
-
-    <footer class="footer">
-    <article class="container">
-      <p>&copy; 2025 Aquatrip - Todos os direitos reservados</p>
-    </article>
-  </footer>
+<form id="signupForm" method="dialog" onsubmit="return false" hidden>
+    <fieldset>
+      <label for="signup-name">Nome completo</label>
+      <input id="signup-name" type="text" placeholder="Seu nome" autocomplete="name">
+      <label for="signup-email">E-mail</label>
+      <input id="signup-email" type="email" placeholder="seu@email.com" autocomplete="email">
+      <label for="signup-pass">Senha</label>
+      <input id="signup-pass" type="password" placeholder="Min. 8 caracteres" autocomplete="new-password">
+      <button type="submit">Criar conta grátis</button>
+      <p class="form-foot">Já tem conta? <a href="#" onclick="switchTab('login')">Entre aqui</a></p>
+    </fieldset>
+</form>
 
 </body>
-</html>
