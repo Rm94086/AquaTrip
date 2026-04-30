@@ -19,8 +19,8 @@
     <img class="logo" src="/img/cenotes1.png"/>
   </a>
   <ul role="list">
-    <li><button class="btn-login"  onclick="openModal('login')">Entrar</button></li>
-    <li><button class="btn-signup" onclick="openModal('signup')">Cadastrar</button></li>
+    <li><a href="/login"><button class="btn-login">Entrar</button></a></li>
+    <li><a href="/cadastro"><button class="btn-signup">Cadastrar</button></a></li>
     <li>
       <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer" onclick="toggleDrawer()">
         <hr aria-hidden="true"><hr aria-hidden="true"><hr aria-hidden="true">
@@ -32,7 +32,7 @@
 <!--  DRAWER  -->
 <aside id="drawer" aria-label="Menu lateral" aria-hidden="true">
   <nav>
-    <a href="#"><i data-lucide="house"></i> Início</a>
+    <a href="/"><i data-lucide="house"></i> Início</a>
     <a href="#"><i data-lucide="ticket"></i> Meus Ingressos</a>
     <a href="#"><i data-lucide="ship"></i> Viagens Feitas</a>
     <a href="/contato"><i data-lucide="briefcase"></i> Faça negócio conosco</a>
@@ -237,10 +237,10 @@
         <h2 id="titulo-ecoo">Nossos Selos Sustentáveis</h2>
         <p class="section-subb">Cada parceiro é verificado por nossos auditores ambientais</p>
         <section class="eco-grid">
-          <article><figure>♻️</figure><h3>Zero Resíduos</h3><p>Parceiros com programa completo de eliminação de resíduos sólidos</p></article>
-          <article><figure>🌊</figure><h3>Conservação Marinha</h3><p>Contribuição ativa para projetos de preservação de ecossistemas</p></article>
-          <article><figure>☀️</figure><h3>Energia Renovável</h3><p>100% da operação movida por fontes de energia limpas</p></article>
-          <article><figure>🐟</figure><h3>Fauna Protegida</h3><p>Nenhum animal capturado da natureza. Só reprodução ética</p></article>
+          <article><figure data-lucide="leaf"></figure><h3>Zero Resíduos</h3><p>Parceiros com programa completo de eliminação de resíduos sólidos</p></article>
+          <article><figure data-lucide="waves-horizontal"></figure><h3>Conservação Marinha</h3><p>Contribuição ativa para projetos de preservação de ecossistemas</p></article>
+          <article><figure data-lucide="sun"></figure><h3>Energia Renovável</h3><p>100% da operação movida por fontes de energia limpas</p></article>
+          <article><figure data-lucide="fish"></figure><h3>Fauna Protegida</h3><p>Nenhum animal capturado da natureza. Só reprodução ética</p></article>
         </section>
       </section>
     </article>
@@ -324,46 +324,10 @@
     <p>Sua plataforma de aventuras aquáticas sustentáveis. Exploramos o oceano com responsabilidade e paixão.</p>
   </section>
   <nav aria-label="Explorar"><h4>Explorar</h4><a href="#">Aquários</a><a href="#">Expedições</a><a href="#">Mergulho</a></nav>
-  <nav aria-label="Conta"><h4>Conta</h4><a href="#" onclick="openModal('login')">Entrar</a><a href="#" onclick="openModal('signup')">Cadastrar</a><a href="#">Meu Perfil</a></nav>
+  <nav aria-label="Conta"><h4>Conta</h4><a href="/login">Entrar</a><a href="/cadastro">Cadastrar</a><a href="#">Meu Perfil</a></nav>
   <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#">Sobre nós</a><a href="#">Sustentabilidade</a><a href="#">Contato</a></nav>
 </footer>
-<address>© 2025 AquaTrip. Todos os direitos reservados.</address>
-
-<!-- MODAL -->
-<dialog id="modal" aria-labelledby="modalTitle" aria-describedby="modalSub">
-  <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
-  <h2 id="modalTitle">Bem-vindo de volta</h2>
-  <p class="modal-sub" id="modalSub">Entre para continuar sua jornada aquática</p>
-
-  <nav class="modal-tabs" aria-label="Abas de autenticação">
-    <button id="tabLogin"  class="active" onclick="switchTab('login')">Entrar</button>
-    <button id="tabSignup"             onclick="switchTab('signup')">Cadastrar</button>
-  </nav>
-
-  <form id="loginForm" method="dialog" onsubmit="return false">
-    <fieldset>
-      <label for="login-email">E-mail</label>
-      <input id="login-email" type="email" placeholder="seu@email.com" autocomplete="email">
-      <label for="login-pass">Senha</label>
-      <input id="login-pass" type="password" placeholder="••••••••" autocomplete="current-password">
-      <button type="submit">Entrar</button>
-      <p class="form-foot">Não tem conta? <a href="#" onclick="switchTab('signup')">Cadastre-se</a> &nbsp;·&nbsp; <a href="#">Esqueci a senha</a></p>
-    </fieldset>
-  </form>
-
-  <form id="signupForm" method="dialog" onsubmit="return false" hidden>
-    <fieldset>
-      <label for="signup-name">Nome completo</label>
-      <input id="signup-name" type="text" placeholder="Seu nome" autocomplete="name">
-      <label for="signup-email">E-mail</label>
-      <input id="signup-email" type="email" placeholder="seu@email.com" autocomplete="email">
-      <label for="signup-pass">Senha</label>
-      <input id="signup-pass" type="password" placeholder="Min. 8 caracteres" autocomplete="new-password">
-      <button type="submit">Criar conta grátis</button>
-      <p class="form-foot">Já tem conta? <a href="#" onclick="switchTab('login')">Entre aqui</a></p>
-    </fieldset>
-  </form>
-</dialog>
+<address>© 2026 AquaTrip. Todos os direitos reservados.</address>
 
 <script src="/js/script.js"></script>
 <script>lucide.createIcons();</script>
