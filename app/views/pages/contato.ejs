@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contato.css">
+    <title>Faça contato conosco</title>
+</head>
+<body>
+    <section class="content">
+        <h1>Faça contato conosco</h1>
+
+        <div id="toast" class="toast" role="alert" aria-live="polite"></div>
+
+        <form id="form" novalidate>
+
+            <section>
+                <input
+                    type="text"
+                    id="nome"
+                    name="nome"
+                    placeholder="Digite seu nome"
+                    class="inputs"
+                    autocomplete="name"
+                    maxlength="100"
+                    aria-describedby="erro-nome"
+                >
+                <span id="erro-nome" class="span-required" role="alert"></span>
+            </section>
+
+            <section>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="Digite seu email"
+                    class="inputs"
+                    autocomplete="email"
+                    maxlength="254"
+                    aria-describedby="erro-email"
+                >
+                <span id="erro-email" class="span-required" role="alert"></span>
+            </section>
+
+            <section>
+                <input
+                    type="text"
+                    id="empresa"
+                    name="empresa"
+                    placeholder="Digite o nome de sua empresa"
+                    class="inputs"
+                    autocomplete="organization"
+                    maxlength="150"
+                    aria-describedby="erro-empresa"
+                >
+                <span id="erro-empresa" class="span-required" role="alert"></span>
+            </section>
+
+            <section>
+                <input
+                    type="text"
+                    id="regiao"
+                    name="regiao"
+                    placeholder="Digite sua região"
+                    class="inputs"
+                    maxlength="100"
+                    aria-describedby="erro-regiao"
+                >
+                <span id="erro-regiao" class="span-required" role="alert"></span>
+            </section>
+
+            <section>
+                <textarea
+                    class="inputs"
+                    id="descricao"
+                    name="descricao"
+                    cols="25"
+                    rows="10"
+                    placeholder="Como podemos ajudar a divulgar seu produto?"
+                    maxlength="1000"
+                    aria-describedby="erro-descricao contador-descricao"
+                ></textarea>
+                <div class="textarea-footer">
+                    <span id="erro-descricao" class="span-required" role="alert"></span>
+                    <span id="contador-descricao" class="contador">0 / 1000</span>
+                </div>
+            </section>
+
+            <button type="submit" id="btn-enviar">Enviar</button>
+        </form>
+    </section>
+
+    <script src="/js/contato.js"></script>
+</body>
+</html>
