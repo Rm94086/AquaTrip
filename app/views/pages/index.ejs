@@ -1,21 +1,22 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>AquaTrip — Explore o Mundo Subaquático</title>
-   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:
-    ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"> 
-    <script src="js/script.js"></script>
-    <link rel="stylesheet" href="css/index.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AquaTrip — Explore o Mundo Subaquático</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/index.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+<body>
 
+<!-- EFEITO DE BOLHAS -->
 <section id="bubbles" aria-hidden="true"></section>
 
+<!--  NAV PRINCIPAL  -->
 <nav aria-label="Navegação principal">
-  <a class="logo" href="#" aria-label="AquaTrip — Início">
-    <figure aria-hidden="true">🐠</figure>
-    Aqua<mark>Trip</mark>
+  <a href="/" aria-label="AquaTrip — Início">
+    <img class="logo" src="/img/cenotes1.png"/>
   </a>
   <ul role="list">
     <li><button class="btn-login"  onclick="openModal('login')">Entrar</button></li>
@@ -28,46 +29,43 @@
   </ul>
 </nav>
 
+<!--  DRAWER  -->
 <aside id="drawer" aria-label="Menu lateral" aria-hidden="true">
   <nav>
-    <a href="#"><abbr title="Início">🏠</abbr> Início</a>
-    <a href="#"><abbr title="Explorar">🔍</abbr> Explorar</a>
-    <a href="#"><abbr title="Ingressos">🎫</abbr> Meus Ingressos</a>
-    <a href="#"><abbr title="Viagens">🌊</abbr> Viagens Feitas</a>
-    <a href="#"><abbr title="Favoritos">❤️</abbr> Favoritos</a>
+    <a href="#"><i data-lucide="house"></i> Início</a>
+    <a href="#"><i data-lucide="ticket"></i> Meus Ingressos</a>
+    <a href="#"><i data-lucide="ship"></i> Viagens Feitas</a>
+    <a href="/contato"><i data-lucide="briefcase"></i> Faça negócio conosco</a>
   </nav>
   <hr>
   <nav>
-    <a href="#"><abbr title="Perfil">👤</abbr> Meu Perfil</a>
-    <a href="#"><abbr title="Configurações">⚙️</abbr> Configurações</a>
-    <a href="#"><abbr title="Administração">🛡️</abbr> Administração</a>
-  </nav>
-  <hr>
-  <nav>
-    <a href="#" onclick="openModal('login'); closeDrawer()"><abbr title="Entrar">🔑</abbr> Entrar</a>
-    <a href="#" style="color:#f87171"><abbr title="Sair">🚪</abbr> Sair</a>
+    <a href="#"><i data-lucide="user"></i> Meu Perfil</a>
+    <a href="#"><i data-lucide="settings"></i> Configurações</a>
   </nav>
 </aside>
 
+<!--  HERO  -->
 <header id="hero">
-  
   <h1>Mergulhe no <em>extraordinário</em></h1>
-  <p class="hero-sub">Descubra aquários, expedições submarinas e destinos oceânicos ao redor do mundo. Sustentabilidade em cada aventura.</p>
+  <p class="hero-sub">Descubra aquários, expedições marinhas e destinos oceânicos ao redor do mundo. Sustentabilidade em cada aventura.</p>
 
   <search role="search">
-    <label for="busca" aria-label="Ícone de busca">🔍</label>
+    <label for="busca" aria-label="Ícone de busca"><i data-lucide="search"></i></label>
     <input id="busca" type="search" placeholder="Busque aquários, expedições, destinos…">
     <button type="button" class="btn-search">Buscar</button>
   </search>
+
+  <figure class="hero-wave" aria-hidden="true">
+  </figure>
 </header>
 
-
+<!--  MAIN  -->
 <main>
 
-
+  <!--  DESTINOS  -->
   <section aria-labelledby="titulo-destinos">
     <article class="container">
-      <em class="section-label">🔥 Em destaque</em>
+      <em class="section-label"> Em destaque!</em>
       <header class="carousel-header">
         <hgroup>
           <h2 id="titulo-destinos">Aquários &amp; Destinos</h2>
@@ -85,21 +83,23 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#0c3b5c,#0a6e82,#0891b2)">
-                <figure aria-hidden="true">🐠</figure>
-                <section class="card-overlay"></section>
+                <img src="/img/cenote.jpg" />
                 <section class="card-badges">
                   <mark class="badge badge-eco">🌿 Eco Cert.</mark>
                   <mark class="badge badge-type">Aquário</mark>
                 </section>
               </section>
               <section class="card-body">
-                <dl class="eco-seals"><dt>♻️ Zero Resíduos</dt><dd>Programa de eliminação de resíduos</dd><dt>🐟 Sem Captura</dt><dd>Nenhum animal capturado</dd></dl>
+                <dl class="eco-seals">
+                  <dt>Zero Resíduos</dt><dd>Programa de eliminação de resíduos</dd>
+                  <dt>Sem Captura</dt><dd>Nenhum animal capturado</dd>
+                </dl>
                 <h3>Aquário de Monterey Bay</h3>
                 <address>📍 California, EUA</address>
-                <section class="card-foot">
+                <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.9 (3.2k)</small></p>
                   <p class="card-price">A partir de R$180</p>
-                </section>
+                </footer>
               </section>
             </article>
           </li>
@@ -107,21 +107,23 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#0d3b2a,#0a5c45,#059669)">
-                <figure aria-hidden="true">🦈</figure>
-                <section class="card-overlay"></section>
+                <img src="/img/aquaRio.webp" />
+                <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
                   <mark class="badge badge-hot">🔥 Trending</mark>
                   <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
               <section class="card-body">
-                <dl class="eco-seals"><dt>🌊 Conservação</dt><dd>Projeto de conservação marinha</dd></dl>
+                <dl class="eco-seals">
+                  <dt>Conservação</dt><dd>Projeto de conservação marinha</dd>
+                </dl>
                 <h3>Grande Barreira de Coral</h3>
                 <address>📍 Queensland, Austrália</address>
-                <section class="card-foot">
+                <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.8 (5.1k)</small></p>
                   <p class="card-price">A partir de R$890</p>
-                </section>
+                </footer>
               </section>
             </article>
           </li>
@@ -129,21 +131,24 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#1a1a4e,#2d2d8a,#4f46e5)">
-                <figure aria-hidden="true">🐙</figure>
-                <section class="card-overlay"></section>
+                <img src="/img/açores.jpg" />
+                <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
                   <mark class="badge badge-eco">🌿 Eco Cert.</mark>
                   <mark class="badge badge-type">Aquário</mark>
                 </section>
               </section>
               <section class="card-body">
-                <dl class="eco-seals"><dt>💧 Água Reciclada</dt><dd>Sistema de reaproveitamento</dd><dt>☀️ Energia Solar</dt><dd>100% energia limpa</dd></dl>
+                <dl class="eco-seals">
+                  <dt>Água Reciclada</dt><dd>Sistema de reaproveitamento</dd>
+                  <dt>Energia Solar</dt><dd>100% energia limpa</dd>
+                </dl>
                 <h3>Osaka Aquarium Kaiyukan</h3>
                 <address>📍 Osaka, Japão</address>
-                <section class="card-foot">
+                <footer class="card-foot">
                   <p class="stars">★★★★☆ <small>4.7 (7.8k)</small></p>
                   <p class="card-price">A partir de R$120</p>
-                </section>
+                </footer>
               </section>
             </article>
           </li>
@@ -151,20 +156,22 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#2a0a0a,#7c1d1d,#dc2626)">
-                <figure aria-hidden="true">🦑</figure>
-                <section class="card-overlay"></section>
+                <img src="/img/emerald cove.png" />
+                <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
                   <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
               <section class="card-body">
-                <dl class="eco-seals"><dt>🐠 Repovoamento</dt><dd>Programa de repovoamento marinho</dd></dl>
+                <dl class="eco-seals">
+                  <dt>Repovoamento</dt><dd>Programa de repovoamento marinho</dd>
+                </dl>
                 <h3>Arquipélago de Fernando de Noronha</h3>
                 <address>📍 Pernambuco, Brasil</address>
-                <section class="card-foot">
+                <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.9 (2.4k)</small></p>
                   <p class="card-price">A partir de R$1.200</p>
-                </section>
+                </footer>
               </section>
             </article>
           </li>
@@ -172,21 +179,23 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#1a3a2a,#2d6e50,#10b981)">
-                <figure aria-hidden="true">🐬</figure>
-                <section class="card-overlay"></section>
+                <img src="/img/Paraty.jpg" />
+                <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
                   <mark class="badge badge-eco">🌿 Eco Cert.</mark>
                   <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
               <section class="card-body">
-                <dl class="eco-seals"><dt>🌿 Zero Carbono</dt><dd>Operação neutra em carbono</dd></dl>
+                <dl class="eco-seals">
+                  <dt>Zero Carbono</dt><dd>Operação neutra em carbono</dd>
+                </dl>
                 <h3>Ilhas Maldivas — Recife Azul</h3>
                 <address>📍 Maldivas</address>
-                <section class="card-foot">
+                <footer class="card-foot">
                   <p class="stars">★★★★★ <small>5.0 (1.9k)</small></p>
                   <p class="card-price">A partir de R$3.400</p>
-                </section>
+                </footer>
               </section>
             </article>
           </li>
@@ -194,21 +203,23 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#0a2040,#0e4070,#0369a1)">
-                <figure aria-hidden="true">🐳</figure>
-                <section class="card-overlay"></section>
+                <img src="/img/aquariosp.webp" />
+                <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
                   <mark class="badge badge-hot">🔥 Trending</mark>
                   <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
               <section class="card-body">
-                <dl class="eco-seals"><dt>🐋 Santuário</dt><dd>Área de proteção de baleias</dd></dl>
+                <dl class="eco-seals">
+                  <dt>Santuário</dt><dd>Área de proteção de baleias</dd>
+                </dl>
                 <h3>Observação de Baleias — Açores</h3>
                 <address>📍 Açores, Portugal</address>
-                <section class="card-foot">
+                <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.9 (4.1k)</small></p>
                   <p class="card-price">A partir de R$2.100</p>
-                </section>
+                </footer>
               </section>
             </article>
           </li>
@@ -219,44 +230,106 @@
     </article>
   </section>
 
+  <!--  ECO  -->
   <section class="eco" aria-labelledby="titulo-eco">
     <article class="container">
-      <em class="section-label">🌿 Sustentabilidade</em>
-      <h2 id="titulo-eco">Nossos Selos Sustentáveis</h2>
-      <p class="section-sub">Cada parceiro é verificado por nossos auditores ambientais</p>
-      <section class="eco-grid"></section>
-        <article><figure>♻️</figure><h3>Zero Resíduos</h3><p>Parceiros com programa completo de eliminação de resíduos sólidos</p></article>
-        <article><figure>🌊</figure><h3>Conservação Marinha</h3><p>Contribuição ativa para projetos de preservação de ecossistemas</p></article>
-        <article><figure>☀️</figure><h3>Energia Renovável</h3><p>100% da operação movida por fontes de energia limpas</p></article>
-        <article><figure>🐟</figure><h3>Fauna Protegida</h3><p>Nenhum animal capturado da natureza. Só reprodução ética</p></article>
+      <section class="container2">
+        <h2 id="titulo-ecoo">Nossos Selos Sustentáveis</h2>
+        <p class="section-subb">Cada parceiro é verificado por nossos auditores ambientais</p>
+        <section class="eco-grid">
+          <article><figure>♻️</figure><h3>Zero Resíduos</h3><p>Parceiros com programa completo de eliminação de resíduos sólidos</p></article>
+          <article><figure>🌊</figure><h3>Conservação Marinha</h3><p>Contribuição ativa para projetos de preservação de ecossistemas</p></article>
+          <article><figure>☀️</figure><h3>Energia Renovável</h3><p>100% da operação movida por fontes de energia limpas</p></article>
+          <article><figure>🐟</figure><h3>Fauna Protegida</h3><p>Nenhum animal capturado da natureza. Só reprodução ética</p></article>
+        </section>
       </section>
     </article>
   </section>
 
-  <section class="cta" aria-labelledby="titulo-cta">
-    <article class="cta-inner">
-      <h2 id="titulo-cta">Pronto para mergulhar?</h2>
-      <p class="cta-sub">Crie sua conta grátis e comece a explorar o mundo subaquático com sustentabilidade</p>
-      <nav class="cta-btns">
-        <button class="btn-primary" onclick="openModal('signup')">Criar conta grátis</button>
-        <button class="btn-ghost">Ver todos os destinos</button>
-      </nav>
+  <!--  EXPEDIÇÕES  -->
+  <section aria-labelledby="titulo-exp">
+    <article class="container">
+      <em class="section-label">Próximas datas</em>
+      <header class="carousel-header">
+        <hgroup>
+          <h2 id="titulo-exp">Expedições Disponíveis</h2>
+          <p class="section-sub">Reserve sua aventura submarina com guias especializados</p>
+        </hgroup>
+        <nav class="carousel-arrows" aria-label="Navegação do carrossel de expedições">
+          <button class="carousel-arrow" id="expArrowLeft"  onclick="scrollExp(-1)" aria-label="Anterior">&#8592;</button>
+          <button class="carousel-arrow" id="expArrowRight" onclick="scrollExp(1)"  aria-label="Próximo">&#8594;</button>
+        </nav>
+      </header>
+
+      <section class="carousel-wrap">
+        <ol class="exp-track" id="expGrid" role="list">
+
+          <li>
+            <article class="exp-row">
+              <p class="exp-num">01</p>
+              <section class="exp-info">
+                <h3>Observação de Baleias — Açores, Portugal</h3>
+                <ul class="exp-meta"><li>📅 15 abr – 22 abr 2025</li><li>👥 12 vagas</li><li>🌿 Eco Certificado</li><li>⭐ 4.9</li></ul>
+              </section>
+              <p class="exp-price">R$3.400</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="exp-row">
+              <p class="exp-num">02</p>
+              <section class="exp-info">
+                <h3>Mergulho com Tubarões — Bahamas</h3>
+                <ul class="exp-meta"><li>📅 02 mai – 09 mai 2025</li><li>👥 8 vagas</li><li>🌿 Certificado Marine World</li><li>⭐ 5.0</li></ul>
+              </section>
+              <p class="exp-price">R$7.200</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="exp-row">
+              <p class="exp-num">03</p>
+              <section class="exp-info">
+                <h3>Recife de Corais — Maldivas</h3>
+                <ul class="exp-meta"><li>📅 20 mai – 27 mai 2025</li><li>👥 6 vagas</li><li>🌿 Zero Carbono</li><li>⭐ 4.8</li></ul>
+              </section>
+              <p class="exp-price">R$9.800</p>
+            </article>
+          </li>
+
+          <li>
+            <article class="exp-row">
+              <p class="exp-num">04</p>
+              <section class="exp-info">
+                <h3>Nado com Golfinhos — Fernando de Noronha</h3>
+                <ul class="exp-meta"><li>📅 10 jun – 14 jun 2025</li><li>👥 15 vagas</li><li>🌿 ICMBio Aprovado</li><li>⭐ 4.9</li></ul>
+              </section>
+              <p class="exp-price">R$2.100</p>
+            </article>
+          </li>
+
+        </ol>
+      </section>
+      <nav class="carousel-dots" id="expDots" aria-label="Posição do carrossel de expedições"></nav>
     </article>
   </section>
 
+
 </main>
 
+<!-- FOOTER -->
 <footer>
   <section>
     <a class="logo" href="#" aria-label="AquaTrip"><figure aria-hidden="true">🐠</figure>Aqua<mark>Trip</mark></a>
     <p>Sua plataforma de aventuras aquáticas sustentáveis. Exploramos o oceano com responsabilidade e paixão.</p>
   </section>
-  <nav aria-label="Explorar"><h4>Explorar</h4><a href="#">Aquários</a><a href="#">Expedições</a><a href="#">Mergulho</a><a href="#">Cruzeiros</a></nav>
-  <nav aria-label="Conta"><h4>Conta</h4><a href="/login" onclick="openModal('login')">Entrar</a><a href="/login" onclick="openModal('signup')">Cadastrar</a><a href="#">Meu Perfil</a><a href="#">Ingressos</a></nav>
-  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#">Sobre nós</a><a href="#">Sustentabilidade</a><a href="#">Blog</a><a href="#">Contato</a></nav>
+  <nav aria-label="Explorar"><h4>Explorar</h4><a href="#">Aquários</a><a href="#">Expedições</a><a href="#">Mergulho</a></nav>
+  <nav aria-label="Conta"><h4>Conta</h4><a href="#" onclick="openModal('login')">Entrar</a><a href="#" onclick="openModal('signup')">Cadastrar</a><a href="#">Meu Perfil</a></nav>
+  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#">Sobre nós</a><a href="#">Sustentabilidade</a><a href="#">Contato</a></nav>
 </footer>
-<address>© 2025 AquaTrip. Todos os direitos reservados. 🌊 Feito com amor pelos oceanos.</address>
+<address>© 2025 AquaTrip. Todos os direitos reservados.</address>
 
+<!-- MODAL -->
 <dialog id="modal" aria-labelledby="modalTitle" aria-describedby="modalSub">
   <button class="modal-close" onclick="closeModal()" aria-label="Fechar">✕</button>
   <h2 id="modalTitle">Bem-vindo de volta</h2>
@@ -273,7 +346,7 @@
       <input id="login-email" type="email" placeholder="seu@email.com" autocomplete="email">
       <label for="login-pass">Senha</label>
       <input id="login-pass" type="password" placeholder="••••••••" autocomplete="current-password">
-      <button type="submit">🌊 Entrar</button>
+      <button type="submit">Entrar</button>
       <p class="form-foot">Não tem conta? <a href="#" onclick="switchTab('signup')">Cadastre-se</a> &nbsp;·&nbsp; <a href="#">Esqueci a senha</a></p>
     </fieldset>
   </form>
@@ -286,8 +359,13 @@
       <input id="signup-email" type="email" placeholder="seu@email.com" autocomplete="email">
       <label for="signup-pass">Senha</label>
       <input id="signup-pass" type="password" placeholder="Min. 8 caracteres" autocomplete="new-password">
-      <button type="submit">🐠 Criar conta grátis</button>
+      <button type="submit">Criar conta grátis</button>
       <p class="form-foot">Já tem conta? <a href="#" onclick="switchTab('login')">Entre aqui</a></p>
     </fieldset>
   </form>
 </dialog>
+
+<script src="/js/script.js"></script>
+<script>lucide.createIcons();</script>
+</body>
+</html>

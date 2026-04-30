@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <link rel="stylesheet" href="/css/pagamento.css" />
+</head>
+<body>
+
+  <main>
+
+    <figure class="hero">
+      <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=800&q=80">
+      <figcaption class="hero-caption">
+        <h1>Maldivas — Paraíso Tropical</h1>
+        <section class="stars-row" aria-label="Avaliação do destino">
+          <output class="stars" aria-label="4.9 de 5 estrelas">
+            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
+          </output>
+          <small class="rating-text">4.9 · 312 avaliações</small>
+        </section>
+      </figcaption>
+    </figure>
+
+    <article class="content">
+
+      <section class="detail-card" aria-labelledby="details-title">
+        <h2 id="details-title">Detalhes do pacote</h2>
+        <dl class="info-grid">
+
+          <dt>Data de saída</dt>
+          <dd>15 de julho, 2025</dd>
+
+          <dt>Data de retorno</dt>
+          <dd>22 de julho, 2025</dd>
+
+          <dt>Horário de embarque</dt>
+          <dd>06h45 — GRU</dd>
+
+          <dt>Duração</dt>
+          <dd>7 noites / 8 dias</dd>
+
+          <dt>Viajantes</dt>
+          <dd>2 adultos</dd>
+        <hr/>
+
+        <section class="price-row" aria-label="Resumo de preço">
+          <hgroup>
+            <h3>Valor total</h3>
+            <p class="price-breakdown">por pessoa: R$ 500,00</p>
+          </hgroup>
+          <strong class="price-total">R$ 1000,00</strong>
+        </section>
+      </section>
+
+      <section class="form-card" aria-labelledby="contact-title">
+        <h2 id="contact-title">Dados do responsável</h2>
+
+        <form id="booking-form" novalidate>
+          <fieldset class="form-row">
+            <legend class="sr-only">Nome do responsável</legend>
+            <label>
+              Nome
+              <input type="text" name="nome" placeholder="Ex: Maria" required />
+            </label>
+            <label>
+              Sobrenome
+              <input type="text" name="sobrenome" placeholder="Ex: Oliveira" required />
+            </label>
+          </fieldset>
+
+          <label class="full">
+            E-mail
+            <input type="email" name="email" placeholder="seu@email.com" required />
+          </label>
+
+          <fieldset class="companions-fieldset">
+            <legend>Acompanhantes</legend>
+            <ol id="companions-list">
+              <li class="companion-item">
+                <input type="text" name="acompanhante[]" placeholder="Nome completo do acompanhante 1" />
+                <button type="button" class="remove-btn" aria-label="Remover acompanhante">×</button>
+              </li>
+            </ol>
+            <button type="button" class="add-btn" id="add-companion">
+              <span class="plus-icon" aria-hidden="true">+</span>
+              Adicionar acompanhante
+            </button>
+          </fieldset>
+        </form>
+      </section>
+
+      <a href="/mercado-pago">
+      <button type="button" class="proceed-btn" id="proceed-btn" aria-label="Prosseguir para o pagamento">
+        Prosseguir para pagamento
+      </button>
+      <p class="note"><small>Você será redirecionado para a etapa de pagamento seguro</small></p>
+      </a>
+
+    </article>
+
+  </main>
+
+  <script src="pagamento.js"></script>
+</body>
+</html>

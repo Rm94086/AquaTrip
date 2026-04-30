@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <script src="validacao.js" defer></script>
+    <title>Cadastro</title>
+</head>
+<body>
+    <section class="content">
+        <h1>Cadastro</h1>
+        <form id="form">
+            <section>
+                <input type="text" name="nome" placeholder="Digite seu nome" class="inputs required">
+                <span class="span-required">O nome deve ter no mínimo 3 caracteres</span>
+            </section>
+
+            <section>
+                <input type="email" name="email" placeholder="Digite seu email" class="inputs required">
+                <span class="span-required">Digite um e-mail válido</span>
+            </section>
+
+            <section>
+                <input type="password" name="senha" placeholder="Senha" class="inputs required">
+                <span class="span-required">A senha deve ter no mínimo 8 caracteres</span>
+            </section>
+
+            <section>
+                <input type="password" name="confirma-senha" placeholder="Confirme a senha" class="inputs required">
+                <span class="span-required">As senhas não coincidem</span>
+            </section>
+
+            <button type="submit">Cadastrar</button><br>
+            <a href="login.ejs">Faça Login</a>
+        </form>
+    </section>
+</body>
+</html>
