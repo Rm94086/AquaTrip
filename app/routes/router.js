@@ -41,4 +41,12 @@ router.get('/aquarios', function(req,res ){
     res.render('pages/aquarios');
 });
 
+router.get('/avaliacao', function(req,res ){
+    res.render('pages/avaliacao');
+});
+
+router.get('/header', function(req,res ){
+    res.render('partials/header');
+});
+
 module.exports = router;

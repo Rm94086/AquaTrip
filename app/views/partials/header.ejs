@@ -1,0 +1,33 @@
+<!-- EFEITO DE BOLHAS -->
+<section id="bubbles" aria-hidden="true"></section>
+
+<!--  NAV PRINCIPAL  -->
+<nav aria-label="Navegação principal">
+  <a href="/" aria-label="AquaTrip — Início">
+    <img class="logo" src="/img/cenotes1.png"/>
+  </a>
+  <ul role="list">
+    <li><a href="/login"><button class="btn-login">Entrar</button></a></li>
+    <li><a href="/cadastro"><button class="btn-signup">Cadastrar</button></a></li>
+    <li>
+      <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer" onclick="toggleDrawer()">
+        <hr aria-hidden="true"><hr aria-hidden="true"><hr aria-hidden="true">
+      </button>
+    </li>
+  </ul>
+</nav>
+
+<!--  DRAWER  -->
+<aside id="drawer" aria-label="Menu lateral" aria-hidden="true">
+  <nav>
+    <a href="/"><i data-lucide="house"></i> Início</a>
+    <a href="#"><i data-lucide="ticket"></i> Meus Ingressos</a>
+    <a href="#"><i data-lucide="ship"></i> Viagens Feitas</a>
+    <a href="/contato"><i data-lucide="briefcase"></i> Faça negócio conosco</a>
+  </nav>
+  <hr>
+  <nav>
+    <a href="/perfil"><i data-lucide="user"></i> Meu Perfil</a>
+    <a href="#"><i data-lucide="settings"></i> Configurações</a>
+  </nav>
+</aside>

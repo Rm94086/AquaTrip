@@ -1,87 +1,240 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8"/>
-<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>Editar Perfil</title>
-<link rel="stylesheet" href="/css/perfil.css"/>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+  <title>Editar Perfil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/perfil.css"/>
 </head>
 <body>
+  <%- include('../partials/header') %>
 
-<div class="card">
-  <div class="cover">
-    <div class="avatar-wrapper">
-      <div class="avatar-ring" onclick="document.getElementById('fileInput').click()" title="Trocar foto">
-        <div class="avatar-placeholder" id="avatarPlaceholder"><span id="avatarInitial">?</span></div>
-        <img id="avatarImg" alt="Foto de perfil"/>
-        <div class="avatar-overlay">
-          <svg viewBox="0 0 24 24"><path d="M15.5 2H8.5L6 6H3a2 2 0 00-2 2v11a2 2 0 002 2h18a2 2 0 002-2V8a2 2 0 00-2-2h-3L15.5 2z"/><circle cx="12" cy="13" r="3.5"/></svg>
-        </div>
-      </div>
-      <input type="file" id="fileInput" accept="image/jpeg,image/png,image/webp,image/gif" aria-label="Upload foto de perfil"/>
-    </div>
-  </div>
+<a href="/" class="back-button">
 
-  <div class="body">
-    <div class="preview-header">
-      <div class="preview-name" id="previewName">Seu Nome</div>
-      <div class="preview-username" id="previewUsername">@username</div>
-    </div>
+← Voltar para Home
 
-    <div class="divider"></div>
+</a>
 
-    <div class="server-error" id="serverError" role="alert"></div>
+<main class="card">
 
-    <!-- Foto -->
-    <p class="section-title">Foto de perfil</p>
-    <div class="field" style="margin-bottom:24px">
-      <div class="file-info" id="fileInfo">JPG, PNG, WebP ou GIF — máx. 5 MB</div>
-      <div class="file-error" id="fileError" role="alert"></div>
-    </div>
+<header class="cover">
 
-    <!-- Dados pessoais -->
-    <p class="section-title">Informações pessoais</p>
+<section class="avatar-wrapper">
 
-    <div class="grid-2">
-      <div class="field" id="field_firstName">
-        <label for="firstName">Nome <span aria-hidden="true" style="color:#E24B4A">*</span></label>
-        <input type="text" id="firstName" name="firstName" placeholder="ex: Ana" autocomplete="given-name" maxlength="30" aria-required="true" aria-describedby="err_firstName"/>
-        <div class="field-error" id="err_firstName" role="alert"></div>
-      </div>
-      <div class="field" id="field_lastName">
-        <label for="lastName">Sobrenome <span aria-hidden="true" style="color:#E24B4A">*</span></label>
-        <input type="text" id="lastName" name="lastName" placeholder="ex: Souza" autocomplete="family-name" maxlength="30" aria-required="true" aria-describedby="err_lastName"/>
-        <div class="field-error" id="err_lastName" role="alert"></div>
-      </div>
-    </div>
+<figure class="avatar-ring"
+onclick="document.getElementById('fileInput').click()"
+title="Trocar foto">
 
-    <div class="field" id="field_username">
-      <label for="username">Nome de usuário <span aria-hidden="true" style="color:#E24B4A">*</span></label>
-      <div class="username-wrap">
-        <span class="username-prefix" aria-hidden="true">@</span>
-        <input type="text" id="username" name="username" placeholder="seuuser" autocomplete="username" maxlength="20" aria-required="true" aria-describedby="err_username" spellcheck="false"/>
-      </div>
-      <div class="field-error" id="err_username" role="alert"></div>
-    </div>
+<section class="avatar-placeholder" id="avatarPlaceholder">
+<span id="avatarInitial">?</span>
+</section>
 
-    <div class="field" id="field_bio">
-      <label for="bio">Bio</label>
-      <textarea id="bio" name="bio" rows="3" placeholder="Fale um pouco sobre você..." maxlength="160" aria-describedby="err_bio charCount"></textarea>
-      <div class="char-count"><span id="charCount">0</span>/160</div>
-      <div class="field-error" id="err_bio" role="alert"></div>
-    </div>
+<img id="avatarImg" alt="Foto de perfil"/>
 
-    <div class="actions">
-      <button class="btn-cancel" type="button" onclick="resetForm()">Descartar</button>
-      <button class="btn-save" id="btnSave" type="button" onclick="saveProfile()">
-        <span class="spinner" aria-hidden="true"></span>Salvar perfil
-      </button>
-    </div>
-  </div>
-</div>
+<section class="avatar-overlay">
+<svg viewBox="0 0 24 24">
+<path d="M15.5 2H8.5L6 6H3a2 2 0 00-2 2v11a2 2 0 002 2h18a2 2 0 002-2V8a2 2 0 00-2-2h-3L15.5 2z"/>
+<circle cx="12" cy="13" r="3.5"/>
+</svg>
+</section>
 
-<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</figure>
+
+<input
+type="file"
+id="fileInput"
+accept="image/jpeg,image/png,image/webp,image/gif"
+aria-label="Upload foto de perfil"
+/>
+
+</section>
+
+</header>
+
+
+<section class="body">
+
+<header class="preview-header">
+<h1 class="preview-name" id="previewName">Seu Nome</h1>
+<p class="preview-username" id="previewUsername">@username</p>
+</header>
+
+<hr class="divider">
+
+<section
+class="server-error"
+id="serverError"
+role="alert">
+</section>
+
+<section>
+
+<h2 class="section-title">
+Foto de perfil
+</h2>
+
+<article class="field" style="margin-bottom:24px">
+<p class="file-info" id="fileInfo">
+JPG, PNG, WebP ou GIF — máx. 5 MB
+</p>
+
+<p class="file-error"
+id="fileError"
+role="alert"></p>
+</article>
+
+</section>
+
+
+<section>
+
+<h2 class="section-title">
+Informações pessoais
+</h2>
+
+<section class="grid-2">
+
+<article class="field" id="field_firstName">
+<label for="firstName">
+Nome
+<span aria-hidden="true" style="color:#E24B4A">*</span>
+</label>
+
+<input
+type="text"
+id="firstName"
+name="firstName"
+placeholder="ex: Ana"
+maxlength="30"
+aria-describedby="err_firstName"
+/>
+
+<p class="field-error"
+id="err_firstName"
+role="alert"></p>
+
+</article>
+
+<article class="field" id="field_lastName">
+
+<label for="lastName">
+Sobrenome
+<span aria-hidden="true" style="color:#E24B4A">*</span>
+</label>
+
+<input
+type="text"
+id="lastName"
+name="lastName"
+placeholder="ex: Souza"
+maxlength="30"
+aria-describedby="err_lastName"
+/>
+
+<p class="field-error"
+id="err_lastName"
+role="alert"></p>
+
+</article>
+
+</section>
+
+
+<article class="field" id="field_username">
+
+<label for="username">
+Nome de usuário
+</label>
+
+<section class="username-wrap">
+
+<span class="username-prefix">
+@
+</span>
+
+<input
+type="text"
+id="username"
+name="username"
+placeholder="seuuser"
+maxlength="20"
+aria-describedby="err_username"
+/>
+
+</section>
+
+<p
+class="field-error"
+id="err_username"
+role="alert"></p>
+
+</article>
+
+
+<article class="field" id="field_bio">
+
+<label for="bio">
+Bio
+</label>
+
+<textarea
+id="bio"
+rows="3"
+maxlength="160"
+placeholder="Fale um pouco sobre você..."
+></textarea>
+
+<p class="char-count">
+<span id="charCount">0</span>/160
+</p>
+
+<p
+class="field-error"
+id="err_bio"
+role="alert">
+</p>
+
+</article>
+
+</section>
+
+
+<footer class="actions">
+
+<button
+class="btn-cancel"
+type="button"
+onclick="resetForm()">
+Descartar
+</button>
+
+<button
+class="btn-save"
+id="btnSave"
+type="button"
+onclick="saveProfile()">
+
+<span class="spinner"></span>
+
+Salvar perfil
+
+</button>
+
+</footer>
+
+</section>
+
+</main>
+
+<section
+class="toast"
+id="toast"
+role="status"
+aria-live="polite">
+</section>
 
 <script src="/js/perfil.js"></script>
+
 </body>
 </html>

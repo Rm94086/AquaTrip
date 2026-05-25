@@ -1,72 +1,43 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <link rel="stylesheet" href="/css/pagamento.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/mercado-pago.css">
+  <title>AquaTrip - Mercado Pago </title>
 </head>
+
+<%- include('../partials/header') %>
+
 <body>
 
-  <main>
+<a href="/" class="back-button">
+← Voltar para Home
+</a>
 
-    <figure class="hero">
-      <figcaption class="hero-caption">
-        <h1>Maldivas — Paraíso Tropical</h1>
-        <section class="stars-row" aria-label="Avaliação do destino">
-          <output class="stars" aria-label="4.9 de 5 estrelas">
-            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
-            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
-            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
-            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
-            <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
-          </output>
-          <small class="rating-text">4.9 · 312 avaliações</small>
-        </section>
-      </figcaption>
-    </figure>
+<main class="payment-page">
 
-    <article class="content">
+<section class="payment-card">
 
-      <section class="detail-card" aria-labelledby="details-title">
-        <h2 id="details-title">Detalhes do pacote</h2>
-        <dl class="info-grid">
+<h1>Pagar com Mercado Pago</h1>
 
-          <dt>Data de saída</dt>
-          <dd>15 de julho, 2025</dd>
+<a href="/Qr-code">
 
-          <dt>Data de retorno</dt>
-          <dd>22 de julho, 2025</dd>
+<button class="proceed-btn">
 
-          <dt>Horário de embarque</dt>
-          <dd>06h45 — GRU</dd>
+GERAR QR CODE
 
-          <dt>Duração</dt>
-          <dd>7 noites / 8 dias</dd>
+</button>
 
-          <dt>Viajantes</dt>
-          <dd>2 adultos</dd>
-        <hr/>
+</a>
 
-        <section class="price-row" aria-label="Resumo de preço">
-          <hgroup>
-            <h3>Valor total</h3>
-            <p class="price-breakdown">por pessoa: R$ 500,00</p>
-          </hgroup>
-          <strong class="price-total">R$ 1000,00</strong>
-        </section>
-      </section>
-      <h1>Pagar com mercado pago:</h1>
-      <br><br><br>
- 
-    <a href="/Qr-code"> 
-      <button type="button" class="proceed-btn" id="proceed-btn" aria-label="Gera qr code">
-        GERAR QR CODE
-      </button>
-      <p class="note"><small>Você será redirecionado para a etapa de pagamento seguro</small></p>
-    </a>
+<p>
+Você será redirecionado para pagamento seguro
+</p>
 
-    </article>
+</section>
 
-  </main>
+</main>
 
-  <script src="/js/pagamento.js"></script>
 </body>
 </html>

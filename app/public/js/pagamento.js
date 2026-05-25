@@ -101,3 +101,10 @@
   form.addEventListener('input', clearErrorOnInput);
   initRemoveButtons();
 })();
+
+function toggleDrawer(){
+ document
+   .getElementById("drawer")
+   .classList
+   .toggle("open");
+}

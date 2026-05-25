@@ -170,34 +170,6 @@
     }
   }, { passive: true });
 
-  // ── Hamburguer Menu ────────────────────────────
-  const hamburgerBtn  = document.getElementById("hamburger-btn");
-  const hamburgerMenu = document.getElementById("hamburger-menu");
-
-  if (hamburgerBtn && hamburgerMenu) {
-    hamburgerBtn.addEventListener("click", () => {
-      const isOpen = hamburgerBtn.getAttribute("aria-expanded") === "true";
-      hamburgerBtn.setAttribute("aria-expanded", String(!isOpen));
-      hamburgerMenu.hidden = isOpen;
-    });
-
-    // Fecha ao clicar fora
-    document.addEventListener("click", (e) => {
-      if (!hamburgerBtn.contains(e.target) && !hamburgerMenu.contains(e.target)) {
-        hamburgerBtn.setAttribute("aria-expanded", "false");
-        hamburgerMenu.hidden = true;
-      }
-    });
-
-    // Fecha ao pressionar Escape
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        hamburgerBtn.setAttribute("aria-expanded", "false");
-        hamburgerMenu.hidden = true;
-      }
-    });
-  }
-
   // ── Init ───────────────────────────────────────
   renderPage();
 
