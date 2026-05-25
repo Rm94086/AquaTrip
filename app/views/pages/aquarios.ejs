@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaWorld — Catálogo de Viagens</title>
+  <link rel="stylesheet" href="/css/aquarios.css" />
+</head>
+<body>
+
+  <header class="site-header">
+    <section class="header-actions" aria-label="Ações do usuário">
+      <a href="/login"><button class="btn-entrar" type="button">Entrar</button></a>
+      <a href="/cadastro"><button class="btn-login" type="button">Login</button></a>
+    </section>
+    <button class="btn-hamburger" id="hamburger-btn" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="hamburger-menu">
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+      <span class="hamburger-bar"></span>
+    </button>
+    <nav class="hamburger-menu" id="hamburger-menu" aria-label="Menu de navegação" hidden>
+      <a href="#"> Destinos</a>
+      <a href="#"> Pacotes</a>
+      <a href="#"> Sobre</a>
+      <a href="#"> Contato</a>
+    </nav>
+  </header>
+
+  <main class="main-layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" aria-label="Filtros de destinos">
+      <section class="sidebar-section">
+        <h2 class="sidebar-title">Destinos</h2>
+        <nav class="filter-nav" aria-label="Filtros por continente">
+          <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
+          <button class="filter-btn" data-filter="asia" type="button">Ásia</button>
+          <button class="filter-btn" data-filter="europa" type="button">Europa</button>
+          <button class="filter-btn" data-filter="americas" type="button">Américas</button>
+          <button class="filter-btn" data-filter="oceania" type="button">Oceania</button>
+        </nav>
+      </section>
+
+      <section class="sidebar-section">
+        <h3 class="sidebar-subtitle">Avaliação mínima</h3>
+        <fieldset class="star-filter">
+          <legend class="sr-only">Filtrar por estrelas</legend>
+          <label><input type="radio" name="stars" value="0" checked /> Todas</label>
+          <label><input type="radio" name="stars" value="4" /> ★★★★+</label>
+          <label><input type="radio" name="stars" value="4.5" /> ★★★★½+</label>
+        </fieldset>
+      </section>
+
+      <section class="sidebar-section">
+        <h3 class="sidebar-subtitle">Preço máximo</h3>
+        <label for="price-range" class="sr-only">Preço máximo por pessoa</label>
+        <input type="range" id="price-range" class="price-slider" min="1000" max="10000" step="500" value="10000" />
+        <output class="price-output" for="price-range">R$ 10.000+</output>
+      </section>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="content-area" aria-label="Catálogo de destinos">
+
+      <!-- CARD DESTACADO -->
+      <article class="card-featured" data-region="asia" data-stars="5" data-price="8500" aria-label="Destino em destaque">
+        <figure class="card-featured-image">
+          <img src="/img/georgia_aquarium.jpg" alt="Georgia Aquarium, Atlanta" loading="lazy" />
+          <figcaption class="featured-badge">✦ Destaque da Semana</figcaption>
+        </figure>
+        <section class="card-featured-body">
+          <header class="card-featured-header">
+            <span class="card-region-tag">Américas</span>
+            <h2 class="card-featured-title">Georgia Aquarium</h2>
+            <p class="card-featured-location"> Atlanta, Estados Unidos</p>
+          </header>
+          <p class="card-featured-desc">
+            O maior aquário do mundo ocidental, abrigando mais de 100.000 animais marinhos em 38 milhões de litros d'água. 
+            Lar de tubarões-baleia — os únicos fora da Ásia — e belugas. Uma imersão épica no oceano profundo.
+          </p>
+          <footer class="card-featured-footer">
+            <section class="card-meta">
+              <meter class="star-meter" min="0" max="5" value="4.9" title="Avaliação: 4.9 de 5"></meter>
+              <output class="star-display" aria-label="Avaliação 4.9 de 5">★★★★★</output>
+              <span class="reviews-count">(2.847 avaliações)</span>
+            </section>
+            <section class="card-price-block">
+              <span class="price-label">A partir de</span>
+              <strong class="price-value">R$ 700</strong>
+              <span class="price-note">/ pessoa · 7 dias</span>
+            </section>
+            <a class="sasas" href="/produto"><button class="btn-ver-pacote" type="button">Ver pacote completo →</button></a>
+          </footer>
+        </section>
+      </article>
+
+      <!-- GRID DE CARDS -->
+      <section class="cards-section" aria-label="Todos os destinos">
+        <header class="cards-header">
+          <h2 class="cards-section-title">Explore o Mundo Subaquático</h2>
+          <nav class="carousel-nav" aria-label="Navegação dos cards">
+            <button class="arrow-btn" id="prev-btn" type="button" aria-label="Anteriores">&#8592;</button>
+            <span class="page-indicator" id="page-indicator" aria-live="polite">1 / 3</span>
+            <button class="arrow-btn" id="next-btn" type="button" aria-label="Próximos">&#8594;</button>
+          </nav>
+        </header>
+
+        <ol class="cards-grid" id="cards-grid" role="list">
+
+          <li class="card-item" data-region="asia" data-stars="4.8" data-price="9200">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&q=80" alt="Okinawa Churaumi Aquarium" loading="lazy" />
+                <figcaption class="card-region-tag">Ásia</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Churaumi Aquarium</h3>
+                  <p class="card-location">Okinawa, Japão</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.8">
+                    <output class="star-display sm">★★★★★</output>
+                    <span class="star-num">4.8</span>
+                  </section>
+                  <strong class="card-price">R$ 850</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="europa" data-stars="4.7" data-price="6800">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1510166089176-3780b30f4da6?w=500&q=80" alt="Aquarium de Barcelona" loading="lazy" />
+                <figcaption class="card-region-tag">Europa</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Aquarium de Barcelona</h3>
+                  <p class="card-location">Barcelona, Espanha</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.7">
+                    <output class="star-display sm">★★★★½</output>
+                    <span class="star-num">4.7</span>
+                  </section>
+                  <strong class="card-price">R$ 800</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="oceania" data-stars="4.9" data-price="11000">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=500&q=80" alt="Sydney Sea Life Aquarium" loading="lazy" />
+                <figcaption class="card-region-tag">Oceania</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">SEA LIFE Sydney</h3>
+                  <p class="card-location">Sydney, Austrália</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.9">
+                    <output class="star-display sm">★★★★★</output>
+                    <span class="star-num">4.9</span>
+                  </section>
+                  <strong class="card-price">R$ 1.000</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="americas" data-stars="4.6" data-price="4500">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1520637836862-4d197d17c93a?w=500&q=80" alt="Monterey Bay Aquarium" loading="lazy" />
+                <figcaption class="card-region-tag">Américas</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Monterey Bay Aquarium</h3>
+                  <p class="card-location">Califórnia, EUA</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.6">
+                    <output class="star-display sm">★★★★½</output>
+                    <span class="star-num">4.6</span>
+                  </section>
+                  <strong class="card-price">R$ 1.500</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="asia" data-stars="4.7" data-price="7300">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=500&q=80" alt="S.E.A. Aquarium Singapore" loading="lazy" />
+                <figcaption class="card-region-tag">Ásia</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">S.E.A. Aquarium</h3>
+                  <p class="card-location">Sentosa, Singapura</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.7">
+                    <output class="star-display sm">★★★★½</output>
+                    <span class="star-num">4.7</span>
+                  </section>
+                  <strong class="card-price">R$ 850</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="europa" data-stars="4.5" data-price="5900">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1597848212624-a19eb35e2651?w=500&q=80" alt="Oceanarium de Lisboa" loading="lazy" />
+                <figcaption class="card-region-tag">Europa</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Oceanário de Lisboa</h3>
+                  <p class="card-location">Lisboa, Portugal</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.5">
+                    <output class="star-display sm">★★★★½</output>
+                    <span class="star-num">4.5</span>
+                  </section>
+                  <strong class="card-price">R$ 900</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="asia" data-stars="4.8" data-price="8100">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1611689342806-0863700ce1e4?w=500&q=80" alt="Dubai Aquarium" loading="lazy" />
+                <figcaption class="card-region-tag">Ásia</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Dubai Aquarium</h3>
+                  <p class="card-location">Dubai, Emirados Árabes</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.8">
+                    <output class="star-display sm">★★★★★</output>
+                    <span class="star-num">4.8</span>
+                  </section>
+                  <strong class="card-price">R$ 700</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="americas" data-stars="4.4" data-price="3200">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=500&q=80" alt="Aquário de Santos" loading="lazy" />
+                <figcaption class="card-region-tag">Américas</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Aquário de Santos</h3>
+                  <p class="card-location">Santos, Brasil</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.4">
+                    <output class="star-display sm">★★★★</output>
+                    <span class="star-num">4.4</span>
+                  </section>
+                  <strong class="card-price">R$ 680</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="europa" data-stars="4.6" data-price="6100">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?w=500&q=80" alt="Cité de la Mer Cherbourg" loading="lazy" />
+                <figcaption class="card-region-tag">Europa</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Cité de la Mer</h3>
+                  <p class="card-location">Cherbourg, França</p>
+                </header>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.6">
+                    <output class="star-display sm">★★★★½</output>
+                    <span class="star-num">4.6</span>
+                  </section>
+                  <strong class="card-price">R$ 890</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+        </ol>
+
+        <p class="no-results" id="no-results" hidden aria-live="polite">Nenhum destino encontrado com esses filtros.</p>
+      </section>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 AquaTrip · Todos os direitos reservados · <a href="#">Política de privacidade</a></p>
+  </footer>
+
+  <script src="/js/aquarios.js"></script>
+</body>
+</html>

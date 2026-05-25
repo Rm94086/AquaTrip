@@ -29,4 +29,16 @@ router.get('/dados_pagamento', function(req,res ){
     res.render('pages/dados_pagamento');
 });
 
+router.get('/perfil', function(req,res ){
+    res.render('pages/perfil');
+});
+
+router.get('/produto', function(req,res ){
+    res.render('pages/produto');
+});
+
+router.get('/aquarios', function(req,res ){
+    res.render('pages/aquarios');
+});
+
 module.exports = router;
