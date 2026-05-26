@@ -49,4 +49,9 @@ router.get('/header', function(req,res ){
     res.render('partials/header');
 });
 
+router.get('/admin', function(req,res ){
+    res.render('pages/admin');
+});
+
+
 module.exports = router;

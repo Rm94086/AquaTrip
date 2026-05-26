@@ -194,6 +194,11 @@ button[type="submit"]:hover{
   transform: translateY(-2px);
 }
 
+.textocadastre-se {
+  position: relative;
+ top: -12px;
+}
+
 /* LINK */
 a{
   text-align: center;
