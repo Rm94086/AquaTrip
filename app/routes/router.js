@@ -21,10 +21,6 @@ router.get('/mercado-pago', function(req,res ){
     res.render('pages/mercado-pago');
 });
 
-router.get('/Qr-code', function(req,res ){
-    res.render('pages/Qr-code');
-});
-
 router.get('/dados_pagamento', function(req,res ){
     res.render('pages/dados_pagamento');
 });
@@ -53,5 +49,8 @@ router.get('/admin', function(req,res ){
     res.render('pages/admin');
 });
 
+router.get('/expedicoes', function(req,res ){
+    res.render('pages/expedicoes');
+});
 
 module.exports = router;
