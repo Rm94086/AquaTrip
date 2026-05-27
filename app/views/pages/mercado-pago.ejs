@@ -1,21 +1,18 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="/css/mercado-pago.css">
-  <title>AquaTrip - Mercado Pago </title>
+  <script src="../js/mercado-pago.js"></script>
+  <title>AquaTrip - Mercado Pago</title>
 </head>
+<body>
 
 <%- include('../partials/header') %>
 
-<body>
-
-<a href="/" class="back-button">
-← Voltar para Home
-</a>
-
-<main class="payment-page">
+<main>
+  <a href="/dados_pagamento" class="breadcrumb-link">← Voltar</a>
+<section class="payment-page">
 
 <section class="payment-card">
 
@@ -36,7 +33,7 @@ Você será redirecionado para pagamento seguro
 </p>
 
 </section>
-
+</section>
 </main>
 
 </body>

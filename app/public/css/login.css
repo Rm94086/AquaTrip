@@ -5,6 +5,11 @@
   --aqua:   #06b6d4;
   --foam:   #cffafe;
   --white:  #ffffff;
+  --glass:        rgba(255,255,255,0.07);
+  --glass-border: rgba(255,255,255,0.12);
+  --muted:         #6b92b3;
+--radius-xs:     6px;
+--transition:    0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* RESET */
@@ -17,7 +22,7 @@
 /* 
    NAV PRINCIPAL
                  */
-body > nav {
+header > nav {
   position: fixed; top: 0; left: 0; right: 0; z-index: 100;
   display: flex; align-items: center; justify-content: space-between;
   padding: 0 2rem; height: 64px;
@@ -26,25 +31,13 @@ body > nav {
 }
 
 .logo {
-  position: absolute;
-  top: 0px;   /* ajusta conforme quiser */
-  left: 10px; /* ajusta conforme quiser */
-  margin-right: auto;
   height: 63px; /* opcional */
   width: 125px;
 }
 
-body > nav ul {
+header > nav ul {
   display: flex; align-items: center; gap: 1rem; list-style: none;
 }
-
-.btn-login {
-  padding: 0.45rem 1.2rem; border-radius: 999px;
-  border: 1px solid var(--glass-border); background: var(--glass);
-  color: var(--white); font-family: 'DM Sans', sans-serif;
-  font-size: 0.88rem; font-weight: 500; cursor: pointer; transition: all 0.2s;
-}
-.btn-login:hover { background: rgba(255,255,255,0.14); border-color: var(--aqua); }
 
 .btn-signup {
   padding: 0.45rem 1.2rem; border-radius: 999px;
@@ -53,6 +46,9 @@ body > nav ul {
   font-size: 0.88rem; font-weight: 600; cursor: pointer; border: none;
   transition: all 0.2s; box-shadow: 0 2px 16px rgba(6,182,212,0.35);
 }
+
+
+
 .btn-signup:hover { transform: translateY(-1px); box-shadow: 0 4px 24px rgba(6,182,212,0.55); }
 
 
@@ -99,7 +95,36 @@ aside#drawer a abbr { font-size: 1.2rem; width: 24px; text-align: center; text-d
 aside#drawer a i { width: 18px; height: 18px; flex-shrink: 0; }
 aside#drawer hr { border: none; border-top: 1px solid var(--glass-border); margin: 0.4rem 0; }
 
+.breadcrumb { margin-right: auto; }
 
+.breadcrumb-link {
+  display: inline-flex;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--muted);
+  padding: 0.25rem 0.5rem;
+  border-radius: var(--radius-xs);
+  transition: all var(--transition);
+  align-self: flex-start;
+  right: 955px;
+  width: 110px;
+  height: 35px;
+  top: 100px;
+  position: relative;
+}
+
+.breadcrumb-link:hover {
+  color: var(--foam);
+  background: rgba(0,198,255,0.08);
+
+}
+
+a {
+  color: var(--foam);
+  text-decoration: none;
+  transition: color var(--transition);
+}
 
 /* FUNDO IGUAL À HOME */
 body{
@@ -116,6 +141,7 @@ body{
 
 /* CARD (FORMULÁRIO) */
 .content{
+   position: fixed;
   background: rgba(2,13,26,0.85);
   backdrop-filter: blur(20px);
 
