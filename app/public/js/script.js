@@ -2,14 +2,6 @@
    AQUATRIP — script.js
    ══════════════════════════════════════ */
 
-/* ── BOLHAS ── */
-const bubbleContainer = document.getElementById('bubbles');
-for (let i = 0; i < 18; i++) {
-  const b = document.createElement('b');
-  const size = Math.random() * 60 + 20;
-  b.style.cssText = `width:${size}px;height:${size}px;left:${Math.random()*100}%;animation-duration:${Math.random()*20+15}s;animation-delay:${Math.random()*20}s`;
-  bubbleContainer.appendChild(b);
-}
 
 /* ══════════════════════════════════════
    CARROSSEL — DESTINOS
@@ -27,7 +19,7 @@ function buildDots() {
     const btn = document.createElement('button');
     btn.setAttribute('aria-label', `Slide ${i + 1}`);
     if (i === 0) btn.classList.add('active');
-    btn.onclick = () => { grid.scrollLeft = i * visible() * CARD_W; syncDots(); };
+    btn.onclick = () => { grid.scrollTo({ left: i * visible() * CARD_W, behavior: 'smooth' }); syncDots(); };
     dotsEl.appendChild(btn);
   }
 }
@@ -40,7 +32,7 @@ function syncDots() {
 }
 
 function scrollCards(dir) {
-  grid.scrollLeft += dir * visible() * CARD_W;
+  grid.scrollTo({ left: grid.scrollLeft + dir * visible() * CARD_W, behavior: 'smooth' });
   setTimeout(syncDots, 320);
 }
 
@@ -55,49 +47,6 @@ grid.addEventListener('mousedown', e => { down = true; sx = e.pageX; ss = grid.s
 document.addEventListener('mouseup',   () => { down = false; grid.classList.remove('dragging'); setTimeout(syncDots, 50); });
 document.addEventListener('mousemove', e => { if (!down) return; e.preventDefault(); grid.scrollLeft = ss - (e.pageX - sx); });
 
-/* ══════════════════════════════════════
-   CARROSSEL — EXPEDIÇÕES
-   ══════════════════════════════════════ */
-const expGrid   = document.getElementById('expGrid');
-const expDotsEl = document.getElementById('expDots');
-const EXP_W     = () => { const li = expGrid.querySelector('li'); return li ? li.offsetWidth + 24 : 384; };
-const expTotal  = expGrid.children.length;
-const expVisible = () => Math.floor(expGrid.clientWidth / EXP_W()) || 1;
-const expNumDots = () => Math.ceil(expTotal / expVisible());
-
-function buildExpDots() {
-  expDotsEl.innerHTML = '';
-  for (let i = 0; i < expNumDots(); i++) {
-    const btn = document.createElement('button');
-    btn.setAttribute('aria-label', `Slide ${i + 1}`);
-    if (i === 0) btn.classList.add('active');
-    btn.onclick = () => { expGrid.scrollLeft = i * expVisible() * EXP_W(); syncExpDots(); };
-    expDotsEl.appendChild(btn);
-  }
-}
-
-function syncExpDots() {
-  const idx = Math.round(expGrid.scrollLeft / EXP_W());
-  [...expDotsEl.children].forEach((d, i) => d.classList.toggle('active', i === idx));
-  document.getElementById('expArrowLeft').disabled  = expGrid.scrollLeft <= 0;
-  document.getElementById('expArrowRight').disabled = expGrid.scrollLeft >= expGrid.scrollWidth - expGrid.clientWidth - 4;
-}
-
-function scrollExp(dir) {
-  expGrid.scrollLeft += dir * EXP_W();
-  setTimeout(syncExpDots, 320);
-}
-
-expGrid.addEventListener('scroll', syncExpDots);
-window.addEventListener('resize', () => { buildExpDots(); syncExpDots(); });
-buildExpDots();
-syncExpDots();
-
-/* drag-to-scroll — expedições */
-let expDown = false, expSx, expSs;
-expGrid.addEventListener('mousedown', e => { expDown = true; expSx = e.pageX; expSs = expGrid.scrollLeft; expGrid.classList.add('dragging'); });
-document.addEventListener('mouseup',   () => { expDown = false; expGrid.classList.remove('dragging'); setTimeout(syncExpDots, 50); });
-document.addEventListener('mousemove', e => { if (!expDown) return; e.preventDefault(); expGrid.scrollLeft = expSs - (e.pageX - expSx); });
 
 /* ══════════════════════════════════════
    DRAWER

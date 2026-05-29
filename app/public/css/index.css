@@ -25,7 +25,11 @@ body > nav {
 }
 
 .logo {
-  height: 63px; /* opcional */
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  margin-right: auto;
+  height: 63px;
   width: 125px;
 }
 
@@ -99,9 +103,9 @@ aside#drawer hr { border: none; border-top: 1px solid var(--glass-border); margi
    HERO
         */
 header#hero {
-  position: relative; min-height: 100vh;
+  position: relative; min-height: auto;
   display: flex; flex-direction: column; align-items: center; justify-content: center;
-  text-align: center; padding: 6rem 1.5rem 4rem; overflow: hidden;
+  text-align: center; padding: 8rem 1.5rem 6rem; overflow: hidden;
   background:
     radial-gradient(ellipse 80% 60% at 50% 80%, rgba(4,59,92,0.7) 0%, transparent 70%),
     radial-gradient(ellipse 50% 40% at 80% 20%, rgba(6,182,212,0.12) 0%, transparent 60%),
@@ -173,10 +177,79 @@ search input::placeholder { color: rgba(255,255,255,0.4); }
 .search-tags li:hover { background: rgba(6,182,212,0.15); border-color: var(--aqua); color: var(--white); }
 
 
+/*
+   DISCOVER BUTTONS
+                    */
+.discover-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.4rem;
+  margin: 3rem auto 0;
+  width: 100%;
+  animation: fadeUp 0.6s 0.4s ease both;
+}
+
+.discover-label {
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--aqua);
+}
+
+.discover-btns {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.discover-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 2rem 3.5rem;
+  border-radius: 20px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.13);
+  color: rgba(255,255,255,0.85);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.22s ease;
+  backdrop-filter: blur(12px);
+  min-width: 180px;
+}
+
+.discover-btn:hover {
+  background: rgba(6,182,212,0.12);
+  border-color: rgba(6,182,212,0.45);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(6,182,212,0.18);
+}
+
+.discover-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.discover-icon i {
+  width: 38px;
+  height: 38px;
+  color: var(--aqua);
+}
+
+
 /* 
    MAIN / SECTIONS
                    */
-main { position: relative; z-index: 1; }
+main { position: relative; z-index: 1; padding-bottom: 3rem; }
 main > section { padding: 5rem 1.5rem; }
 
 .container { max-width: 1200px; margin: 0 auto; }
@@ -326,34 +399,6 @@ section.eco { background: linear-gradient(135deg, rgba(4,59,92,0.4) 0%, rgba(2,1
   justify-content: center;  
 }
 
-/* 
-   EXPEDIÇÕES
-              */
-ol.exp-track {
-  display: flex; gap: 1.5rem; overflow-x: auto; scroll-behavior: smooth;
-  padding-bottom: 1rem; padding-left: 2px; scrollbar-width: none; cursor: grab; list-style: none;
-}
-ol.exp-track::-webkit-scrollbar { display: none; }
-ol.exp-track.dragging { cursor: grabbing; scroll-behavior: auto; }
-ol.exp-track > li { flex: 0 0 360px; min-width: 0; display: flex; }
-
-article.exp-row {
-  display: flex; gap: 1.5rem; align-items: flex-start;
-  background: var(--glass); border: 1px solid var(--glass-border);
-  border-radius: 18px; padding: 1.2rem 1.5rem; transition: all 0.3s; cursor: pointer;
-  width: 100%; overflow: visible;
-}
-article.exp-row:hover { border-color: rgba(6,182,212,0.35); background: rgba(6,182,212,0.06); transform: translateY(-4px); }
-
-.exp-num {
-  font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900;
-  color: rgba(6,182,212,0.2); min-width: 48px; line-height: 1;
-}
-.exp-info { flex: 1; }
-.exp-info h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.25rem; }
-.exp-meta { font-size: 0.82rem; color: rgba(255,255,255,0.5); display: flex; gap: 1rem; flex-wrap: wrap; list-style: none; }
-.exp-price { font-size: 1.1rem; font-weight: 700; color: var(--aqua); white-space: nowrap; }
-
 
 /* 
    CTA
@@ -396,10 +441,16 @@ section.cta { padding: 2rem 1.5rem 5rem; }
 /* 
    FOOTER
           */
+.footer-wrapper {
+  display: block;
+  padding-top: 3rem;
+}
+
 footer {
-  padding: 3rem 1.5rem 0; border-top: 1px solid var(--glass-border);
+  padding: 4rem 1.5rem 3rem;
+  box-shadow: 0 -1px 0 var(--glass-border);
   display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 2rem;
-  max-width: 1200px; margin: 0 auto;
+  max-width: 1440px; margin: 0 auto;
 }
 footer > section p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.6; margin-top: 0.8rem; }
 footer nav { display: flex; flex-direction: column; }
@@ -407,11 +458,11 @@ footer nav h4 { font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.
 footer nav a { font-size: 0.88rem; color: rgba(255,255,255,0.6); text-decoration: none; margin-bottom: 0.5rem; transition: color 0.2s; }
 footer nav a:hover { color: var(--aqua); }
 
-footer + address {
+footer + address, .footer-wrapper address {
   font-style: normal; text-align: center; padding: 1.5rem;
   font-size: 0.78rem; color: rgba(255,255,255,0.3);
   border-top: 1px solid var(--glass-border);
-  max-width: 1200px; margin: 2rem auto 0; display: block;
+  display: block;
 }
 
 
@@ -505,4 +556,6 @@ form p.form-foot a { color: var(--aqua); text-decoration: none; font-weight: 500
   footer { grid-template-columns: 1fr; }
   article.exp-row { flex-direction: column; align-items: flex-start; }
   search { padding: 0.5rem 0.5rem 0.5rem 1rem; }
+  .discover-btns { gap: 0.5rem; }
+  .discover-btn { min-width: 85px; padding: 0.75rem 1.2rem; }
 }

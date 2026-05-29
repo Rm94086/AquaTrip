@@ -53,4 +53,16 @@ router.get('/expedicoes', function(req,res ){
     res.render('pages/expedicoes');
 });
 
+router.get('/viajens', function(req,res ){
+    res.render('pages/viajens');
+});
+
+router.get('/ingressos', function(req,res ){
+    res.render('pages/ingressos');
+});
+
+router.get('/produto_churaumi', function(req,res ){
+    res.render('pages/produto_churaumi');
+});
+
 module.exports = router;

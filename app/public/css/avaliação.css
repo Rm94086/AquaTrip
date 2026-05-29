@@ -143,6 +143,13 @@ aside#drawer hr { border: none; border-top: 1px solid var(--glass-border); margi
 
 }
 
+a {
+  color: var(--foam);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+
 .tudo {
   position: relative;
   top: 70px;

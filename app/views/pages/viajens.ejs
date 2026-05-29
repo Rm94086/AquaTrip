@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Minhas Viagens - Aquatrip</title>
+  <link rel="stylesheet" href="/css/viagens.css" />
+</head>
+<body>
+
+  <section class="at-wrap">
+
+<%- include('../partials/header') %>
+
+    <!-- Header -->
+    <header class="at-header">
+      <section class="at-logo">
+      </section>
+      <h1 class="at-title">Minhas <span>viagens</span></h1>
+      <p class="at-subtitle" id="at-subtitle">Carregando destinos...</p>
+    </header>
+
+    <!-- Estatísticas -->
+    <section class="at-stats" aria-label="Resumo de viagens">
+      <section class="at-stat">
+        <section class="at-stat-val" id="s-v">0</section>
+        <section class="at-stat-label">viagens</section>
+      </section>
+      <section class="at-stat">
+        <section class="at-stat-val" id="s-p">0</section>
+        <section class="at-stat-label">países</section>
+      </section>
+      <section class="at-stat">
+        <section class="at-stat-val" id="s-d">0</section>
+        <section class="at-stat-label">dias</section>
+      </section>
+    </section>
+
+    <!-- Timeline de viagens -->
+    <main id="at-timeline" aria-label="Lista de viagens"></main>
+
+  </section>
+
+  <!-- Script -->
+  <script src="/js/viagens.js"></script>
+
+</body>
+</html>

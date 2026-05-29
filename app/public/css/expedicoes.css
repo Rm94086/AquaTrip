@@ -5,7 +5,6 @@
   --current:#0d5c8f;
   --glow:#00c6ff;
   --foam:#7fdbff;
-  --muted:#7d9cb8;
   --card-bg:rgba(10,30,60,.75);
   --card-border:rgba(0,198,255,.14);
   --radius:18px;
@@ -181,10 +180,6 @@ img{
   width:100%;
   display:block;
   object-fit:cover;
-}
-
-a{
-  text-decoration:none;
 }
 
 .main-layout{
@@ -449,6 +444,10 @@ a{
   padding:2rem;
   text-align:center;
   color:var(--muted);
+}
+
+.imagem {
+  height:200px
 }
 
 @media(min-width:768px){

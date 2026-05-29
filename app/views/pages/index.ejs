@@ -10,8 +10,7 @@
 </head>
 <body>
 
-<!-- EFEITO DE BOLHAS -->
-<section id="bubbles" aria-hidden="true"></section>
+
 
 <!--  NAV PRINCIPAL  -->
 <nav aria-label="Navegação principal">
@@ -33,14 +32,14 @@
 <aside id="drawer" aria-label="Menu lateral" aria-hidden="true">
   <nav>
     <a href="/"><i data-lucide="house"></i> Início</a>
-    <a href="#"><i data-lucide="ticket"></i> Meus Ingressos</a>
-    <a href="#"><i data-lucide="ship"></i> Viagens Feitas</a>
+    <a href="/ingressos"><i data-lucide="ticket"></i> Meus Ingressos</a>
+    <a href="/viajens"><i data-lucide="ship"></i> Viagens Feitas</a>
     <a href="/contato"><i data-lucide="briefcase"></i> Faça negócio conosco</a>
   </nav>
   <hr>
   <nav>
     <a href="/perfil"><i data-lucide="user"></i> Meu Perfil</a>
-    <a href="#"><i data-lucide="settings"></i> Configurações</a>
+    <a href="/admin"><i data-lucide="settings"></i> Configurações</a>
   </nav>
 </aside>
 
@@ -54,6 +53,21 @@
     <input id="busca" type="search" placeholder="Busque aquários, expedições, destinos…">
     <button type="button" class="btn-search">Buscar</button>
   </search>
+
+  <!-- BOTÕES DESCUBRA -->
+  <div class="discover-section">
+    <p class="discover-label">Descubra</p>
+    <div class="discover-btns">
+      <a href="/expedicoes" class="discover-btn">
+        <span class="discover-icon"><i data-lucide="ship"></i></span>
+        <span>Expedições</span>
+      </a>
+      <a href="/aquarios" class="discover-btn">
+        <span class="discover-icon"><i data-lucide="fish"></i></span>
+        <span>Aquários</span>
+      </a>
+    </div>
+  </div>
 
   <figure class="hero-wave" aria-hidden="true">
   </figure>
@@ -83,9 +97,9 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#0c3b5c,#0a6e82,#0891b2)">
-                <img src="/img/cenote.jpg" />
+                <img src="/img/monteray_aquarium.jpg" />
                 <section class="card-badges">
-                  <mark class="badge badge-eco">🌿 Eco Cert.</mark>
+                  <mark class="badge badge-eco">Eco Cert.</mark>
                   <mark class="badge badge-type">Aquário</mark>
                 </section>
               </section>
@@ -95,7 +109,7 @@
                   <dt>Sem Captura</dt><dd>Nenhum animal capturado</dd>
                 </dl>
                 <h3>Aquário de Monterey Bay</h3>
-                <address>📍 California, EUA</address>
+                <address>California, EUA</address>
                 <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.9 (3.2k)</small></p>
                   <p class="card-price">A partir de R$180</p>
@@ -107,22 +121,22 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#0d3b2a,#0a5c45,#059669)">
-                <img src="/img/aquaRio.webp" />
+                <img src="/img/georgia_aquarium.jpg" />
                 <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
-                  <mark class="badge badge-hot">🔥 Trending</mark>
-                  <mark class="badge badge-type">Expedição</mark>
+                  <mark class="badge badge-eco">Eco Cert.</mark>
+                  <mark class="badge badge-type">Aquário</mark>
                 </section>
               </section>
               <section class="card-body">
                 <dl class="eco-seals">
                   <dt>Conservação</dt><dd>Projeto de conservação marinha</dd>
                 </dl>
-                <h3>Grande Barreira de Coral</h3>
-                <address>📍 Queensland, Austrália</address>
+                <h3>Georgia Aquarium</h3>
+                <address>Atlanta, Estados Unidos</address>
                 <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.8 (5.1k)</small></p>
-                  <p class="card-price">A partir de R$890</p>
+                  <p class="card-price">A partir de R$700</p>
                 </footer>
               </section>
             </article>
@@ -131,11 +145,11 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#1a1a4e,#2d2d8a,#4f46e5)">
-                <img src="/img/açores.jpg" />
+                <img src="/img/caribe.png" />
                 <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
-                  <mark class="badge badge-eco">🌿 Eco Cert.</mark>
-                  <mark class="badge badge-type">Aquário</mark>
+                  <mark class="badge badge-eco">Eco Cert.</mark>
+                  <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
               <section class="card-body">
@@ -143,11 +157,11 @@
                   <dt>Água Reciclada</dt><dd>Sistema de reaproveitamento</dd>
                   <dt>Energia Solar</dt><dd>100% energia limpa</dd>
                 </dl>
-                <h3>Osaka Aquarium Kaiyukan</h3>
-                <address>📍 Osaka, Japão</address>
+                <h3>Ilhas do Caribe</h3>
+                <address>Caribe, Américas </address>
                 <footer class="card-foot">
-                  <p class="stars">★★★★☆ <small>4.7 (7.8k)</small></p>
-                  <p class="card-price">A partir de R$120</p>
+                  <p class="stars">★★★★★ <small>4.9 (7.8k)</small></p>
+                  <p class="card-price">A partir de R$14.000</p>
                 </footer>
               </section>
             </article>
@@ -156,9 +170,10 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#2a0a0a,#7c1d1d,#dc2626)">
-                <img src="/img/emerald cove.png" />
+                <img src="/img/fernandonoronha.jpg" />
                 <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
+                  <mark class="badge badge-eco">Eco Cert.</mark>
                   <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
@@ -167,10 +182,10 @@
                   <dt>Repovoamento</dt><dd>Programa de repovoamento marinho</dd>
                 </dl>
                 <h3>Arquipélago de Fernando de Noronha</h3>
-                <address>📍 Pernambuco, Brasil</address>
+                <address>Pernambuco, Brasil</address>
                 <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.9 (2.4k)</small></p>
-                  <p class="card-price">A partir de R$1.200</p>
+                  <p class="card-price">A partir de R$1.500</p>
                 </footer>
               </section>
             </article>
@@ -179,22 +194,22 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#1a3a2a,#2d6e50,#10b981)">
-                <img src="/img/Paraty.jpg" />
+                <img src="/img/aquarium_barcelona.avif" />
                 <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
-                  <mark class="badge badge-eco">🌿 Eco Cert.</mark>
-                  <mark class="badge badge-type">Expedição</mark>
+                  <mark class="badge badge-eco">Eco Cert.</mark>
+                  <mark class="badge badge-type">Aquário</mark>
                 </section>
               </section>
               <section class="card-body">
                 <dl class="eco-seals">
-                  <dt>Zero Carbono</dt><dd>Operação neutra em carbono</dd>
+                  <dt>Observação</dt><dd>Observação ao Aquário</dd>
                 </dl>
-                <h3>Ilhas Maldivas — Recife Azul</h3>
-                <address>📍 Maldivas</address>
+                <h3>Aquarium de Barcelona</h3>
+                <address>Barcelona</address>
                 <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>5.0 (1.9k)</small></p>
-                  <p class="card-price">A partir de R$3.400</p>
+                  <p class="stars">★★★★★ <small>4.7 (1.9k)</small></p>
+                  <p class="card-price">A partir de R$800</p>
                 </footer>
               </section>
             </article>
@@ -203,10 +218,10 @@
           <li>
             <article>
               <section class="card-img" style="background:linear-gradient(135deg,#0a2040,#0e4070,#0369a1)">
-                <img src="/img/aquariosp.webp" />
+                <img src="/img/tubarao_georgia.avif" />
                 <span class="card-overlay" aria-hidden="true"></span>
                 <section class="card-badges">
-                  <mark class="badge badge-hot">🔥 Trending</mark>
+                  <mark class="badge badge-eco">Eco Cert.</mark>
                   <mark class="badge badge-type">Expedição</mark>
                 </section>
               </section>
@@ -215,7 +230,7 @@
                   <dt>Santuário</dt><dd>Área de proteção de baleias</dd>
                 </dl>
                 <h3>Observação de Baleias — Açores</h3>
-                <address>📍 Açores, Portugal</address>
+                <address>Açores, Portugal</address> 
                 <footer class="card-foot">
                   <p class="stars">★★★★★ <small>4.9 (4.1k)</small></p>
                   <p class="card-price">A partir de R$2.100</p>
@@ -246,86 +261,17 @@
     </article>
   </section>
 
-  <!--  EXPEDIÇÕES  -->
-  <section aria-labelledby="titulo-exp">
-    <article class="container">
-      <em class="section-label">Próximas datas</em>
-      <header class="carousel-header">
-        <hgroup>
-          <h2 id="titulo-exp">Expedições Disponíveis</h2>
-          <p class="section-sub">Reserve sua aventura submarina com guias especializados</p>
-        </hgroup>
-        <nav class="carousel-arrows" aria-label="Navegação do carrossel de expedições">
-          <button class="carousel-arrow" id="expArrowLeft"  onclick="scrollExp(-1)" aria-label="Anterior">&#8592;</button>
-          <button class="carousel-arrow" id="expArrowRight" onclick="scrollExp(1)"  aria-label="Próximo">&#8594;</button>
-        </nav>
-      </header>
-
-      <section class="carousel-wrap">
-        <ol class="exp-track" id="expGrid" role="list">
-
-          <li>
-            <article class="exp-row">
-              <p class="exp-num">01</p>
-              <section class="exp-info">
-                <h3>Observação de Baleias — Açores, Portugal</h3>
-                <ul class="exp-meta"><li>📅 15 abr – 22 abr 2025</li><li>👥 12 vagas</li><li>🌿 Eco Certificado</li><li>⭐ 4.9</li></ul>
-              </section>
-              <p class="exp-price">R$3.400</p>
-            </article>
-          </li>
-
-          <li>
-            <article class="exp-row">
-              <p class="exp-num">02</p>
-              <section class="exp-info">
-                <h3>Mergulho com Tubarões — Bahamas</h3>
-                <ul class="exp-meta"><li>📅 02 mai – 09 mai 2025</li><li>👥 8 vagas</li><li>🌿 Certificado Marine World</li><li>⭐ 5.0</li></ul>
-              </section>
-              <p class="exp-price">R$7.200</p>
-            </article>
-          </li>
-
-          <li>
-            <article class="exp-row">
-              <p class="exp-num">03</p>
-              <section class="exp-info">
-                <h3>Recife de Corais — Maldivas</h3>
-                <ul class="exp-meta"><li>📅 20 mai – 27 mai 2025</li><li>👥 6 vagas</li><li>🌿 Zero Carbono</li><li>⭐ 4.8</li></ul>
-              </section>
-              <p class="exp-price">R$9.800</p>
-            </article>
-          </li>
-
-          <li>
-            <article class="exp-row">
-              <p class="exp-num">04</p>
-              <section class="exp-info">
-                <h3>Nado com Golfinhos — Fernando de Noronha</h3>
-                <ul class="exp-meta"><li>📅 10 jun – 14 jun 2025</li><li>👥 15 vagas</li><li>🌿 ICMBio Aprovado</li><li>⭐ 4.9</li></ul>
-              </section>
-              <p class="exp-price">R$2.100</p>
-            </article>
-          </li>
-
-        </ol>
-      </section>
-      <nav class="carousel-dots" id="expDots" aria-label="Posição do carrossel de expedições"></nav>
-    </article>
-  </section>
-
-
 </main>
 
 <!-- FOOTER -->
 <footer>
   <section>
-    <a class="logo" href="#" aria-label="AquaTrip"><figure aria-hidden="true">🐠</figure>Aqua<mark>Trip</mark></a>
-    <p>Sua plataforma de aventuras aquáticas sustentáveis. Exploramos o oceano com responsabilidade e paixão.</p>
+    <a class="logo" href="#" aria-label="AquaTrip"><figure aria-hidden="true"></figure>Aqua<mark>Trip</mark></a>
+    <p>Sua plataforma de aventuras aquáticas sustentáveis. Exploramos o <br> oceano com responsabilidade e paixão.</p>
   </section>
-  <nav aria-label="Explorar"><h4>Explorar</h4><a href="#">Aquários</a><a href="#">Expedições</a><a href="#">Mergulho</a></nav>
+  <nav aria-label="Explorar"><h4>Explorar</h4><a href="/aquarios">Aquários</a><a href="/expedicoes">Expedições</a><a href="#">Mergulho</a></nav>
   <nav aria-label="Conta"><h4>Conta</h4><a href="/login">Entrar</a><a href="/cadastro">Cadastrar</a><a href="/perfil">Meu Perfil</a></nav>
-  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#">Sobre nós</a><a href="#">Sustentabilidade</a><a href="#">Contato</a></nav>
+  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#">Sobre nós</a><a href="#">Sustentabilidade</a><a href="/contato">Contato</a></nav>
 </footer>
 <address>© 2026 AquaTrip. Todos os direitos reservados.</address>
 

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meus Ingressos - AquaTrip</title>
+  <link rel="stylesheet" href="/css/ingressos.css"/>
+</head>
+
+<%- include('../partials/header') %>
+
+<body>
+  <main class="page">
+
+    <section class="stats" aria-label="Resumo de ingressos">
+      <article class="stat">
+        <strong class="stat-num">5</strong>
+        <span class="stat-lbl">Total de ingressos</span>
+      </article>
+      <article class="stat">
+        <strong class="stat-num stat-num--valid">3</strong>
+        <span class="stat-lbl">Válidos</span>
+      </article>
+      <article class="stat">
+        <strong class="stat-num stat-num--used">2</strong>
+        <span class="stat-lbl">Utilizados</span>
+      </article>
+    </section>
+
+    <nav class="tabs" aria-label="Filtrar ingressos">
+      <button class="tab active" onclick="filter('todos', this)">Todos</button>
+      <button class="tab" onclick="filter('aquario', this)">Aquários</button>
+      <button class="tab" onclick="filter('expedicao', this)">Expedições</button>
+      <button class="tab" onclick="filter('valido', this)">
+        <i class="ti ti-check" aria-hidden="true"></i> Válidos
+      </button>
+    </nav>
+
+    <section class="list" id="list" aria-label="Lista de ingressos" aria-live="polite"></section>
+
+  </main>
+
+  <script src="/js/ingressos.js"></script>
+</body>
+</html>
