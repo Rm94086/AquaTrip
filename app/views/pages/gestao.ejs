@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aqua Trip · Painel de gestão</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/gestao.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <linearGradient id="gaugeGradTeal" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#1B9E93"/>
+      <stop offset="100%" stop-color="#2FCBBE"/>
+    </linearGradient>
+    <linearGradient id="gaugeGradGold" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#C4923A"/>
+      <stop offset="100%" stop-color="#E7B75B"/>
+    </linearGradient>
+    <linearGradient id="gaugeGradMuted" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#8FA6AD"/>
+      <stop offset="100%" stop-color="#B6C6CB"/>
+    </linearGradient>
+  </defs>
+</svg>
+
+<header class="topbar">
+  <button type="button" class="topbar__menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Abrir menu de navegação">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+  </button>
+
+  <a href="#" class="topbar__brand" aria-label="Aqua Trip, início do painel">
+    <img class="logo" src="../img/logo.png">
+  </a>
+
+  <p class="topbar__role">
+    <strong>Marina Alves</strong>
+    <small>Administradora</small>
+  </p>
+</header>
+
+<nav class="side-nav" id="mainNav" aria-label="Navegação principal">
+  <ul>
+    <li>
+      <button type="button" class="side-nav__link is-active" data-target="experiencias">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 17c2.2 0 2.2-2 4.4-2s2.2 2 4.4 2 2.2-2 4.4-2 2.2 2 4.4 2" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/><path d="M5 12l3-7h8l3 7" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Experiências
+      </button>
+    </li>
+    <li>
+      <button type="button" class="side-nav__link" data-target="usuarios">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M3 20c0-3.3 2.7-5.5 6-5.5s6 2.2 6 5.5" stroke="currentColor" stroke-width="1.8" fill="none" stroke-linecap="round"/><circle cx="17.5" cy="9" r="2.4" stroke="currentColor" stroke-width="1.6" fill="none"/><path d="M14.8 20c.3-2.7 2.3-4.4 4.7-4.4 2.1 0 3.8 1.3 4.3 3.4" stroke="currentColor" stroke-width="1.6" fill="none" stroke-linecap="round"/></svg>
+        Usuários
+      </button>
+    </li>
+    <li>
+      <button type="button" class="side-nav__link" data-target="faturamento">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="1.8" fill="none"/><path d="M3 10.5h18" stroke="currentColor" stroke-width="1.8"/><path d="M6.5 14.5h4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        Faturamento
+      </button>
+    </li>
+  </ul>
+  <p class="side-nav__foot">Aqua Trip · painel interno</p>
+</nav>
+
+<main class="content">
+
+  <!-- ===================== EXPERIÊNCIAS ===================== -->
+  <section class="panel is-active" id="experiencias" aria-labelledby="experiencias-title">
+    <header class="panel__head">
+      <hgroup>
+        <h1 id="experiencias-title">Experiências</h1>
+        <p>Acompanhe o desempenho de cada experiência criada por usuários da plataforma.</p>
+      </hgroup>
+      <dl class="panel__stats">
+        <dt>Ativas</dt>
+        <dd id="statAtivas">–</dd>
+        <dt>Metas batidas</dt>
+        <dd id="statBatidas">–</dd>
+        <dt>Suspensas</dt>
+        <dd id="statSuspensas">–</dd>
+      </dl>
+    </header>
+
+    <form class="filter-bar" role="search" aria-label="Buscar experiências" id="formExperiencias">
+      <label class="filter-bar__search" for="buscaExperiencias">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="buscaExperiencias" name="busca" placeholder="Buscar por título, criador ou local…" autocomplete="off">
+      </label>
+
+      <label for="filtroCategoria">
+        Categoria
+        <select id="filtroCategoria" name="categoria">
+          <option value="todas">Todas</option>
+          <option value="praia">Praia</option>
+          <option value="pesca">Pesca esportiva</option>
+          <option value="caiaque">Caiaque</option>
+          <option value="aquario">Aquário</option>
+          <option value="scuba">Mergulho / scuba</option>
+        </select>
+      </label>
+
+      <label for="filtroStatus">
+        Status
+        <select id="filtroStatus" name="status">
+          <option value="todos">Todos</option>
+          <option value="ativa">Ativa</option>
+          <option value="suspensa">Suspensa</option>
+          <option value="desativada">Desativada</option>
+        </select>
+      </label>
+
+      <label for="filtroMeta">
+        Meta
+        <select id="filtroMeta" name="meta">
+          <option value="todas">Todas</option>
+          <option value="progresso">Em progresso</option>
+          <option value="batida">Batida</option>
+          <option value="ultrapassada">Ultrapassada</option>
+        </select>
+      </label>
+    </form>
+
+    <p class="empty-state" id="experienciasVazio" hidden>Nenhuma experiência encontrada com esses filtros.</p>
+
+    <ul class="experience-grid" id="listaExperiencias"></ul>
+  </section>
+
+  <!-- ===================== USUÁRIOS ===================== -->
+  <section class="panel" id="usuarios" aria-labelledby="usuarios-title">
+    <header class="panel__head">
+      <hgroup>
+        <h1 id="usuarios-title">Usuários</h1>
+        <p>Pessoas cadastradas na plataforma Aqua Trip.</p>
+      </hgroup>
+      <dl class="panel__stats">
+        <dt>Total de usuários</dt>
+        <dd id="statTotalUsuarios">–</dd>
+        <dt>Suspensos</dt>
+        <dd id="statSuspensos">–</dd>
+        <dt>Banidos</dt>
+        <dd id="statBanidos">–</dd>
+      </dl>
+    </header>
+
+    <form class="filter-bar filter-bar--compact" role="search" aria-label="Buscar usuários" id="formUsuarios">
+      <label class="filter-bar__search" for="buscaUsuarios">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="buscaUsuarios" name="busca" placeholder="Buscar por nome, e-mail ou telefone…" autocomplete="off">
+      </label>
+
+      <label for="filtroStatusUsuarios">
+        Status
+        <select id="filtroStatusUsuarios" name="status">
+          <option value="todos">Todos</option>
+          <option value="ativo">Ativo</option>
+          <option value="suspenso">Suspenso</option>
+          <option value="banido">Banido</option>
+        </select>
+      </label>
+    </form>
+
+    <p class="empty-state" id="usuariosVazio" hidden>Nenhum usuário encontrado com esses filtros.</p>
+
+    <figure class="data-table-wrap">
+      <table class="data-table" id="tabelaUsuarios">
+        <caption class="sr-only">Lista de usuários cadastrados na plataforma</caption>
+        <thead>
+          <tr>
+            <th scope="col">Nome</th>
+            <th scope="col">E-mail</th>
+            <th scope="col">Telefone</th>
+            <th scope="col">Status</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody id="corpoUsuarios"></tbody>
+      </table>
+    </figure>
+  </section>
+
+  <!-- ===================== FATURAMENTO ===================== -->
+  <section class="panel" id="faturamento" aria-labelledby="faturamento-title">
+    <header class="panel__head">
+      <hgroup>
+        <h1 id="faturamento-title">Faturamento</h1>
+        <p>Receita gerada pela plataforma através das experiências vendidas.</p>
+      </hgroup>
+    </header>
+
+    <ul class="billing-summary">
+      <li>
+        <b class="billing-summary__label">Recebido no mês</b>
+        <data class="billing-summary__value" id="billTotalRecebido" value="0">R$ 0</data>
+      </li>
+      <li>
+        <b class="billing-summary__label">Pendente</b>
+        <data class="billing-summary__value billing-summary__value--pending" id="billTotalPendente" value="0">R$ 0</data>
+      </li>
+      <li>
+        <b class="billing-summary__label">Reembolsado</b>
+        <data class="billing-summary__value billing-summary__value--refund" id="billTotalReembolso" value="0">R$ 0</data>
+      </li>
+      <li>
+        <b class="billing-summary__label">Taxa da plataforma</b>
+        <data class="billing-summary__value" id="billTotalTaxa" value="0">R$ 0</data>
+      </li>
+    </ul>
+
+    <form class="filter-bar" role="search" aria-label="Buscar transações" id="formFaturamento">
+      <label class="filter-bar__search" for="buscaFaturamento">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" fill="none"/><path d="M21 21l-4.3-4.3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <input type="search" id="buscaFaturamento" name="busca" placeholder="Buscar por experiência ou cliente…" autocomplete="off">
+      </label>
+
+      <label for="filtroStatusPagamento">
+        Status
+        <select id="filtroStatusPagamento" name="status">
+          <option value="todos">Todos</option>
+          <option value="pago">Pago</option>
+          <option value="pendente">Pendente</option>
+          <option value="reembolsado">Reembolsado</option>
+        </select>
+      </label>
+
+      <label for="filtroPeriodo">
+        Período
+        <select id="filtroPeriodo" name="periodo">
+          <option value="todos">Todo o histórico</option>
+          <option value="7">Últimos 7 dias</option>
+          <option value="30">Últimos 30 dias</option>
+          <option value="90">Últimos 90 dias</option>
+        </select>
+      </label>
+    </form>
+
+    <p class="empty-state" id="faturamentoVazio" hidden>Nenhuma transação encontrada com esses filtros.</p>
+
+    <figure class="data-table-wrap">
+      <table class="data-table data-table--billing" id="tabelaFaturamento">
+        <caption class="sr-only">Histórico de transações da plataforma</caption>
+        <thead>
+          <tr>
+            <th scope="col">Data</th>
+            <th scope="col">Experiência</th>
+            <th scope="col">Cliente</th>
+            <th scope="col">Valor</th>
+            <th scope="col">Taxa</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody id="corpoFaturamento"></tbody>
+      </table>
+    </figure>
+  </section>
+
+</main>
+
+<!-- Overlay para fechar o menu no mobile -->
+<button type="button" class="nav-overlay" id="navOverlay" aria-hidden="true" tabindex="-1"></button>
+
+<!-- ===================== MODAL DE CONFIRMAÇÃO ===================== -->
+<dialog class="confirm-modal" id="confirmModal" aria-labelledby="confirmTitle">
+  <article>
+    <h2 id="confirmTitle">Confirmar ação</h2>
+    <p id="confirmMessage">Tem certeza?</p>
+    <label class="confirm-modal__field" id="confirmDuracaoWrap" for="confirmDuracao" hidden>
+      Duração da suspensão
+      <select id="confirmDuracao">
+        <option value="1">1 dia</option>
+        <option value="7" selected>7 dias</option>
+        <option value="15">15 dias</option>
+        <option value="30">30 dias</option>
+        <option value="0">Por tempo indeterminado</option>
+      </select>
+    </label>
+    <footer class="confirm-modal__actions">
+      <button type="button" class="btn" id="confirmCancel">Cancelar</button>
+      <button type="button" class="btn btn--danger" id="confirmAccept">Confirmar</button>
+    </footer>
+  </article>
+</dialog>
+
+<script src="script.js"></script>
+</body>
+</html>

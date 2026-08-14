@@ -65,4 +65,8 @@ router.get('/produto_churaumi', function(req,res ){
     res.render('pages/produto_churaumi');
 });
 
+router.get('/gestao', function(req,res ){
+    res.render('pages/gestao');
+});
+
 module.exports = router;
