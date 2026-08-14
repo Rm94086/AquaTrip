@@ -53,8 +53,8 @@ router.get('/expedicoes', function(req,res ){
     res.render('pages/expedicoes');
 });
 
-router.get('/viajens', function(req,res ){
-    res.render('pages/viajens');
+router.get('/viagens', function(req,res ){
+    res.render('pages/viagens');
 });
 
 router.get('/ingressos', function(req,res ){

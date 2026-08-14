@@ -1,38 +1,45 @@
+<link rel="stylesheet" href="/css/header.css">
 <script src="https://unpkg.com/lucide@latest"></script>
-<header>
-<!-- EFEITO DE BOLHAS -->
-<section id="bubbles" aria-hidden="true"></section>
-
-<!--  NAV PRINCIPAL  -->
-<nav aria-label="Navegação principal">
-  <a href="/" aria-label="AquaTrip — Início">
-    <img class="logo" src="/img/logo.png"/>
-  </a>
-  <ul role="list">
-    <li><a href="/login"><button class="btn-login">Entrar</button></a></li>
-    <li><a href="/cadastro"><button class="btn-signup">Cadastrar</button></a></li>
-    <li>
-      <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer" onclick="toggleDrawer()">
-        <hr aria-hidden="true"><hr aria-hidden="true"><hr aria-hidden="true">
+<header class="shared-header">
+  <nav aria-label="Navegação principal">
+    <a href="/" aria-label="AquaTrip — Início">
+      <img class="logo" src="/img/logo.png" alt="AquaTrip" />
+    </a>
+    <div class="shared-profile-menu">
+      <button class="shared-profile-trigger" id="sharedProfileTrigger" type="button" aria-label="Abrir opções do perfil" aria-expanded="false" aria-controls="sharedProfileDropdown">
+        <span class="shared-avatar" aria-hidden="true"><i data-lucide="user-round"></i></span>
       </button>
-    </li>
-  </ul>
-</nav>
-
-<!--  DRAWER  -->
-<aside id="drawer" aria-label="Menu lateral" aria-hidden="true">
-  <nav>
-    <a href="/"><i data-lucide="house"></i> Início</a>
-    <a href="/ingressos"><i data-lucide="ticket"></i> Meus Ingressos</a>
-    <a href="/viajens"><i data-lucide="ship"></i> Viagens Feitas</a>
-    <a href="/contato"><i data-lucide="briefcase"></i> Faça negócio conosco</a>
+      <div class="shared-profile-dropdown" id="sharedProfileDropdown" hidden>
+        <a href="/perfil"><i data-lucide="user-round"></i> Meu perfil</a>
+        <a href="/viagens"><i data-lucide="map"></i> Minhas experiências</a>
+        <a href="/admin"><i data-lucide="settings"></i> Configurações</a>
+      </div>
+    </div>
   </nav>
-  <hr>
-  <nav>
-    <a href="/perfil"><i data-lucide="user"></i> Meu Perfil</a>
-    <a href="/admin"><i data-lucide="settings"></i> Configurações</a>
-  </nav>
-</aside>
-
-<script>lucide.createIcons();</script>
 </header>
+<script>
+  lucide.createIcons();
+  (function () {
+    const trigger = document.getElementById('sharedProfileTrigger');
+    const dropdown = document.getElementById('sharedProfileDropdown');
+    if (!trigger || !dropdown) return;
+    trigger.addEventListener('click', function (event) {
+      event.stopPropagation();
+      const open = !dropdown.hidden;
+      dropdown.hidden = open;
+      trigger.setAttribute('aria-expanded', String(!open));
+    });
+    document.addEventListener('click', function (event) {
+      if (!event.target.closest('.shared-profile-menu')) {
+        dropdown.hidden = true;
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+    document.addEventListener('keydown', function (event) {
+      if (event.key === 'Escape') {
+        dropdown.hidden = true;
+        trigger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  })();
+</script>

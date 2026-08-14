@@ -3,275 +3,289 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AquaTrip — Explore o Mundo Subaquático</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="description" content="AquaTrip — descubra experiências, destinos e aventuras pelo Brasil e conecte-se com quem oferece cada experiência.">
+  <title>AquaTrip — Experiências pelo Brasil</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/css/index.css">
   <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
 
-
-
-<!--  NAV PRINCIPAL  -->
-<nav aria-label="Navegação principal">
+<nav class="site-nav" aria-label="Navegação principal">
   <a href="/" aria-label="AquaTrip — Início">
-    <img class="logo" src="/img/logo.png"/>
+    <img class="logo" src="/img/logo.png" alt="AquaTrip">
   </a>
-  <ul role="list">
-    <li><a href="/login"><button class="btn-login">Entrar</button></a></li>
-    <li><a href="/cadastro"><button class="btn-signup">Cadastrar</button></a></li>
-    <li>
-      <button id="hamburger" aria-label="Menu" aria-expanded="false" aria-controls="drawer" onclick="toggleDrawer()">
-        <hr aria-hidden="true"><hr aria-hidden="true"><hr aria-hidden="true">
+
+  <ul role="list" class="nav-actions">
+    <li><a href="/login" class="btn-login">Entrar</a></li>
+    <li><a href="/cadastro" class="btn-signup">Cadastrar</a></li>
+    <li class="profile-menu">
+      <button class="profile-trigger" id="profileTrigger" type="button" aria-label="Abrir opções do perfil" aria-expanded="false" aria-controls="profileDropdown">
+        <span class="avatar avatar-default" aria-hidden="true"><i data-lucide="user-round"></i></span>
       </button>
+      <div class="profile-dropdown" id="profileDropdown" hidden>
+        <div class="profile-summary">
+          <span class="avatar avatar-small avatar-default" aria-hidden="true"><i data-lucide="user-round"></i></span>
+          <div>
+            <strong>Minha conta</strong>
+            <span>Acesse seu perfil</span>
+          </div>
+        </div>
+        <a href="/perfil"><i data-lucide="user-round"></i> Meu perfil</a>
+        <a href="/viagens"><i data-lucide="map"></i> Minhas experiências</a>
+        <a href="/admin"><i data-lucide="settings"></i> Configurações</a>
+      </div>
     </li>
   </ul>
 </nav>
 
-<!--  DRAWER  -->
-<aside id="drawer" aria-label="Menu lateral" aria-hidden="true">
-  <nav>
-    <a href="/"><i data-lucide="house"></i> Início</a>
-    <a href="/ingressos"><i data-lucide="ticket"></i> Meus Ingressos</a>
-    <a href="/viajens"><i data-lucide="ship"></i> Viagens Feitas</a>
-    <a href="/contato"><i data-lucide="briefcase"></i> Faça negócio conosco</a>
-  </nav>
-  <hr>
-  <nav>
-    <a href="/perfil"><i data-lucide="user"></i> Meu Perfil</a>
-    <a href="/admin"><i data-lucide="settings"></i> Configurações</a>
-  </nav>
-</aside>
-
-<!--  HERO  -->
 <header id="hero">
-  <h1>Mergulhe no <em>extraordinário</em></h1>
-  <p class="hero-sub">Descubra aquários, expedições marinhas e destinos oceânicos ao redor do mundo. Sustentabilidade em cada aventura.</p>
+  <div class="hero-glow" aria-hidden="true"></div>
+  <span class="hero-kicker">AquaTrip · Turismo brasileiro</span>
+  <h1>Descubra o <em>Brasil</em> de um jeito diferente</h1>
+  <p class="hero-sub">Encontre experiências, destinos e aventuras incríveis pelo Brasil. Conheça quem oferece cada experiência e conecte-se diretamente com o vendedor.</p>
 
-  <search role="search">
-    <label for="busca" aria-label="Ícone de busca"><i data-lucide="search"></i></label>
-    <input id="busca" type="search" placeholder="Busque aquários, expedições, destinos…">
-    <button type="button" class="btn-search">Buscar</button>
-  </search>
-
-  <!-- BOTÕES DESCUBRA -->
-  <div class="discover-section">
-    <p class="discover-label">Descubra</p>
-    <div class="discover-btns">
-      <a href="/expedicoes" class="discover-btn">
-        <span class="discover-icon"><i data-lucide="ship"></i></span>
-        <span>Expedições</span>
-      </a>
-      <a href="/aquarios" class="discover-btn">
-        <span class="discover-icon"><i data-lucide="fish"></i></span>
-        <span>Aquários</span>
-      </a>
-    </div>
+  <div class="hero-actions" aria-label="Ações principais">
+    <a class="btn-primary" href="#em-destaque">Explorar experiências <i data-lucide="arrow-down-right"></i></a>
+    <a class="btn-ghost" href="#descubra">Ver categorias <i data-lucide="compass"></i></a>
   </div>
 
-  <figure class="hero-wave" aria-hidden="true">
-  </figure>
+  <div class="hero-proof" aria-label="Diferenciais da plataforma">
+    <span><i data-lucide="map-pin"></i> Destinos no Brasil</span>
+    <span><i data-lucide="handshake"></i> Conexão com vendedores</span>
+    <span><i data-lucide="leaf"></i> Turismo responsável</span>
+  </div>
+
+  <figure class="hero-wave" aria-hidden="true"></figure>
 </header>
 
-<!--  MAIN  -->
 <main>
-
-  <!--  DESTINOS  -->
-  <section aria-labelledby="titulo-destinos">
-    <article class="container">
-      <em class="section-label"> Em destaque!</em>
-      <header class="carousel-header">
-        <hgroup>
-          <h2 id="titulo-destinos">Aquários &amp; Destinos</h2>
-          <p class="section-sub">Os lugares mais impressionantes para explorar a vida marinha</p>
-        </hgroup>
-        <nav class="carousel-arrows" aria-label="Navegação do carrossel">
-          <button class="carousel-arrow" id="arrowLeft"  onclick="scrollCards(-1)" aria-label="Anterior">&#8592;</button>
-          <button class="carousel-arrow" id="arrowRight" onclick="scrollCards(1)"  aria-label="Próximo">&#8594;</button>
-        </nav>
+  <!-- DESCOBRIR -->
+  <section id="descubra" class="discover-section-home" aria-labelledby="titulo-descubra">
+    <div class="container">
+      <span class="section-label">Explore possibilidades</span>
+      <header class="section-heading">
+        <div>
+          <h2 id="titulo-descubra">Descubra</h2>
+          <p class="section-sub">Escolha um tipo de experiência e encontre opções para viver pelo Brasil.</p>
+        </div>
       </header>
 
-      <section class="carousel-wrap">
+      <div class="discover-grid">
+        <a href="/expedicoes" class="discover-card discover-card-large">
+          <span class="discover-card-icon"><i data-lucide="ship"></i></span>
+          <span><strong>Expedições</strong><small>Roteiros e aventuras para explorar novos lugares</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="/aquarios" class="discover-card">
+          <span class="discover-card-icon"><i data-lucide="fish"></i></span>
+          <span><strong>Aquários</strong><small>Conheça a vida marinha brasileira</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="#em-destaque" class="discover-card" data-filter="caiaque">
+          <span class="discover-card-icon"><i data-lucide="waves"></i></span>
+          <span><strong>Caiaques</strong><small>Remadas, rios, manguezais e mar</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="#em-destaque" class="discover-card" data-filter="praia">
+          <span class="discover-card-icon"><i data-lucide="umbrella"></i></span>
+          <span><strong>Praias</strong><small>Experiências à beira-mar em diferentes regiões</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="#em-destaque" class="discover-card" data-filter="destino">
+          <span class="discover-card-icon"><i data-lucide="map"></i></span>
+          <span><strong>Destinos</strong><small>Lugares para conhecer, explorar e lembrar</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="#em-destaque" class="discover-card" data-filter="pesca">
+          <span class="discover-card-icon"><i data-lucide="anchor"></i></span>
+          <span><strong>Pesca esportiva</strong><small>Saídas guiadas e experiências em águas brasileiras</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+        <a href="#em-destaque" class="discover-card" data-filter="mergulho">
+          <span class="discover-card-icon"><i data-lucide="waves"></i></span>
+          <span><strong>Mergulho / scuba</strong><small>Descubra o que existe abaixo da superfície</small></span>
+          <i class="discover-arrow" data-lucide="arrow-up-right"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- EM DESTAQUE -->
+  <section id="em-destaque" class="featured-section" aria-labelledby="titulo-destaques">
+    <div class="container">
+      <div class="featured-intro">
+        <div>
+          <span class="section-label">Experiências para começar</span>
+          <h2 id="titulo-destaques">Em destaque</h2>
+          <p class="section-sub">Opções selecionadas para você conhecer o destino, a experiência e quem está por trás dela.</p>
+        </div>
+        <nav class="carousel-arrows" aria-label="Navegação das experiências em destaque">
+          <button class="carousel-arrow" id="arrowLeft" type="button" onclick="scrollCards(-1)" aria-label="Experiências anteriores">←</button>
+          <button class="carousel-arrow" id="arrowRight" type="button" onclick="scrollCards(1)" aria-label="Próximas experiências">→</button>
+        </nav>
+      </div>
+
+      <div class="featured-filter" aria-label="Filtrar experiências">
+        <button type="button" class="filter-chip active" data-filter="todos">Todos</button>
+        <button type="button" class="filter-chip" data-filter="expedicao">Expedições</button>
+        <button type="button" class="filter-chip" data-filter="caiaque">Caiaques</button>
+        <button type="button" class="filter-chip" data-filter="praia">Praias</button>
+        <button type="button" class="filter-chip" data-filter="aquario">Aquários</button>
+        <button type="button" class="filter-chip" data-filter="pesca">Pesca</button>
+        <button type="button" class="filter-chip" data-filter="mergulho">Mergulho</button>
+      </div>
+
+      <div class="carousel-wrap">
         <ul class="cards-track" id="cardsGrid" role="list">
-
-          <li>
-            <article>
-              <section class="card-img" style="background:linear-gradient(135deg,#0c3b5c,#0a6e82,#0891b2)">
-                <img src="/img/monteray_aquarium.jpg" />
-                <section class="card-badges">
-                  <mark class="badge badge-eco">Eco Cert.</mark>
-                  <mark class="badge badge-type">Aquário</mark>
-                </section>
-              </section>
-              <section class="card-body">
-                <dl class="eco-seals">
-                  <dt>Zero Resíduos</dt><dd>Programa de eliminação de resíduos</dd>
-                  <dt>Sem Captura</dt><dd>Nenhum animal capturado</dd>
-                </dl>
-                <h3>Aquário de Monterey Bay</h3>
-                <address>California, EUA</address>
-                <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>4.9 (3.2k)</small></p>
-                  <p class="card-price">A partir de R$180</p>
-                </footer>
-              </section>
+          <li data-category="expedicao destino">
+            <article class="experience-card">
+              <a href="/expedicoes" class="card-link" aria-label="Ver expedição em Fernando de Noronha">
+                <figure class="card-img">
+                  <img src="/img/fernandonoronha.jpg" alt="Paisagem de Fernando de Noronha" loading="lazy">
+                  <figcaption class="card-badges"><span class="badge badge-hot">Em destaque</span><span class="badge badge-type">Expedição</span></figcaption>
+                </figure>
+                <div class="card-body">
+                  <div class="card-tagline"><span><i data-lucide="map-pin"></i> Fernando de Noronha, PE</span><span class="card-eco"><i data-lucide="leaf"></i> Responsável</span></div>
+                  <h3>Expedição marinha em Fernando de Noronha</h3>
+                  <p>Um roteiro para conhecer águas cristalinas, vida marinha e paisagens preservadas.</p>
+                  <div class="card-foot"><span class="card-seller"><i data-lucide="user-round"></i> Por vendedor parceiro</span><strong>A partir de R$ 1.500</strong></div>
+                </div>
+              </a>
             </article>
           </li>
 
-          <li>
-            <article>
-              <section class="card-img" style="background:linear-gradient(135deg,#0d3b2a,#0a5c45,#059669)">
-                <img src="/img/georgia_aquarium.jpg" />
-                <span class="card-overlay" aria-hidden="true"></span>
-                <section class="card-badges">
-                  <mark class="badge badge-eco">Eco Cert.</mark>
-                  <mark class="badge badge-type">Aquário</mark>
-                </section>
-              </section>
-              <section class="card-body">
-                <dl class="eco-seals">
-                  <dt>Conservação</dt><dd>Projeto de conservação marinha</dd>
-                </dl>
-                <h3>Georgia Aquarium</h3>
-                <address>Atlanta, Estados Unidos</address>
-                <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>4.8 (5.1k)</small></p>
-                  <p class="card-price">A partir de R$700</p>
-                </footer>
-              </section>
+          <li data-category="aquario destino">
+            <article class="experience-card">
+              <a href="/aquarios" class="card-link" aria-label="Ver experiência no Aquário de Santos">
+                <figure class="card-img">
+                  <img src="/img/aquarium_santos.jpg" alt="Aquário de Santos" loading="lazy">
+                  <figcaption class="card-badges"><span class="badge badge-type">Aquário</span><span class="badge badge-eco">Preservação</span></figcaption>
+                </figure>
+                <div class="card-body">
+                  <div class="card-tagline"><span><i data-lucide="map-pin"></i> Santos, SP</span><span class="card-eco"><i data-lucide="leaf"></i> Turismo responsável</span></div>
+                  <h3>Visita ao Aquário de Santos</h3>
+                  <p>Conheça espécies marinhas e aprenda sobre conservação em uma experiência no litoral paulista.</p>
+                  <div class="card-foot"><span class="card-seller"><i data-lucide="user-round"></i> Por vendedor parceiro</span><strong>A partir de R$ 60</strong></div>
+                </div>
+              </a>
             </article>
           </li>
 
-          <li>
-            <article>
-              <section class="card-img" style="background:linear-gradient(135deg,#1a1a4e,#2d2d8a,#4f46e5)">
-                <img src="/img/caribe.png" />
-                <span class="card-overlay" aria-hidden="true"></span>
-                <section class="card-badges">
-                  <mark class="badge badge-eco">Eco Cert.</mark>
-                  <mark class="badge badge-type">Expedição</mark>
-                </section>
-              </section>
-              <section class="card-body">
-                <dl class="eco-seals">
-                  <dt>Água Reciclada</dt><dd>Sistema de reaproveitamento</dd>
-                  <dt>Energia Solar</dt><dd>100% energia limpa</dd>
-                </dl>
-                <h3>Ilhas do Caribe</h3>
-                <address>Caribe, Américas </address>
-                <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>4.9 (7.8k)</small></p>
-                  <p class="card-price">A partir de R$14.000</p>
-                </footer>
-              </section>
+          <li data-category="caiaque destino">
+            <article class="experience-card">
+              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de caiaque em Ilhabela">
+                <figure class="card-img">
+                  <img src="/img/expedicao_amazonica.png" alt="Expedição em ambiente natural brasileiro" loading="lazy">
+                  <figcaption class="card-badges"><span class="badge badge-type">Caiaque</span><span class="badge badge-eco">Natureza</span></figcaption>
+                </figure>
+                <div class="card-body">
+                  <div class="card-tagline"><span><i data-lucide="map-pin"></i> Ilhabela, SP</span><span class="card-eco"><i data-lucide="leaf"></i> Comunidade local</span></div>
+                  <h3>Caiaque ao pôr do sol em Ilhabela</h3>
+                  <p>Remada guiada por enseadas tranquilas com paradas para contemplar a paisagem.</p>
+                  <div class="card-foot"><span class="card-seller"><i data-lucide="user-round"></i> Juliana Prado</span><strong>A partir de R$ 95</strong></div>
+                </div>
+              </a>
             </article>
           </li>
 
-          <li>
-            <article>
-              <section class="card-img" style="background:linear-gradient(135deg,#2a0a0a,#7c1d1d,#dc2626)">
-                <img src="/img/fernandonoronha.jpg" />
-                <span class="card-overlay" aria-hidden="true"></span>
-                <section class="card-badges">
-                  <mark class="badge badge-eco">Eco Cert.</mark>
-                  <mark class="badge badge-type">Expedição</mark>
-                </section>
-              </section>
-              <section class="card-body">
-                <dl class="eco-seals">
-                  <dt>Repovoamento</dt><dd>Programa de repovoamento marinho</dd>
-                </dl>
-                <h3>Arquipélago de Fernando de Noronha</h3>
-                <address>Pernambuco, Brasil</address>
-                <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>4.9 (2.4k)</small></p>
-                  <p class="card-price">A partir de R$1.500</p>
-                </footer>
-              </section>
+          <li data-category="praia destino">
+            <article class="experience-card">
+              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de praia em Jericoacoara">
+                <figure class="card-img card-img-position-top">
+                  <img src="/img/fernandonoronha.jpg" alt="Paisagem litorânea brasileira" loading="lazy">
+                  <figcaption class="card-badges"><span class="badge badge-type">Praia</span><span class="badge badge-eco">Natureza</span></figcaption>
+                </figure>
+                <div class="card-body">
+                  <div class="card-tagline"><span><i data-lucide="map-pin"></i> Jericoacoara, CE</span><span class="card-eco"><i data-lucide="leaf"></i> Turismo responsável</span></div>
+                  <h3>Dia de praia e lagoas em Jericoacoara</h3>
+                  <p>Um roteiro de praia, dunas, lagoas e paisagens naturais para viver o litoral cearense.</p>
+                  <div class="card-foot"><span class="card-seller"><i data-lucide="user-round"></i> Aline Costa</span><strong>A partir de R$ 70</strong></div>
+                </div>
+              </a>
             </article>
           </li>
 
-          <li>
-            <article>
-              <section class="card-img" style="background:linear-gradient(135deg,#1a3a2a,#2d6e50,#10b981)">
-                <img src="/img/aquarium_barcelona.avif" />
-                <span class="card-overlay" aria-hidden="true"></span>
-                <section class="card-badges">
-                  <mark class="badge badge-eco">Eco Cert.</mark>
-                  <mark class="badge badge-type">Aquário</mark>
-                </section>
-              </section>
-              <section class="card-body">
-                <dl class="eco-seals">
-                  <dt>Observação</dt><dd>Observação ao Aquário</dd>
-                </dl>
-                <h3>Aquarium de Barcelona</h3>
-                <address>Barcelona</address>
-                <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>4.7 (1.9k)</small></p>
-                  <p class="card-price">A partir de R$800</p>
-                </footer>
-              </section>
+          <li data-category="pesca destino">
+            <article class="experience-card">
+              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de pesca no Rio Negro">
+                <figure class="card-img">
+                  <img src="/img/expedicao_amazonica.png" alt="Expedição pela Amazônia brasileira" loading="lazy">
+                  <figcaption class="card-badges"><span class="badge badge-type">Pesca esportiva</span><span class="badge badge-eco">Guia local</span></figcaption>
+                </figure>
+                <div class="card-body">
+                  <div class="card-tagline"><span><i data-lucide="map-pin"></i> Manaus, AM</span><span class="card-eco"><i data-lucide="leaf"></i> Comunidade local</span></div>
+                  <h3>Pesca esportiva no Rio Negro</h3>
+                  <p>Dia de pesca com barco e guia especializado para conhecer os rios da Amazônia.</p>
+                  <div class="card-foot"><span class="card-seller"><i data-lucide="user-round"></i> Diego Martins</span><strong>A partir de R$ 420</strong></div>
+                </div>
+              </a>
             </article>
           </li>
 
-          <li>
-            <article>
-              <section class="card-img" style="background:linear-gradient(135deg,#0a2040,#0e4070,#0369a1)">
-                <img src="/img/tubarao_georgia.avif" />
-                <span class="card-overlay" aria-hidden="true"></span>
-                <section class="card-badges">
-                  <mark class="badge badge-eco">Eco Cert.</mark>
-                  <mark class="badge badge-type">Expedição</mark>
-                </section>
-              </section>
-              <section class="card-body">
-                <dl class="eco-seals">
-                  <dt>Santuário</dt><dd>Área de proteção de baleias</dd>
-                </dl>
-                <h3>Observação de Baleias — Açores</h3>
-                <address>Açores, Portugal</address> 
-                <footer class="card-foot">
-                  <p class="stars">★★★★★ <small>4.9 (4.1k)</small></p>
-                  <p class="card-price">A partir de R$2.100</p>
-                </footer>
-              </section>
+          <li data-category="mergulho destino">
+            <article class="experience-card">
+              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de mergulho em Fernando de Noronha">
+                <figure class="card-img">
+                  <img src="/img/cardume_peixes.avif" alt="Cardume de peixes em ambiente marinho" loading="lazy">
+                  <figcaption class="card-badges"><span class="badge badge-type">Mergulho</span><span class="badge badge-eco">Conservação</span></figcaption>
+                </figure>
+                <div class="card-body">
+                  <div class="card-tagline"><span><i data-lucide="map-pin"></i> Fernando de Noronha, PE</span><span class="card-eco"><i data-lucide="leaf"></i> Preservação</span></div>
+                  <h3>Batismo de mergulho em Fernando de Noronha</h3>
+                  <p>Primeira experiência de mergulho autônomo acompanhada por instrutor certificado.</p>
+                  <div class="card-foot"><span class="card-seller"><i data-lucide="user-round"></i> Renata Farias</span><strong>A partir de R$ 650</strong></div>
+                </div>
+              </a>
             </article>
           </li>
-
         </ul>
-      </section>
-      <nav class="carousel-dots" id="carouselDots" aria-label="Posição do carrossel"></nav>
-    </article>
+      </div>
+      <nav class="carousel-dots" id="carouselDots" aria-label="Posição das experiências"></nav>
+    </div>
   </section>
 
-  <!--  ECO  -->
+  <!-- CRIAR EXPEDIÇÃO -->
+  <section id="criar-expedicao" class="create-section" aria-labelledby="titulo-criar-expedicao">
+    <div class="container">
+      <article class="create-card">
+        <div class="create-icon"><i data-lucide="compass"></i></div>
+        <div class="create-copy">
+          <span class="section-label">Sua próxima aventura</span>
+          <h2 id="titulo-criar-expedicao">Criar expedição</h2>
+          <p>Tem uma ideia de roteiro ou experiência pelo Brasil? Dê o primeiro passo e transforme sua expedição em uma oportunidade de conexão com outros exploradores.</p>
+        </div>
+        <a class="btn-primary" href="/expedicoes">Começar <i data-lucide="arrow-right"></i></a>
+      </article>
+    </div>
+  </section>
+
+  <!-- SELOS SUSTENTÁVEIS -->
   <section class="eco" aria-labelledby="titulo-eco">
-    <article class="container">
-      <section class="container2">
-        <h2 id="titulo-ecoo">Nossos Selos Sustentáveis</h2>
-        <p class="section-subb">Cada parceiro é verificado por nossos auditores ambientais</p>
-        <section class="eco-grid">
-          <article><figure data-lucide="leaf"></figure><h3>Zero Resíduos</h3><p>Parceiros com programa completo de eliminação de resíduos sólidos</p></article>
-          <article><figure data-lucide="waves-horizontal"></figure><h3>Conservação Marinha</h3><p>Contribuição ativa para projetos de preservação de ecossistemas</p></article>
-          <article><figure data-lucide="sun"></figure><h3>Energia Renovável</h3><p>100% da operação movida por fontes de energia limpas</p></article>
-          <article><figure data-lucide="fish"></figure><h3>Fauna Protegida</h3><p>Nenhum animal capturado da natureza. Só reprodução ética</p></article>
-        </section>
-      </section>
-    </article>
+    <div class="container">
+      <div class="eco-heading">
+        <span class="section-label">Escolhas que fazem diferença</span>
+        <h2 id="titulo-eco">Selos Sustentáveis</h2>
+        <p class="section-sub">Sinais visuais para ajudar você a identificar experiências que valorizam a natureza e as comunidades locais.</p>
+      </div>
+      <div class="eco-grid">
+        <article><figure><i data-lucide="leaf"></i></figure><h3>Experiência sustentável</h3><p>Iniciativas que reduzem impactos e valorizam a conservação dos destinos.</p></article>
+        <article><figure><i data-lucide="waves"></i></figure><h3>Preservação ambiental</h3><p>Atividades alinhadas à proteção de ecossistemas e da vida marinha.</p></article>
+        <article><figure><i data-lucide="users"></i></figure><h3>Apoio à comunidade local</h3><p>Experiências que fortalecem guias, negócios e pessoas da região.</p></article>
+        <article><figure><i data-lucide="heart-handshake"></i></figure><h3>Turismo responsável</h3><p>Operações que incentivam uma relação mais consciente com cada destino.</p></article>
+      </div>
+    </div>
   </section>
-
 </main>
 
-<!-- FOOTER -->
 <footer>
   <section>
-    <a class="logo" href="#" aria-label="AquaTrip"><figure aria-hidden="true"></figure>Aqua<mark>Trip</mark></a>
-    <p>Sua plataforma de aventuras aquáticas sustentáveis. Exploramos o <br> oceano com responsabilidade e paixão.</p>
+    <a class="footer-logo" href="/" aria-label="AquaTrip">Aqua<mark>Trip</mark></a>
+    <p>Uma ponte entre quem quer descobrir o Brasil e quem cria experiências para vivê-lo com responsabilidade.</p>
   </section>
-  <nav aria-label="Explorar"><h4>Explorar</h4><a href="/aquarios">Aquários</a><a href="/expedicoes">Expedições</a><a href="#">Mergulho</a></nav>
-  <nav aria-label="Conta"><h4>Conta</h4><a href="/login">Entrar</a><a href="/cadastro">Cadastrar</a><a href="/perfil">Meu Perfil</a></nav>
-  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#">Sobre nós</a><a href="#">Sustentabilidade</a><a href="/contato">Contato</a></nav>
+  <nav aria-label="Explorar"><h4>Explorar</h4><a href="#descubra">Descubra</a><a href="/aquarios">Aquários</a><a href="/expedicoes">Expedições</a></nav>
+  <nav aria-label="Conta"><h4>Conta</h4><a href="/login">Entrar</a><a href="/cadastro">Cadastrar</a><a href="/perfil">Meu perfil</a></nav>
+  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#em-destaque">Em destaque</a><a href="#criar-expedicao">Criar expedição</a><a href="#titulo-eco">Sustentabilidade</a></nav>
 </footer>
 <address>© 2026 AquaTrip. Todos os direitos reservados.</address>
 

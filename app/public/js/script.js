@@ -1,106 +1,143 @@
-/* ══════════════════════════════════════
-   AQUATRIP — script.js
-   ══════════════════════════════════════ */
+/* AquaTrip — interações da Home */
 
-
-/* ══════════════════════════════════════
-   CARROSSEL — DESTINOS
-   ══════════════════════════════════════ */
-const grid   = document.getElementById('cardsGrid');
+const grid = document.getElementById('cardsGrid');
 const dotsEl = document.getElementById('carouselDots');
-const CARD_W = 280 + 24;
-const total  = grid.children.length;
-const visible  = () => Math.floor(grid.clientWidth / CARD_W) || 1;
-const numDots  = () => Math.ceil(total / visible());
+const arrowLeft = document.getElementById('arrowLeft');
+const arrowRight = document.getElementById('arrowRight');
+const profileTrigger = document.getElementById('profileTrigger');
+const profileDropdown = document.getElementById('profileDropdown');
+
+/* CARROSSEL */
+function getStep() {
+  const firstCard = grid?.querySelector('li:not([hidden])');
+  if (!firstCard) return 0;
+  return firstCard.getBoundingClientRect().width + 24;
+}
+
+function getVisible() {
+  const step = getStep();
+  return step ? Math.max(1, Math.floor(grid.clientWidth / step)) : 1;
+}
 
 function buildDots() {
+  if (!grid || !dotsEl) return;
+  const visible = getVisible();
+  const cards = [...grid.children].filter(card => !card.hidden);
+  const count = Math.max(1, Math.ceil(cards.length / visible));
   dotsEl.innerHTML = '';
-  for (let i = 0; i < numDots(); i++) {
-    const btn = document.createElement('button');
-    btn.setAttribute('aria-label', `Slide ${i + 1}`);
-    if (i === 0) btn.classList.add('active');
-    btn.onclick = () => { grid.scrollTo({ left: i * visible() * CARD_W, behavior: 'smooth' }); syncDots(); };
-    dotsEl.appendChild(btn);
+
+  for (let i = 0; i < count; i++) {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.setAttribute('aria-label', `Slide ${i + 1}`);
+    button.addEventListener('click', () => {
+      grid.scrollTo({ left: i * visible * getStep(), behavior: 'smooth' });
+    });
+    dotsEl.appendChild(button);
   }
 }
 
 function syncDots() {
-  const idx = Math.round(grid.scrollLeft / (visible() * CARD_W));
-  [...dotsEl.children].forEach((d, i) => d.classList.toggle('active', i === idx));
-  document.getElementById('arrowLeft').disabled  = grid.scrollLeft <= 0;
-  document.getElementById('arrowRight').disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 4;
+  if (!grid || !dotsEl) return;
+  const step = getStep();
+  const visible = getVisible();
+  const index = step ? Math.round(grid.scrollLeft / (visible * step)) : 0;
+
+  [...dotsEl.children].forEach((dot, i) => dot.classList.toggle('active', i === index));
+  if (arrowLeft) arrowLeft.disabled = grid.scrollLeft <= 4;
+  if (arrowRight) arrowRight.disabled = grid.scrollLeft >= grid.scrollWidth - grid.clientWidth - 4;
 }
 
-function scrollCards(dir) {
-  grid.scrollTo({ left: grid.scrollLeft + dir * visible() * CARD_W, behavior: 'smooth' });
-  setTimeout(syncDots, 320);
+function scrollCards(direction) {
+  if (!grid) return;
+  grid.scrollBy({ left: direction * getVisible() * getStep(), behavior: 'smooth' });
+  window.setTimeout(syncDots, 350);
 }
 
-grid.addEventListener('scroll', syncDots);
-window.addEventListener('resize', () => { buildDots(); syncDots(); });
+window.scrollCards = scrollCards;
+
+grid?.addEventListener('scroll', syncDots);
+window.addEventListener('resize', () => {
+  buildDots();
+  syncDots();
+});
+
+/* FILTROS DE DESCUBRA / EM DESTAQUE */
+const filterChips = [...document.querySelectorAll('.filter-chip')];
+const discoverLinks = [...document.querySelectorAll('.discover-card[data-filter]')];
+
+function applyFilter(filter) {
+  if (!grid) return;
+
+  [...grid.children].forEach(card => {
+    const categories = (card.dataset.category || '').split(' ');
+    card.hidden = filter !== 'todos' && !categories.includes(filter);
+  });
+
+  filterChips.forEach(chip => chip.classList.toggle('active', chip.dataset.filter === filter));
+  grid.scrollTo({ left: 0, behavior: 'smooth' });
+  buildDots();
+  syncDots();
+}
+
+filterChips.forEach(chip => {
+  chip.addEventListener('click', () => applyFilter(chip.dataset.filter));
+});
+
+discoverLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    const filter = link.dataset.filter;
+    if (!filter) return;
+    applyFilter(filter);
+  });
+});
+
+/* ARRASTAR O CARROSSEL NO DESKTOP */
+let dragging = false;
+let startX = 0;
+let startScroll = 0;
+
+grid?.addEventListener('mousedown', event => {
+  if (event.target.closest('a, button')) return;
+  dragging = true;
+  startX = event.pageX;
+  startScroll = grid.scrollLeft;
+  grid.classList.add('dragging');
+});
+
+document.addEventListener('mouseup', () => {
+  dragging = false;
+  grid?.classList.remove('dragging');
+  window.setTimeout(syncDots, 50);
+});
+
+document.addEventListener('mousemove', event => {
+  if (!dragging || !grid) return;
+  event.preventDefault();
+  grid.scrollLeft = startScroll - (event.pageX - startX);
+});
+
+/* PERFIL */
+function closeProfile() {
+  if (!profileDropdown || !profileTrigger) return;
+  profileDropdown.hidden = true;
+  profileTrigger.setAttribute('aria-expanded', 'false');
+}
+
+profileTrigger?.addEventListener('click', event => {
+  event.stopPropagation();
+  const isOpen = !profileDropdown.hidden;
+  profileDropdown.hidden = isOpen;
+  profileTrigger.setAttribute('aria-expanded', String(!isOpen));
+});
+
+document.addEventListener('click', event => {
+  if (!event.target.closest('.profile-menu')) closeProfile();
+});
+
+document.addEventListener('keydown', event => {
+  if (event.key === 'Escape') closeProfile();
+});
+
 buildDots();
 syncDots();
-
-/* drag-to-scroll — destinos */
-let down = false, sx, ss;
-grid.addEventListener('mousedown', e => { down = true; sx = e.pageX; ss = grid.scrollLeft; grid.classList.add('dragging'); });
-document.addEventListener('mouseup',   () => { down = false; grid.classList.remove('dragging'); setTimeout(syncDots, 50); });
-document.addEventListener('mousemove', e => { if (!down) return; e.preventDefault(); grid.scrollLeft = ss - (e.pageX - sx); });
-
-
-/* ══════════════════════════════════════
-   DRAWER
-   ══════════════════════════════════════ */
-function toggleDrawer() {
-  const d = document.getElementById('drawer');
-  const h = document.getElementById('hamburger');
-  const open = d.classList.toggle('open');
-  h.classList.toggle('active', open);
-  h.setAttribute('aria-expanded', open);
-  d.setAttribute('aria-hidden', !open);
-}
-
-function closeDrawer() {
-  const d = document.getElementById('drawer');
-  const h = document.getElementById('hamburger');
-  d.classList.remove('open');
-  h.classList.remove('active');
-  h.setAttribute('aria-expanded', 'false');
-  d.setAttribute('aria-hidden', 'true');
-}
-
-document.addEventListener('click', e => {
-  if (!e.target.closest('#drawer') && !e.target.closest('#hamburger')) closeDrawer();
-});
-
-/* ══════════════════════════════════════
-   MODAL
-   ══════════════════════════════════════ */
-const dlg = document.getElementById('modal');
-
-function openModal(tab) {
-  dlg.showModal();
-  switchTab(tab || 'login');
-}
-
-function closeModal() {
-  dlg.close();
-}
-
-dlg.addEventListener('click', e => {
-  if (e.target === dlg) dlg.close();
-});
-
-function switchTab(tab) {
-  const isLogin = tab === 'login';
-  document.getElementById('loginForm').hidden  = !isLogin;
-  document.getElementById('signupForm').hidden =  isLogin;
-  document.getElementById('tabLogin').className  = isLogin  ? 'active' : '';
-  document.getElementById('tabSignup').className = !isLogin ? 'active' : '';
-  document.getElementById('modalTitle').textContent = isLogin
-    ? 'Bem-vindo de volta'
-    : 'Crie sua conta';
-  document.getElementById('modalSub').textContent = isLogin
-    ? 'Entre para continuar sua jornada aquática'
-    : 'Junte-se a 180 mil exploradores';
-}
