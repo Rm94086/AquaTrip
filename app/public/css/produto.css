@@ -128,27 +128,32 @@ aside#drawer hr { border: none; border-top: 1px solid var(--glass-border); margi
 
 .breadcrumb-link {
   display: inline-flex;
+  align-items: center;
   gap: 0.4rem;
+
   font-size: 0.85rem;
   font-weight: 500;
   color: var(--muted);
-  padding: 0.25rem 0.5rem;
+
+  padding: 0.4rem 0.6rem;
   border-radius: var(--radius-xs);
+
   transition: all var(--transition);
+
   align-self: flex-start;
-  margin-left: -12rem;
-  width: 170px;
-  height: 35px;
-  position: relative;
-  top: 74px;
+
+  /* Correção */
+  margin: 0 0 0.5rem 0;
+  position: static;
+
+  width: fit-content;
+  height: auto;
 }
 
 .breadcrumb-link:hover {
   color: var(--foam);
   background: rgba(0,198,255,0.08);
-
 }
-
 body {
   background-color: var(--deep);
   background-image:
@@ -180,13 +185,14 @@ ul, ol { list-style: none; }
    =========================== */
 
 .produto-main {
-   max-width: 1280px;
+  max-width: 1280px;
   margin: 0 auto;
-  padding: 30px 2rem 4rem;
+  padding: 90px 2rem 4rem;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
 }
+
 
 /* ===========================
    GALERIA
@@ -768,14 +774,20 @@ ul, ol { list-style: none; }
 ::-webkit-scrollbar-thumb { background: var(--ocean); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--current); }
 
-/* ===========================
-   RESPONSIVO
-   =========================== */
 
+/* RESPONSIVO ========================
+
+===================================*/
 /* Tablet largo */
 @media (max-width: 1100px) {
-  .produto-content { grid-template-columns: 1fr 340px; gap: 2rem; }
-  .info-destaques  { grid-template-columns: repeat(2, 1fr); }
+  .produto-content {
+    grid-template-columns: 1fr 340px;
+    gap: 2rem;
+  }
+
+  .info-destaques {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Tablet */
@@ -786,31 +798,132 @@ ul, ol { list-style: none; }
 
   .reserva-card {
     position: static;
-    order: -1; /* sobe o card de reserva antes das infos */
+    order: -1;
   }
 
-  .galeria-principal { height: 320px; }
+  .galeria-principal {
+    height: 320px;
+  }
 
-  .info-destaques { grid-template-columns: repeat(4, 1fr); }
+  .info-destaques {
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
 
 /* Mobile grande */
 @media (max-width: 620px) {
-  .produto-main { padding: 1.2rem 1rem 3rem; gap: 1.8rem; }
-  .galeria-principal { height: 240px; border-radius: var(--radius-sm); }
-  .thumb-btn { width: 90px; height: 58px; }
-  .info-destaques { grid-template-columns: repeat(2, 1fr); }
-  .incluso-list { grid-template-columns: 1fr; }
-  .produto-titulo { font-size: 1.7rem; }
-  .reserva-card { padding: 1.3rem; }
-  .preco-valor { font-size: 1.6rem; }
-  .header-actions { display: none; } /* simplifica header em mobile */
+  .produto-main {
+    padding: 1.2rem 1rem 3rem;
+    gap: 1.8rem;
+  }
+
+  .galeria-principal {
+    height: 240px;
+    border-radius: var(--radius-sm);
+  }
+
+  .thumb-btn {
+    width: 90px;
+    height: 58px;
+  }
+
+  .info-destaques {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .incluso-list {
+    grid-template-columns: 1fr;
+  }
+
+  .produto-titulo {
+    font-size: 1.7rem;
+  }
+
+  .reserva-card {
+    padding: 1.3rem;
+  }
+
+  .preco-valor {
+    font-size: 1.6rem;
+  }
+
+  .header-actions {
+    display: none;
+  }
 }
 
 /* Mobile pequeno */
 @media (max-width: 400px) {
-  .galeria-principal { height: 200px; }
-  .info-destaques { grid-template-columns: 1fr 1fr; }
-  .form-group-double .form-field { flex-direction: column; align-items: flex-start; }
-  .field-input { text-align: left; width: 100%; }
+  .galeria-principal {
+    height: 200px;
+  }
+
+  .info-destaques {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .form-group-double .form-field {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .field-input {
+    text-align: left;
+    width: 100%;
+  }
 }
+
+/* =========================================
+   CORREÇÃO DEFINITIVA — VOLTAR AO CATÁLOGO
+   ========================================= */
+
+.produto-main {
+  position: relative;
+}
+
+/* Breadcrumb sempre dentro da área visível */
+.produto-main > .breadcrumb-link {
+  position: relative !important;
+
+  /* cancela deslocamentos antigos */
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+
+  margin: 0 0 1rem 0 !important;
+
+  display: inline-flex !important;
+  align-items: center;
+
+  width: fit-content !important;
+  max-width: 100%;
+
+  height: auto !important;
+
+  padding: 0.4rem 0.6rem;
+
+  transform: none !important;
+
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+
+  text-decoration: none;
+}
+
+.produto-main > .breadcrumb-link:hover {
+  color: var(--foam);
+  background: rgba(0, 198, 255, 0.08);
+}
+
+/* Mobile */
+@media (max-width: 620px) {
+  .produto-main > .breadcrumb-link {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    left: 0 !important;
+    right: auto !important;
+  }
+}
+
