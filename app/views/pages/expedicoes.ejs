@@ -10,7 +10,6 @@
 
 <%- include('../partials/header') %>
 
-<a href="/" class="breadcrumb-link">← Voltar</a>
 <main class="main-layout">
   <!-- SIDEBAR -->
   <aside class="sidebar" aria-label="Filtros de expedições">
@@ -19,6 +18,8 @@
       <a href="/" class="breadcrumb-link">← Voltar</a>
 
       <h2 class="sidebar-title">Expedições</h2>
+
+      <a href="/criar_experiencia" class="btn-criar-experiencia">Criar experiência</a>
 
       <nav class="filter-nav" aria-label="Filtros por região">
         <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
@@ -104,7 +105,7 @@
 
           <section class="card-meta">
             <output class="star-display">★★★★★</output>
-            <span class="reviews-count">(1.284 avaliações)</span>
+            <span class="reviews-count">4.9 · 1.284 avaliações</span>
           </section>
 
           <section class="card-price-block">
@@ -188,7 +189,7 @@
                   <span class="star-num">4.8</span>
                 </section>
 
-                <strong class="card-price">R$ 4.500</strong>
+                <span class="reviews-count">· 218 avaliações</span><strong class="card-price">R$ 4.500</strong>
 
               </footer>
 
@@ -223,7 +224,7 @@
                   <span class="star-num">4.9</span>
                 </section>
 
-                <strong class="card-price">R$ 14.000</strong>
+                <span class="reviews-count">· 164 avaliações</span><strong class="card-price">R$ 14.000</strong>
 
               </footer>
 
@@ -258,7 +259,7 @@
                   <span class="star-num">4.7</span>
                 </section>
 
-                <strong class="card-price">R$ 10.500</strong>
+                <span class="reviews-count">· 127 avaliações</span><strong class="card-price">R$ 10.500</strong>
 
               </footer>
 
@@ -293,7 +294,7 @@
                   <span class="star-num">4.6</span>
                 </section>
 
-                <strong class="card-price">R$ 11.000</strong>
+                <span class="reviews-count">· 98 avaliações</span><strong class="card-price">R$ 11.000</strong>
 
               </footer>
 
@@ -328,7 +329,7 @@
                   <span class="star-num">4.5</span>
                 </section>
 
-                <strong class="card-price">R$ 6.500</strong>
+                <span class="reviews-count">· 203 avaliações</span><strong class="card-price">R$ 6.500</strong>
 
               </footer>
 
@@ -363,7 +364,7 @@
                   <span class="star-num">4.8</span>
                 </section>
 
-                <strong class="card-price">R$ 8.000</strong>
+                <span class="reviews-count">· 119 avaliações</span><strong class="card-price">R$ 8.000</strong>
 
               </footer>
 
@@ -384,11 +385,7 @@
 
 </main>
 
-<footer class="site-footer">
-  <p>
-    © 2026 AquaTrip · Todos os direitos reservados
-  </p>
-</footer>
+<%- include('../partials/footer') %>
 
 <script src="/js/expedicoes.js"></script>
 

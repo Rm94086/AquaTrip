@@ -52,6 +52,8 @@ body {
   background: linear-gradient(135deg, var(--deep), var(--ocean));
   color: var(--white);
   padding-top: 64px;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -163,6 +165,9 @@ aside#drawer hr { border: none; border-top: 1px solid var(--glass-border); margi
   max-width: 680px;
   margin: 0 auto;
   padding: 4rem 1rem 3rem;
+  flex: 1 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 /* ── Hero ────────────────────────────────────────────── */

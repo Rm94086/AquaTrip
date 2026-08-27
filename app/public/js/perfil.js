@@ -166,6 +166,7 @@ async function saveProfile(){
   }
 
   toastMsg('Perfil salvo com sucesso!','success');
+  window.location.href = '/perfil_editado';
 }
 
 function resetForm(){

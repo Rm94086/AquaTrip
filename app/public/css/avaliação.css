@@ -55,6 +55,8 @@
 
 body {
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 
   font-family: var(--font-body);
 
@@ -314,7 +316,7 @@ aside#drawer a:hover {
 
 .tudo {
   width: 100%;
-  min-height: 100vh;
+  flex: 1 0 auto;
 
   padding-top: 90px;
   padding-bottom: 50px;

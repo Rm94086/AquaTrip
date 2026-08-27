@@ -56,15 +56,17 @@ function render() {
 
     byYear[y].forEach((t) => {
       const d = daysBetween(t.start, t.end);
-      const card = document.createElement('section');
+      const card = document.createElement('a');
       card.className = 'at-card';
+      card.href = t.link || '#';
+      card.setAttribute('aria-label', `Ver experiência: ${t.city}`);
       card.innerHTML = `
         <section class="at-card-visual" style="background:${BG_COLORS[t.bg || 0]}">${t.img || ''}</section>
         <section class="at-card-body">
           <section class="at-card-row">
             <section>
               <section class="at-card-city">${t.city}</section>
-              <section class="at-card-country">${t.country}</section>
+              <section class="at-card-country">${t.state}</section>
             </section>
             <section class="at-card-date">${formatDate(t.start)}</section>
           </section>
@@ -82,13 +84,13 @@ function render() {
   });
 
   const totalDias = trips.reduce((s, t) => s + daysBetween(t.start, t.end), 0);
-  const paises = new Set(trips.map((t) => t.country)).size;
+  const estados = new Set(trips.map((t) => t.state)).size;
 
   document.getElementById('s-v').textContent = trips.length;
-  document.getElementById('s-p').textContent = paises;
+  document.getElementById('s-p').textContent = estados;
   document.getElementById('s-d').textContent = totalDias;
   document.getElementById('at-subtitle').textContent =
-    `${trips.length} destino${trips.length !== 1 ? 's' : ''} · ${paises} país${paises !== 1 ? 'es' : ''}`;
+    `${trips.length} destino${trips.length !== 1 ? 's' : ''} · ${estados} estado${estados !== 1 ? 's' : ''}`;
 }
 const BG_COLORS = [
   'rgba(8,145,178,0.18)',
@@ -101,32 +103,52 @@ const BG_COLORS = [
 const DEFAULTS = [
   {
     id: 1,
-    city: 'Lisboa',
-    country: 'Portugal',
+    city: 'Aquário de Santos',
+    state: 'São Paulo',
     start: '2026-03-10',
-    end: '2026-03-17',
+    end: '2026-03-10',
     rating: 5,
     bg: 0,
+    desc: 'Visita guiada aos tanques oceânicos e ao túnel submerso do Aquário de Santos.',
+    tags: ['Aquário', 'Família'],
+    link: '/produto_churaumi',
   },
   {
     id: 2,
-    city: 'Buenos Aires',
-    country: 'Argentina',
+    city: 'Fernando de Noronha',
+    state: 'Pernambuco',
     start: '2026-07-01',
-    end: '2026-07-10',
+    end: '2026-07-08',
     rating: 5,
     bg: 1,
+    desc: 'Praias premiadas, águas cristalinas e mergulho entre recifes preservados.',
+    tags: ['Praia', 'Mergulho'],
+    link: '/praias',
   },
   {
     id: 3,
-    city: 'Tóquio',
-    country: 'Japão',
+    city: 'Arraial do Cabo',
+    state: 'Rio de Janeiro',
     start: '2026-04-03',
-    end: '2026-04-14',
+    end: '2026-04-06',
     rating: 5,
     bg: 2,
+    desc: 'Batismo de mergulho em uma das águas mais claras do litoral fluminense.',
+    tags: ['Mergulho', 'Litoral'],
+    link: '/mergulho',
   },
- 
+  {
+    id: 4,
+    city: 'Ilhabela',
+    state: 'São Paulo',
+    start: '2026-05-15',
+    end: '2026-05-17',
+    rating: 4,
+    bg: 3,
+    desc: 'Remada por enseadas protegidas e praias de água calma no litoral norte paulista.',
+    tags: ['Caiaque', 'Natureza'],
+    link: '/caiaque',
+  },
 ];
 
 document.addEventListener('DOMContentLoaded', render);

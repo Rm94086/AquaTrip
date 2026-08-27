@@ -3,16 +3,17 @@
 <head>
   <link rel="stylesheet" href="/css/pagamento.css" />
 </head>
-
- <%- include('../partials/header') %>
-
 <body>
+ <%- include('../partials/header') %>
 
   <main>
    <a href="/produto" class="breadcrumb-link">← Voltar</a>
     <figure class="hero">
+      <img src="/img/fernandonoronha.jpg" alt="Fernando de Noronha, Pernambuco" />
       <figcaption class="hero-caption">
-        <h1>Maldivas — Paraíso Tropical</h1>
+        <span class="destination-label">Experiência selecionada</span>
+        <h1>Fernando de Noronha — Pernambuco</h1>
+        <p class="destination-description">Explore águas cristalinas, praias preservadas e uma das regiões de maior biodiversidade marinha do Brasil.</p>
         <section class="stars-row" aria-label="Avaliação do destino">
           <output class="stars" aria-label="4.9 de 5 estrelas">
             <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
@@ -21,7 +22,7 @@
             <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
             <svg class="star" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,1 12.9,7 19.5,7.6 14.5,12 16.2,18.5 10,15 3.8,18.5 5.5,12 0.5,7.6 7.1,7"/></svg>
           </output>
-          <small class="rating-text">4.9 · 312 avaliações</small>
+          <small class="rating-text">4.9 · 328 avaliações</small>
         </section>
       </figcaption>
     </figure>
@@ -33,16 +34,16 @@
         <dl class="info-grid">
 
           <dt>Data de saída</dt>
-          <dd>15 de julho, 2025</dd>
+          <dd>15 de julho, 2026</dd>
 
           <dt>Data de retorno</dt>
-          <dd>22 de julho, 2025</dd>
+          <dd>18 de julho, 2026</dd>
 
           <dt>Horário de embarque</dt>
-          <dd>06h45 — GRU</dd>
+          <dd>08h10 — Recife</dd>
 
           <dt>Duração</dt>
-          <dd>7 noites / 8 dias</dd>
+          <dd>3 noites / 4 dias</dd>
 
           <dt>Viajantes</dt>
           <dd>2 adultos</dd>
@@ -51,10 +52,16 @@
         <section class="price-row" aria-label="Resumo de preço">
           <hgroup>
             <h3>Valor total</h3>
-            <p class="price-breakdown">por pessoa: R$ 500,00</p>
+            <p class="price-breakdown">por pessoa: R$ 2.150,00</p>
           </hgroup>
-          <strong class="price-total">R$ 1000,00</strong>
+          <strong class="price-total">R$ 4.300,00</strong>
         </section>
+      </section>
+
+      <section class="payment-methods" aria-labelledby="payment-method-title">
+        <h2 id="payment-method-title">Método de pagamento</h2>
+        <label class="payment-option"><input type="radio" name="pagamento" checked><span><strong>PIX</strong><small>Confirmação rápida após a próxima etapa.</small></span></label>
+        <label class="payment-option"><input type="radio" name="pagamento"><span><strong>Cartão de crédito</strong><small>Informe os dados do cartão na próxima etapa.</small></span></label>
       </section>
 
       <section class="form-card" aria-labelledby="contact-title">
@@ -105,6 +112,8 @@
     </article>
 
   </main>
+
+  <%- include('../partials/footer') %>
 
   <script src="/js/pagamento.js"></script>
 </body>

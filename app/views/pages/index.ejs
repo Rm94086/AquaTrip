@@ -82,12 +82,12 @@
           <span><strong>Aquários</strong><small>Conheça a vida marinha brasileira</small></span>
           <i class="discover-arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a href="#em-destaque" class="discover-card" data-filter="caiaque">
+        <a href="/caiaque" class="discover-card">
           <span class="discover-card-icon"><i data-lucide="waves"></i></span>
           <span><strong>Caiaques</strong><small>Remadas, rios, manguezais e mar</small></span>
           <i class="discover-arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a href="#em-destaque" class="discover-card" data-filter="praia">
+        <a href="/praias" class="discover-card">
           <span class="discover-card-icon"><i data-lucide="umbrella"></i></span>
           <span><strong>Praias</strong><small>Experiências à beira-mar em diferentes regiões</small></span>
           <i class="discover-arrow" data-lucide="arrow-up-right"></i>
@@ -97,12 +97,12 @@
           <span><strong>Destinos</strong><small>Lugares para conhecer, explorar e lembrar</small></span>
           <i class="discover-arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a href="#em-destaque" class="discover-card" data-filter="pesca">
+        <a href="/pesca" class="discover-card">
           <span class="discover-card-icon"><i data-lucide="anchor"></i></span>
           <span><strong>Pesca esportiva</strong><small>Saídas guiadas e experiências em águas brasileiras</small></span>
           <i class="discover-arrow" data-lucide="arrow-up-right"></i>
         </a>
-        <a href="#em-destaque" class="discover-card" data-filter="mergulho">
+        <a href="/mergulho" class="discover-card">
           <span class="discover-card-icon"><i data-lucide="waves"></i></span>
           <span><strong>Mergulho / scuba</strong><small>Descubra o que existe abaixo da superfície</small></span>
           <i class="discover-arrow" data-lucide="arrow-up-right"></i>
@@ -174,7 +174,7 @@
 
           <li data-category="caiaque destino">
             <article class="experience-card">
-              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de caiaque em Ilhabela">
+              <a href="/caiaque" class="card-link" aria-label="Conhecer experiência de caiaque em Ilhabela">
                 <figure class="card-img">
                   <img src="/img/expedicao_amazonica.png" alt="Expedição em ambiente natural brasileiro" loading="lazy">
                   <figcaption class="card-badges"><span class="badge badge-type">Caiaque</span><span class="badge badge-eco">Natureza</span></figcaption>
@@ -191,7 +191,7 @@
 
           <li data-category="praia destino">
             <article class="experience-card">
-              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de praia em Jericoacoara">
+              <a href="/praias" class="card-link" aria-label="Conhecer experiência de praia em Jericoacoara">
                 <figure class="card-img card-img-position-top">
                   <img src="/img/fernandonoronha.jpg" alt="Paisagem litorânea brasileira" loading="lazy">
                   <figcaption class="card-badges"><span class="badge badge-type">Praia</span><span class="badge badge-eco">Natureza</span></figcaption>
@@ -208,7 +208,7 @@
 
           <li data-category="pesca destino">
             <article class="experience-card">
-              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de pesca no Rio Negro">
+              <a href="/pesca" class="card-link" aria-label="Conhecer experiência de pesca no Rio Negro">
                 <figure class="card-img">
                   <img src="/img/expedicao_amazonica.png" alt="Expedição pela Amazônia brasileira" loading="lazy">
                   <figcaption class="card-badges"><span class="badge badge-type">Pesca esportiva</span><span class="badge badge-eco">Guia local</span></figcaption>
@@ -225,7 +225,7 @@
 
           <li data-category="mergulho destino">
             <article class="experience-card">
-              <a href="#criar-expedicao" class="card-link" aria-label="Conhecer experiência de mergulho em Fernando de Noronha">
+              <a href="/mergulho" class="card-link" aria-label="Conhecer experiência de mergulho em Fernando de Noronha">
                 <figure class="card-img">
                   <img src="/img/cardume_peixes.avif" alt="Cardume de peixes em ambiente marinho" loading="lazy">
                   <figcaption class="card-badges"><span class="badge badge-type">Mergulho</span><span class="badge badge-eco">Conservação</span></figcaption>
@@ -255,7 +255,7 @@
           <h2 id="titulo-criar-expedicao">Criar expedição</h2>
           <p>Tem uma ideia de roteiro ou experiência pelo Brasil? Dê o primeiro passo e transforme sua expedição em uma oportunidade de conexão com outros exploradores.</p>
         </div>
-        <a class="btn-primary" href="/expedicoes">Começar <i data-lucide="arrow-right"></i></a>
+        <a class="btn-primary" href="/criar_experiencia">Começar <i data-lucide="arrow-right"></i></a>
       </article>
     </div>
   </section>
@@ -278,16 +278,7 @@
   </section>
 </main>
 
-<footer>
-  <section>
-    <a class="footer-logo" href="/" aria-label="AquaTrip">Aqua<mark>Trip</mark></a>
-    <p>Uma ponte entre quem quer descobrir o Brasil e quem cria experiências para vivê-lo com responsabilidade.</p>
-  </section>
-  <nav aria-label="Explorar"><h4>Explorar</h4><a href="#descubra">Descubra</a><a href="/aquarios">Aquários</a><a href="/expedicoes">Expedições</a></nav>
-  <nav aria-label="Conta"><h4>Conta</h4><a href="/login">Entrar</a><a href="/cadastro">Cadastrar</a><a href="/perfil">Meu perfil</a></nav>
-  <nav aria-label="AquaTrip"><h4>AquaTrip</h4><a href="#em-destaque">Em destaque</a><a href="#criar-expedicao">Criar expedição</a><a href="#titulo-eco">Sustentabilidade</a></nav>
-</footer>
-<address>© 2026 AquaTrip. Todos os direitos reservados.</address>
+<%- include('../partials/footer') %>
 
 <script src="/js/script.js"></script>
 <script>lucide.createIcons();</script>

@@ -147,10 +147,12 @@ body{
     background: linear-gradient(180deg, #020d1a 0%, #032740 60%, #020d1a 100%);
     color: var(--white);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     min-height: 100vh;
     padding: 1.5rem;
+    padding-top: calc(64px + 1.5rem);
 }
 
 /* CARD principal (glass effect) */

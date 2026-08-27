@@ -136,14 +136,17 @@ body {
   background: var(--deep);
   color: var(--white);
   font-family: 'Inter', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 
 
 /* ── Layout ── */
 .at-wrap {
-  min-height: 100vh;
   padding: 2rem 1.5rem 3rem;
+  flex: 1 0 auto;
 }
 
 /* ── Header ── */
@@ -267,6 +270,9 @@ body {
   overflow: hidden;
   cursor: pointer;
   transition: border-color 0.18s, transform 0.18s;
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
 .at-card:hover {

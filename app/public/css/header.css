@@ -25,6 +25,12 @@
   padding: 0 2rem;
 }
 .shared-header > nav > a { display: inline-flex; align-items: center; }
+.shared-header-actions { display: flex; align-items: center; gap: .75rem; margin: 0; padding: 0; list-style: none; }
+.shared-btn-login, .shared-btn-signup { display: inline-flex; align-items: center; justify-content: center; padding: .55rem 1.05rem; border-radius: 999px; font: 600 .86rem 'DM Sans', sans-serif; text-decoration: none; transition: .2s ease; }
+.shared-btn-login { color: var(--header-white); border: 1px solid var(--header-border); background: var(--header-glass); }
+.shared-btn-signup { color: var(--header-white); background: linear-gradient(135deg, var(--header-teal), var(--header-aqua)); box-shadow: 0 4px 16px rgba(6,182,212,.24); }
+.shared-btn-login:hover { border-color: var(--header-aqua); background: rgba(255,255,255,.12); }
+.shared-btn-signup:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(6,182,212,.4); }
 .shared-header .logo {
   position: static;
   display: block;
@@ -88,4 +94,22 @@
   .shared-header .logo { width: 108px; height: 58px; }
   .shared-profile-trigger { width: 40px; height: 40px; }
   .shared-profile-dropdown { width: min(250px, calc(100vw - 2rem)); }
+  .shared-header-actions { gap: .45rem; }
+  .shared-btn-login, .shared-btn-signup { padding: .45rem .7rem; font-size: .78rem; }
 }
+
+/* ===========================
+   FOOTER PADRÃO DO SITE
+   Usado em todas as páginas via partials/footer.ejs
+   =========================== */
+.site-footer {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: transparent;
+  border-top: 1px solid var(--header-border);
+  color: var(--header-muted);
+  font-size: .82rem;
+  flex-shrink: 0;
+}
+
+.site-footer p { margin: 0; }

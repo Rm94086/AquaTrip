@@ -153,11 +153,9 @@ aside#drawer hr { border: none; border-top: 1px solid var(--glass-border); margi
   border-radius: var(--radius-xs);
   transition: all var(--transition);
   align-self: flex-start;
-  left: 600px;
-  width: 110px;
-  height: 35px;
-  top: 210px;
-  position: relative;
+  width: auto;
+  height: auto;
+  position: static;
 }
 
 .breadcrumb-link:hover {
@@ -196,10 +194,13 @@ body {
   background: var(--color-bg-page);
   color: var(--color-text-primary);
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
  
 main {
   padding-bottom: 3rem;
+  flex: 1 0 auto;
 }
  
 .content {
@@ -590,3 +591,12 @@ input.error {
     grid-template-columns: 1fr;
   }
 }
+
+/* Ajustes de consistência e responsividade da etapa de pagamento. */
+.payment-methods { max-width: 680px; margin: 1.25rem auto 0; padding: 1.25rem; background: var(--card-bg); border: 1px solid var(--card-border); border-radius: var(--radius-lg); }
+.payment-methods h2 { font-family: var(--font-display); color: var(--foam); font-size: 1.1rem; margin: 0 0 .85rem; }
+.payment-option { display: flex; flex-direction: row; align-items: flex-start; gap: .75rem; padding: .8rem; margin-top: .55rem; border: 1px solid var(--card-border); border-radius: 10px; color: var(--foam); cursor: pointer; }
+.payment-option:has(input:checked) { border-color: var(--aqua); background: rgba(6,182,212,.1); }
+.payment-option span { display: grid; gap: .2rem; }.payment-option small { color: var(--muted); }
+.destination-label { display: block; color: #cffafe; font-size: .72rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; margin-bottom: .35rem; }.destination-description { color: rgba(255,255,255,.9); font-size: .88rem; line-height: 1.45; max-width: 620px; margin: 0 0 .7rem; }
+main { padding-top: 68px; }.breadcrumb-link { position: static; width: auto; height: auto; margin: 1.25rem auto 0; max-width: 680px; padding: 0 1.25rem; display: flex; }.hero { margin-top: .8rem; }.content { padding-bottom: 0; }

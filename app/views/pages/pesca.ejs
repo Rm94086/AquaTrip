@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AquaTrip — Pesca Esportiva</title>
+  <link rel="stylesheet" href="/css/pesca.css" />
+</head>
+<body>
+
+<%- include('../partials/header') %>
+
+  <main class="main-layout">
+
+    <!-- MENU LATERAL -->
+    <aside class="sidebar" aria-label="Filtros de pesca esportiva">
+      <section class="sidebar-section">
+        <a href="/" class="breadcrumb-link">← Voltar</a>
+        <h2 class="sidebar-title">Pesca Esportiva</h2>
+        <a href="/criar_experiencia" class="btn-criar-experiencia">Criar experiência</a>
+        <nav class="filter-nav" aria-label="Filtros por região">
+          <button class="filter-btn active" data-filter="todos" type="button">Todos</button>
+          <button class="filter-btn" data-filter="brasil" type="button">Brasil</button>
+        </nav>
+      </section>
+
+      <section class="sidebar-section">
+        <h3 class="sidebar-subtitle">Avaliação mínima</h3>
+        <fieldset class="star-filter">
+          <legend class="sr-only">Filtrar por estrelas</legend>
+          <label><input type="radio" name="stars" value="0" checked /> Todas</label>
+          <label><input type="radio" name="stars" value="4" /> ★★★★+</label>
+          <label><input type="radio" name="stars" value="4.5" /> ★★★★½+</label>
+        </fieldset>
+      </section>
+
+      <section class="sidebar-section">
+        <h3 class="sidebar-subtitle">Preço máximo</h3>
+        <label for="price-range" class="sr-only">Preço máximo por pessoa</label>
+        <input type="range" id="price-range" class="price-slider" min="400" max="1200" step="50" value="1200" />
+        <output class="price-output" for="price-range">R$ 1.200+</output>
+      </section>
+    </aside>
+
+    <!-- CONTEÚDO PRINCIPAL -->
+    <section class="content-area" aria-label="Catálogo de pesca esportiva">
+
+      <!-- CARD DESTACADO -->
+      <article class="card-featured" data-region="brasil" data-stars="4.8" data-price="690" aria-label="Destino em destaque">
+        <figure class="card-featured-image">
+          <img src="https://www.personalpesca.com.br/arquivos/media/Destinos/Amaz%C3%B4nia%20-%20Rio%20Negro/08%20pescadores.jpg" alt="Pescadores em barco no Rio Negro, Amazonas" loading="lazy" />
+          <figcaption class="featured-badge">✦ Experiência em Destaque</figcaption>
+        </figure>
+        <section class="card-featured-body">
+          <header class="card-featured-header">
+            <span class="card-region-tag">Brasil</span>
+            <h2 class="card-featured-title">Pesca esportiva no Rio Negro</h2>
+            <p class="card-featured-location">Manaus, Amazonas</p>
+          </header>
+          <p class="card-featured-desc">
+            Dia de pesca embarcada com guia local, equipamentos básicos e navegação pelos igarapés e canais do Rio Negro.
+          </p>
+          <footer class="card-featured-footer">
+            <section class="card-meta">
+              <meter class="star-meter" min="0" max="5" value="4.8" title="Avaliação: 4.8 de 5"></meter>
+              <output class="star-display" aria-label="Avaliação 4.8 de 5">★★★★★</output>
+              <span class="reviews-count">4.8 · 176 avaliações</span>
+              <small class="review-disclaimer">Avaliações fictícias para demonstração.</small>
+            </section>
+            <section class="card-price-block">
+              <span class="price-label">A partir de</span>
+              <strong class="price-value">R$ 690</strong>
+              <span class="price-note">/ pessoa · 1 dia</span>
+            </section>
+            <a href="/dados_pagamento"><button class="btn-ver-pacote" type="button">Ver experiência →</button></a>
+          </footer>
+        </section>
+      </article>
+
+      <!-- GRID DE CARDS -->
+      <section class="cards-section" aria-label="Todos os passeios de pesca">
+        <header class="cards-header">
+          <h2 class="cards-section-title">Explore Pesca Esportiva pelo Brasil</h2>
+          <nav class="carousel-nav" aria-label="Navegação dos cards">
+            <button class="arrow-btn" id="prev-btn" type="button" aria-label="Anteriores">&#8592;</button>
+            <span class="page-indicator" id="page-indicator" aria-live="polite">1 / 3</span>
+            <button class="arrow-btn" id="next-btn" type="button" aria-label="Próximos">&#8594;</button>
+          </nav>
+        </header>
+
+        <ol class="cards-grid" id="cards-grid" role="list">
+
+          <li class="card-item" data-region="brasil" data-stars="4.9" data-price="1180">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="https://www.personalpesca.com.br/arquivos/media/Destinos/Amaz%C3%B4nia%20-%20Rio%20Negro/08%20pescadores.jpg" alt="Pesca esportiva no Rio Negro, Amazonas" loading="lazy" />
+                <figcaption class="card-region-tag">Brasil</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Aventura de tucunaré no Rio Negro</h3>
+                  <p class="card-location">Barcelos, Amazonas</p>
+                </header>
+                <p class="card-desc">Saída de pesca com condutor experiente em uma região conhecida pela pesca do tucunaré.</p>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.9">
+                    <output class="star-display sm">★★★★★</output>
+                    <span class="star-num">4.9 · 142 avaliações</span>
+                  </section>
+                  <strong class="card-price">R$ 1.180</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="brasil" data-stars="4.7" data-price="760">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="/img/expedicao_amazonica.png" alt="Rio no Pantanal de Mato Grosso" loading="lazy" />
+                <figcaption class="card-region-tag">Brasil</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Pesca de rio no Pantanal Norte</h3>
+                  <p class="card-location">Cáceres, Mato Grosso</p>
+                </header>
+                <p class="card-desc">Roteiro de barco pelos rios pantaneiros com guia, observação de aves e prática de pesca esportiva.</p>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.7">
+                    <output class="star-display sm">★★★★</output>
+                    <span class="star-num">4.7 · 108 avaliações</span>
+                  </section>
+                  <strong class="card-price">R$ 760</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="brasil" data-stars="4.6" data-price="720">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="/img/expedicao_amazonica.png" alt="Paisagem de rio no Pantanal Sul" loading="lazy" />
+                <figcaption class="card-region-tag">Brasil</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Rios do Pantanal Sul</h3>
+                  <p class="card-location">Corumbá, Mato Grosso do Sul</p>
+                </header>
+                <p class="card-desc">Experiência de um dia para pescar e conhecer a paisagem alagada do Pantanal sul-mato-grossense.</p>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.6">
+                    <output class="star-display sm">★★★★</output>
+                    <span class="star-num">4.6 · 86 avaliações</span>
+                  </section>
+                  <strong class="card-price">R$ 720</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="brasil" data-stars="4.7" data-price="650">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="/img/expedicao_amazonica.png" alt="Rio Araguaia em Goiás" loading="lazy" />
+                <figcaption class="card-region-tag">Brasil</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Pesca guiada no Rio Araguaia</h3>
+                  <p class="card-location">Luiz Alves, Goiás</p>
+                </header>
+                <p class="card-desc">Saída em embarcação regional pelos trechos calmos do Araguaia, com orientação técnica durante o dia.</p>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.7">
+                    <output class="star-display sm">★★★★</output>
+                    <span class="star-num">4.7 · 121 avaliações</span>
+                  </section>
+                  <strong class="card-price">R$ 650</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="brasil" data-stars="4.5" data-price="480">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="/img/fernandonoronha.jpg" alt="Baía de Angra dos Reis, Rio de Janeiro" loading="lazy" />
+                <figcaption class="card-region-tag">Brasil</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Pesca costeira em Angra dos Reis</h3>
+                  <p class="card-location">Angra dos Reis, Rio de Janeiro</p>
+                </header>
+                <p class="card-desc">Navegação leve pela Baía da Ilha Grande para pesca costeira acompanhada por marinheiro local.</p>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.5">
+                    <output class="star-display sm">★★★★</output>
+                    <span class="star-num">4.5 · 77 avaliações</span>
+                  </section>
+                  <strong class="card-price">R$ 480</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+          <li class="card-item" data-region="brasil" data-stars="4.6" data-price="520">
+            <article class="card">
+              <figure class="card-thumb">
+                <img src="/img/observacao_baleias.jpg" alt="Litoral de Florianópolis, Santa Catarina" loading="lazy" />
+                <figcaption class="card-region-tag">Brasil</figcaption>
+              </figure>
+              <section class="card-body">
+                <header>
+                  <h3 class="card-title">Pesca embarcada em Florianópolis</h3>
+                  <p class="card-location">Florianópolis, Santa Catarina</p>
+                </header>
+                <p class="card-desc">Experiência no litoral catarinense com instruções de segurança e leitura das condições do mar.</p>
+                <footer class="card-footer">
+                  <section class="card-stars" aria-label="Avaliação 4.6">
+                    <output class="star-display sm">★★★★</output>
+                    <span class="star-num">4.6 · 69 avaliações</span>
+                  </section>
+                  <strong class="card-price">R$ 520</strong>
+                </footer>
+              </section>
+            </article>
+          </li>
+
+        </ol>
+
+        <p class="no-results" id="no-results" hidden aria-live="polite">Nenhuma experiência encontrada com esses filtros.</p>
+      </section>
+    </section>
+
+  </main>
+
+  <%- include('../partials/footer') %>
+
+  <script src="/js/aquarios.js"></script>
+</body>
+</html>

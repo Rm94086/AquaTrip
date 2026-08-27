@@ -5,6 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aquário de Santos — AquaTrip</title>
   <link rel="stylesheet" href="../css/produto.css" />
+</head>
+<body>
 
  <%- include('../partials/header') %>
 
@@ -186,10 +188,6 @@
               <span class="field-label">Ida</span>
               <input type="date" id="data-ida" class="field-input" min="2025-06-01" />
             </label>
-            <label class="form-field" for="data-volta">
-              <span class="field-label">Volta</span>
-              <input type="date" id="data-volta" class="field-input" min="2025-06-08" />
-            </label>
           </fieldset>
 
           <fieldset class="form-group-double pessoas-group">
@@ -217,24 +215,17 @@
             <fieldset class="quarto-options">
               <legend class="sr-only">Selecione o tipo de quarto</legend>
               <label class="quarto-option">
-                <input type="radio" name="quarto" value="standard" checked />
+                <input type="radio" name="quarto" value="solteiro" checked />
                 <section class="quarto-label">
-                  <strong>Standard</strong>
+                  <strong>Quarto de solteiro</strong>
                   <span>+ R$ 0</span>
                 </section>
               </label>
               <label class="quarto-option">
-                <input type="radio" name="quarto" value="superior" />
+                <input type="radio" name="quarto" value="casal" />
                 <section class="quarto-label">
-                  <strong>Superior</strong>
-                  <span>+ R$ 800</span>
-                </section>
-              </label>
-              <label class="quarto-option">
-                <input type="radio" name="quarto" value="suite" />
-                <section class="quarto-label">
-                  <strong>Suíte</strong>
-                  <span>+ R$ 500</span>
+                  <strong>Quarto para casal</strong>
+                  <span>+ R$ 700</span>
                 </section>
               </label>
             </fieldset>
@@ -275,9 +266,7 @@
     </nav>
   </dialog>
 
-  <footer class="site-footer">
-    <p>© 2026 AquaTrip · Todos os direitos reservados · <a href="#">Política de privacidade</a></p>
-  </footer>
+  <%- include('../partials/footer') %>
 
   <script src="/js/produto.js"></script>
 </body>

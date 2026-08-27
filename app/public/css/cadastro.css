@@ -28,7 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   background: linear-gradient(135deg, var(--deep), var(--ocean));
   color: var(--white);
   padding-top: 64px;

@@ -145,9 +145,11 @@ a {
 body{
 min-height:100vh;
 padding:2rem 1rem;
+padding-top:calc(64px + 2rem);
 
 display:flex;
-justify-content:center;
+flex-direction:column;
+justify-content:space-between;
 align-items:center;
 
 font-family:'DM Sans',sans-serif;
@@ -213,8 +215,8 @@ linear-gradient(
 
 .avatar-wrapper{
 position:absolute;
-bottom:-50px;
-left:35px;
+bottom:-138px;
+left:20px;
 }
 
 .avatar-ring{
@@ -551,6 +553,7 @@ margin-top:60px;
 
 .avatar-wrapper{
 left:50%;
+bottom:-50px;
 transform:translateX(-50%);
 }
 }

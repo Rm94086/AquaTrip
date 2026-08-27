@@ -134,10 +134,14 @@ body{
 background:#071826;
 font-family: var(--font-body);
 color:white;
+min-height: 100vh;
+display: flex;
+flex-direction: column;
 }
 
 main {
     margin-top: 64px;
+    flex: 1 0 auto;
 }
 
 .back-button{

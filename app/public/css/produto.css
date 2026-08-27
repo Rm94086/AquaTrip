@@ -164,6 +164,8 @@ body {
   font-size: 15px;
   line-height: 1.65;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 img { display: block; max-width: 100%; object-fit: cover; }
@@ -191,6 +193,9 @@ ul, ol { list-style: none; }
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
+  flex: 1 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 
@@ -760,10 +765,11 @@ ul, ol { list-style: none; }
 .site-footer {
   text-align: center;
   padding: 1.5rem;
-  background: rgba(5,13,26,0.9);
+  background: transparent;
   border-top: 1px solid var(--card-border);
   font-size: 0.82rem;
   color: var(--muted);
+  flex-shrink: 0;
 }
 
 /* ===========================

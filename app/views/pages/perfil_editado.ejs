@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil · Ana Beatriz</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/perfil_editado.css">
+</head>
+<body>
+
+<%- include('../partials/header') %>
+
+  <main>
+    <article class="cartao-perfil">
+
+      <figure class="cartao-perfil__foto">
+        <img
+          src="/img/avatar.svg"
+          alt="Foto de perfil de Ana Beatriz"
+          width="112"
+          height="112"
+        >
+      </figure>
+
+      <header class="cartao-perfil__cabecalho">
+        <h1>Ana Beatriz</h1>
+        <p class="cartao-perfil__usuario">@anabeatriz</p>
+      </header>
+
+      <p class="cartao-perfil__bio">
+        Apaixonada por explorar o Brasil, uma experiência de cada vez.
+      </p>
+
+      <footer class="cartao-perfil__acoes">
+        <a href="/perfil" class="botao-editar" id="botaoEditar">
+          Editar perfil
+        </a>
+        <output class="cartao-perfil__mensagem" id="mensagem" aria-live="polite"></output>
+      </footer>
+
+    </article>
+  </main>
+
+  <%- include('../partials/footer') %>
+
+</body>
+</html>

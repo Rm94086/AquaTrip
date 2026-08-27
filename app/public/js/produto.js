@@ -125,7 +125,7 @@
   });
 
   /* ── Tipo de quarto ──────────────────────── */
-  const quartoPrecos = { standard: 0, superior: 800, suite: 2000 };
+  const quartoPrecos = { solteiro: 0, casal: 700 };
   let quartoExtra = 0;
 
   document.querySelectorAll("input[name='quarto']").forEach(input => {
@@ -165,25 +165,11 @@
   /* ── Validação e botão prosseguir ─────────── */
   const btnProsseguir = document.getElementById("btn-prosseguir");
   const dataIda       = document.getElementById("data-ida");
-  const dataVolta     = document.getElementById("data-volta");
-
-  // Garante que a volta não seja antes da ida
-  dataIda.addEventListener("change", () => {
-    if (dataVolta.value && dataVolta.value < dataIda.value) {
-      dataVolta.value = "";
-    }
-    dataVolta.min = dataIda.value || "2025-06-01";
-  });
 
   btnProsseguir.addEventListener("click", () => {
     if (!dataIda.value) {
       dataIda.focus();
       pulsarCampo(dataIda.closest(".form-field"));
-      return;
-    }
-    if (!dataVolta.value) {
-      dataVolta.focus();
-      pulsarCampo(dataVolta.closest(".form-field"));
       return;
     }
 

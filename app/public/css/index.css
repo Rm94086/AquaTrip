@@ -13,13 +13,17 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; width: 100%; }
 body {
   min-width: 320px;
+  width: 100%;
   overflow-x: hidden;
   font-family: 'DM Sans', sans-serif;
   background: var(--deep);
   color: var(--white);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 a { color: inherit; }
 button, a { -webkit-tap-highlight-color: transparent; }
@@ -244,7 +248,7 @@ h1 em { color: var(--aqua); font-style: italic; }
 .hero-wave { position: absolute; left: 0; right: 0; bottom: -1px; height: 100px; margin: 0; background: linear-gradient(180deg, transparent, var(--deep)); clip-path: polygon(0 70%, 15% 58%, 32% 72%, 48% 55%, 66% 68%, 82% 50%, 100% 65%, 100% 100%, 0 100%); }
 
 /* SECTIONS */
-main { position: relative; z-index: 1; }
+main { position: relative; z-index: 1; flex: 1 0 auto; }
 main > section { padding: 5.5rem 0; }
 .section-heading, .featured-intro { display: flex; align-items: flex-end; justify-content: space-between; gap: 2rem; }
 h2 {
@@ -491,3 +495,20 @@ body > address { padding: 1.3rem; border-top: 1px solid var(--glass-border); col
   .card-tagline { align-items: flex-start; flex-direction: column; }
   footer { grid-template-columns: 1fr; }
 }
+
+/* ===========================
+   FOOTER PADRÃO DO SITE
+   =========================== */
+.site-footer {
+  width: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: transparent;
+  border-top: 1px solid rgba(255,255,255,.12);
+  color: var(--muted);
+  font-size: .82rem;
+  flex-shrink: 0;
+}
+
+.site-footer p { margin: 0 auto; }
