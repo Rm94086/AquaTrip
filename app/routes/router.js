@@ -37,6 +37,22 @@ router.get('/aquarios', function(req,res ){
     res.render('pages/aquarios');
 });
 
+router.get('/praias', function(req,res ){
+    res.render('pages/praias');
+});
+
+router.get('/pesca', function(req,res ){
+    res.render('pages/pesca');
+});
+
+router.get('/caiaque', function(req,res ){
+    res.render('pages/caiaque');
+});
+
+router.get('/mergulho', function(req,res ){
+    res.render('pages/mergulho');
+});
+
 router.get('/avaliacao', function(req,res ){
     res.render('pages/avaliacao');
 });
@@ -67,6 +83,14 @@ router.get('/produto_churaumi', function(req,res ){
 
 router.get('/gestao', function(req,res ){
     res.render('pages/gestao');
+});
+
+router.get('/criar_experiencia', function(req,res ){
+    res.render('pages/criar_experiencia');
+});
+
+router.get('/perfil_editado', function(req,res ){
+    res.render('pages/perfil_editado');
 });
 
 module.exports = router;
