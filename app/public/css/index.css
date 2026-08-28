@@ -436,8 +436,9 @@ footer {
   margin: 0 auto;
   padding: 4rem 0 3rem;
   border-top: 1px solid var(--glass-border);
+    justify-self: center;
 }
-.footer-logo { display: inline-block; color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; text-decoration: none; }
+.footer-logo {   justify-items: center; display: inline-block; color: var(--white); font-family: 'Playfair Display', serif; font-size: 1.6rem; font-weight: 700; text-decoration: none; }
 .footer-logo mark { color: var(--aqua); background: transparent; }
 footer > section p { max-width: 350px; margin-top: .8rem; color: rgba(255,255,255,.43); font-size: .82rem; line-height: 1.6; }
 footer nav { display: flex; flex-direction: column; }
@@ -496,19 +497,19 @@ body > address { padding: 1.3rem; border-top: 1px solid var(--glass-border); col
   footer { grid-template-columns: 1fr; }
 }
 
+
 /* ===========================
    FOOTER PADRÃO DO SITE
    =========================== */
 .site-footer {
   width: 100%;
   box-sizing: border-box;
-  text-align: center;
   padding: 1.5rem 1rem;
   background: transparent;
   border-top: 1px solid rgba(255,255,255,.12);
   color: var(--muted);
   font-size: .82rem;
   flex-shrink: 0;
+    justify-self: center;
 }
 
-.site-footer p { margin: 0 auto; }
