@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rios Bonito — AquaTrip</title>
+  <link rel="stylesheet" href="../css/produto.css" />
+</head>
+<body>
+
+ <%- include('../partials/header') %>
+
+  <main class="produto-main">
+    <a href="/expedicoes" class="breadcrumb-link">← Voltar ao catálogo</a>
+
+    <!-- HERO / GALERIA -->
+    <section class="galeria-section" aria-label="Galeria de fotos">
+      <figure class="galeria-principal">
+        <img
+          id="foto-principal"
+          src="/img/aquarium_santos.jpg"
+          alt="Aquário de Santos — Vista principal do tanque oceânico"
+          loading="eager"
+        />
+        <figcaption class="galeria-badge">✦ Destaque da Semana</figcaption>
+        <button class="galeria-expand" id="btn-expand" type="button" aria-label="Expandir foto">⛶</button>
+      </figure>
+
+      <ol class="galeria-thumbs" role="list" aria-label="Miniaturas da galeria">
+        <li>
+          <button class="thumb-btn active" type="button" data-src="/img/aquarium_santos.jpg"
+          data-alt="Vista principal do tanque oceânico" aria-label="Foto 1" aria-pressed="true">
+            <img src="/img/aquarium_santos.jpg" alt="" />
+          </button>
+        </li>
+        <li>
+          <button class="thumb-btn" type="button" data-src="/img/cardume_peixes.avif" 
+          data-alt="Tubarão-baleia nadando no tanque" aria-label="Foto 2" aria-pressed="false">
+            <img src="/img/cardume_peixes.avif" alt="" />
+          </button>
+        </li>
+      </ol>
+    </section>
+
+    <!-- CONTEÚDO: INFO + RESERVA -->
+    <section class="produto-content">
+
+      <!-- COLUNA ESQUERDA: Informações -->
+      <article class="produto-info" aria-label="Informações do destino">
+
+        <header class="info-header">
+          <span class="region-tag">Américas</span>
+          <h1 class="produto-titulo">Oceanic Aquarium</h1>
+          <address class="produto-local"> Balneário Camboriú, Santa Catarina — Brasil</address>
+
+          <section class="rating-row" aria-label="Avaliação geral">
+            <output class="stars-display" aria-label="Avaliação 4.9 de 5">★★★★★</output>
+            <strong class="rating-num">4.9</strong>
+            <span class="rating-count">(2.847 avaliações)</span>
+          </section>
+        </header>
+
+        <section class="info-destaques" aria-label="Destaques do pacote">
+          <article class="destaque-card">
+            <span class="destaque-icon"></span>
+            <strong>Tubarão-baleia</strong>
+            <p>Biodiversidade brasileira</p>
+          </article>
+          <article class="destaque-card">
+            <span class="destaque-icon"></span>
+            <strong>38 mi. litros</strong>
+            <p>O maior do hemisfério</p>
+          </article>
+          <article class="destaque-card">
+            <span class="destaque-icon"></span>
+            <strong>+100.000</strong>
+            <p>Animais marinhos</p>
+          </article>
+          <article class="destaque-card">
+            <span class="destaque-icon"></span>
+            <strong>10 galerias</strong>
+            <p>Temáticas imersivas</p>
+          </article>
+        </section>
+
+        <section class="info-descricao">
+          <h2 class="section-heading">Sobre o destino</h2>
+          
+          <p>O Aquário de Santos, no litoral de São Paulo, é o maior aquário do hemisfério ocidental e um dos mais impressionantes do mundo. Com mais de 38 milhões de litros 
+            d'água distribuídos em dez galerias temáticas, o local abriga mais de 100.000 animais de 700 espécies diferentes.</p>
+
+          <p>A atração principal é o <em>Tanque de vida marinha</em>, um tanque monumental com quatro tubarões-baleia — espécies encontradas em ambientes marinhos brasileiros — além de raias mantas gigantes, 
+            groupers e milhares de peixes. Um túnel de 30 metros permite caminhar literalmente sob o oceano.</p>
+
+          <p>O pacote AquaWorld inclui traslado do aeroporto, hospedagem de 7 noites em hotel 4 estrelas a 5 minutos do aquário, 
+            ingresso para acesso ilimitado durante toda a estadia e guia bilíngue exclusivo para o grupo.</p>
+        </section>
+
+        <section class="info-incluso">
+          <h2 class="section-heading">O que está incluso</h2>
+          <ul class="incluso-list" role="list">
+            <li><span class="check">✓</span> Transporte até Santos, São Paulo</li>
+            <li><span class="check">✓</span> 7 noites em hotel 4★ (café da manhã incluso)</li>
+            <li><span class="check">✓</span> Ingresso ilimitado ao Aquário de Santos</li>
+            <li><span class="check">✓</span> Traslados aeroporto ↔ hotel</li>
+            <li><span class="check">✓</span> Guia bilíngue exclusivo</li>
+            <li><span class="check">✓</span> Seguro viagem completo</li>
+            <li><span class="x">✗</span> Refeições (exceto café da manhã)</li>
+            <li><span class="x">✗</span> Despesas pessoais e gorjetas</li>
+          </ul>
+        </section>
+
+        <section class="info-avaliações">
+          <h2 class="section-heading">Avaliações recentes</h2>
+          <ol class="avaliacoes-list" role="list">
+            <li class="avaliacao-item">
+              <header class="avaliacao-header">
+                <figure class="avaliacao-avatar">M</figure>
+                <section>
+                  <strong class="avaliacao-nome">Marina S.</strong>
+                  <time class="avaliacao-data" datetime="2025-03">Março 2025</time>
+                </section>
+                <output class="avaliacao-stars" aria-label="5 estrelas">★★★★★</output>
+              </header>
+              <p class="avaliacao-texto">Experiência incrível! Ver os tubarões-baleia de perto foi algo que nunca vou esquecer. A organização do AquaWorld foi impecável do começo ao fim.</p>
+            </li>
+            <li class="avaliacao-item">
+              <header class="avaliacao-header">
+                <figure class="avaliacao-avatar">R</figure>
+                <section>
+                  <strong class="avaliacao-nome">Rafael T.</strong>
+                  <time class="avaliacao-data" datetime="2025-02">Fevereiro 2025</time>
+                </section>
+                <output class="avaliacao-stars" aria-label="5 estrelas">★★★★★</output>
+              </header>
+              <p class="avaliacao-texto">Fui com a família, incluindo duas crianças. Todos ficaram fascinados. O guia foi extremamente atencioso e o hotel era excelente.</p>
+            </li>
+            <li class="avaliacao-item">
+              <header class="avaliacao-header">
+                <figure class="avaliacao-avatar">C</figure>
+                <section>
+                  <strong class="avaliacao-nome">Camila R.</strong>
+                  <time class="avaliacao-data" datetime="2025-01">Janeiro 2025</time>
+                </section>
+                <output class="avaliacao-stars" aria-label="4 estrelas">★★★★☆</output>
+              </header>
+              <p class="avaliacao-texto">Muito bem organizado. A única ressalva é que gostaríamos de mais tempo livre, mas no geral superou as expectativas. Recomendo!</p>
+            </li>
+          </ol>
+        </section>
+
+      </article>
+
+      <!-- COLUNA DIREITA: Card de reserva -->
+      <aside class="reserva-card" aria-label="Formulário de reserva">
+        <header class="reserva-header">
+          <section class="reserva-preco">
+            <span class="preco-from">A partir de</span>
+            <strong class="preco-valor">R$ 8.500</strong>
+            <span class="preco-per">/ pessoa</span>
+          </section>
+          <output class="reserva-stars" aria-label="Avaliação 4.9">★★★★★ <span>4.9</span></output>
+        </header>
+
+        <section class="reserva-form" aria-label="Dados da reserva">
+
+          <fieldset class="form-group-double">
+            <legend class="form-label"> Data da viagem</legend>
+            <label class="form-field" for="data-ida">
+              <span class="field-label">Ida</span>
+              <input type="date" id="data-ida" class="field-input" min="2025-06-01" />
+            </label>
+          </fieldset>
+
+          <fieldset class="form-group-double pessoas-group">
+            <legend class="form-label"> Pessoas</legend>
+            <label class="form-field" for="adultos">
+              <span class="field-label">Adultos</span>
+              <section class="counter" role="group" aria-label="Quantidade de adultos">
+                <button class="counter-btn" type="button" data-target="adultos" data-action="dec" aria-label="Diminuir adultos">−</button>
+                <output class="counter-val" id="adultos" aria-live="polite">1</output>
+                <button class="counter-btn" type="button" data-target="adultos" data-action="inc" aria-label="Aumentar adultos">+</button>
+              </section>
+            </label>
+            <label class="form-field" for="criancas">
+              <span class="field-label">Crianças</span>
+              <section class="counter" role="group" aria-label="Quantidade de crianças">
+                <button class="counter-btn" type="button" data-target="criancas" data-action="dec" aria-label="Diminuir crianças">−</button>
+                <output class="counter-val" id="criancas" aria-live="polite">0</output>
+                <button class="counter-btn" type="button" data-target="criancas" data-action="inc" aria-label="Aumentar crianças">+</button>
+              </section>
+            </label>
+          </fieldset>
+
+          <section class="form-group">
+            <h3 class="form-label"> Tipo de quarto</h3>
+            <fieldset class="quarto-options">
+              <legend class="sr-only">Selecione o tipo de quarto</legend>
+              <label class="quarto-option">
+                <input type="radio" name="quarto" value="solteiro" checked />
+                <section class="quarto-label">
+                  <strong>Quarto de solteiro</strong>
+                  <span>+ R$ 0</span>
+                </section>
+              </label>
+              <label class="quarto-option">
+                <input type="radio" name="quarto" value="casal" />
+                <section class="quarto-label">
+                  <strong>Quarto para casal</strong>
+                  <span>+ R$ 700</span>
+                </section>
+              </label>
+            </fieldset>
+          </section>
+
+          <section class="resumo-preco" aria-label="Resumo do preço" aria-live="polite">
+            <p class="resumo-linha"><span>Base (1 adulto)</span><strong id="preco-base">R$ 8.500</strong></p>
+            <p class="resumo-linha"><span>Crianças (0)</span><strong id="preco-criancas">R$ 0</strong></p>
+            <p class="resumo-linha"><span>Tipo de quarto</span><strong id="preco-quarto">R$ 0</strong></p>
+            <hr class="resumo-divider" />
+            <p class="resumo-total"><span>Total estimado</span><strong id="preco-total">R$ 8.500</strong></p>
+          </section>
+
+        </section>
+
+        <a href="/dados_pagamento">
+        <button class="btn-prosseguir" type="button" id="btn-prosseguir">
+          Prosseguir para pagamento →
+        </button>
+        </a>
+        <p class="reserva-nota">Sem cobrança antecipada · Cancelamento gratuito em 48h</p>
+
+      </aside>
+
+    </section>
+
+  </main>
+
+  <!-- LIGHTBOX -->
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada" aria-modal="true">
+    <button class="lightbox-close" id="lightbox-close" type="button" aria-label="Fechar">✕</button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-img" src="" alt="" />
+    </figure>
+    <nav class="lightbox-nav" aria-label="Navegar entre fotos">
+      <button class="lightbox-arrow" id="lb-prev" type="button" aria-label="Foto anterior">&#8592;</button>
+      <button class="lightbox-arrow" id="lb-next" type="button" aria-label="Próxima foto">&#8594;</button>
+    </nav>
+  </dialog>
+
+  <%- include('../partials/footer') %>
+
+  <script src="/js/produto.js"></script>
+</body>
+</html>

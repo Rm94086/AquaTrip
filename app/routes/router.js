@@ -92,5 +92,42 @@ router.get('/criar_experiencia', function(req,res ){
 router.get('/perfil_editado', function(req,res ){
     res.render('pages/perfil_editado');
 });
+ 
+router.get('/riosbonito', function(req,res ){
+    res.render('pages/riosbonito');
+});
+ 
+router.get('/amazonica', function(req,res ){
+    res.render('pages/amazonica');
+});
+ 
+router.get('/arraialdocabo', function(req,res ){
+    res.render('pages/arraialdocabo');
+});
+ 
+router.get('/angradosreis', function(req,res ){
+    res.render('pages/angradosreis');
+});
+ 
+router.get('/baleias', function(req,res ){
+    res.render('pages/baleias');
+});
+ 
+router.get('/ilhabela', function(req,res ){
+    res.render('pages/ilhabela');
+});
+
+router.get('/oceanic', function(req,res ){
+    res.render('pages/oceanic');
+});
+
+router.get('/aquarioubatuba', function(req,res ){
+    res.render('pages/aquarioubatuba');
+});
+
+router.get('/aquariorj', function(req,res ){
+    res.render('pages/aquariorj');
+});
+
 
 module.exports = router;
