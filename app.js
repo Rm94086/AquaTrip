@@ -1,3 +1,6 @@
+require('dotenv').config()
+process.env.API_SECRET_KEY
+os.getenv('API_SECRET_KEY')
 const express = require("express");
 const app = express();
 const port = 3000;
